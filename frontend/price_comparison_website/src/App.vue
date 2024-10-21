@@ -1,72 +1,68 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
+<!-- src/App.vue -->
 <template>
   <div id="app">
     <nav>
       <router-link to="/">首页</router-link>
-      <router-link to="/register">注册</router-link>
-      <router-link to="/login">登录</router-link>
-      <button v-if="isAuthenticated" @click="logout">登出</button>
+      <span v-if="!isAuthenticated">
+        <router-link to="/login">登录</router-link>
+        <router-link to="/register">注册</router-link>
+      </span>
+      <span v-else>
+        欢迎，{{ username }}！
+        <a href="#" @click.prevent="handleLogout">登出</a>
+      </span>
     </nav>
-    <router-view></router-view>
+    <hr />
+    <router-view />
   </div>
 </template>
 
 <script>
+import axios from './axios';
+
 export default {
+  name: 'App',
   data() {
     return {
-      isAuthenticated: !!localStorage.getItem('access_token')
-    }
+      username: '',
+    };
+  },
+  computed: {
+    isAuthenticated() {
+      return !!localStorage.getItem('token');
+    },
   },
   methods: {
-    logout() {
-      localStorage.removeItem('access_token')
-      localStorage.removeItem('refresh_token')
-      this.isAuthenticated = false
-      this.$router.push('/')
+    handleLogout() {
+      localStorage.removeItem('token');
+      this.username = '';
+      this.$router.push({ name: 'home' });
+    },
+    async fetchUserInfo() {
+      try {
+        const response = await axios.get('user/');
+        this.username = response.data.username;
+      } catch (error) {
+        // 如果获取用户信息失败，可能是 token 无效
+        localStorage.removeItem('token');
+      }
+    },
+  },
+  created() {
+    if (this.isAuthenticated) {
+      this.fetchUserInfo();
     }
-  }
-}
+  },
+};
 </script>
 
 <style>
+/* 添加一些简单的样式 */
 nav {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-</style>
-
-<style scoped>
-header {
-  line-height: 1.5;
+  margin-bottom: 10px;
 }
 
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+nav a {
+  margin-right: 10px;
 }
 </style>

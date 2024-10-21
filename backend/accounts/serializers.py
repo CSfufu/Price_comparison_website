@@ -32,6 +32,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
         user.save()
         return user
 
+
 class LoginSerializer(serializers.Serializer):
     username = serializers.CharField(required=True)
     password = serializers.CharField(write_only=True, required=True)
@@ -40,11 +41,21 @@ class LoginSerializer(serializers.Serializer):
         username = attrs.get('username')
         password = attrs.get('password')
 
-        if username and password:
-            user = authenticate(username=username, password=password)
-            if not user:
-                raise serializers.ValidationError("无法登录，请检查用户名和密码")
-        else:
-            raise serializers.ValidationError("必须提供用户名和密码")
+        if not username:
+            raise serializers.ValidationError({"username": "用户名不能为空"})
+        if not password:
+            raise serializers.ValidationError({"password": "密码不能为空"})
+
+        # 检查用户名是否存在
+        try:
+            user = CustomUser.objects.get(username=username)
+        except CustomUser.DoesNotExist:
+            raise serializers.ValidationError({"username": "用户名未注册"})
+
+        # 验证密码
+        user = authenticate(username=username, password=password)
+        if not user:
+            raise serializers.ValidationError({"password": "密码错误"})
+
         attrs['user'] = user
         return attrs
