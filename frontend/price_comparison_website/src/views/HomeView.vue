@@ -1,12 +1,30 @@
 <!-- src/views/HomeView.vue -->
 <template>
   <div class="home-container">
-    <el-carousel height="300px" :interval="4000" arrow="always">
+    <!-- 轮播图 -->
+    <el-carousel height="500px" :interval="4000" arrow="always">
       <el-carousel-item v-for="item in carouselItems" :key="item.id">
         <img :src="item.image" alt="Carousel Image" class="carousel-image" />
       </el-carousel-item>
     </el-carousel>
+
+    <!-- 主体内容 -->
     <div class="home-content">
+      <!-- 登录状态下的欢迎信息 -->
+      <el-card v-if="isAuthenticated" class="user-info-card">
+        <h3>欢迎，{{ username }}！</h3>
+        <p>来到了全世界最好的商品购物网站。</p>
+      </el-card>
+
+      <!-- 未登录状态下的提示信息 -->
+      <el-card v-else class="guest-info-card">
+        <h3>欢迎来到商品价格比较网站</h3>
+        <p>请先登录以获取个性化体验。</p>
+        <el-button type="primary" @click="goToLogin">登录</el-button>
+        <el-button @click="goToRegister">注册</el-button>
+      </el-card>
+
+      <!-- 公共内容（无论是否登录都显示） -->
       <el-row :gutter="20">
         <el-col :span="24">
           <h2 class="home-title">欢迎来到商品价格比较网站</h2>
@@ -33,36 +51,61 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'HomeView',
-  data() {
-    return {
-      carouselItems: [
-      { id: 1, image: '../media/images/banner1.jpeg' },
-      { id: 2, image: '../media/images/banner2.jpeg' },
-      { id: 3, image: '../media/images/banner3.jpeg' },
-    ],
-    features: [
-      {
-        icon: '/icons/compare.svg',
-        title: '价格比较',
-        description: '一键比较多家电商平台价格，省时省力。',
-      },
-      {
-        icon: '/icons/discount.svg',
-        title: '优惠促销',
-        description: '汇总各大平台优惠信息，不错过任何折扣。',
-      },
-      {
-        icon: '/icons/security.svg',
-        title: '安全保障',
-        description: '严格的数据审核机制，确保信息真实可靠。',
-      },
-    ],
-    };
-  },
+<script setup>
+import {ref, onMounted, computed} from 'vue';
+import { useRouter } from 'vue-router';
+import auth from '../store/auth';
+
+// 导入轮播图图片
+import banner1 from '../assets/media/images/banner1.jpeg';
+import banner2 from '../assets/media/images/banner2.jpeg';
+import banner3 from '../assets/media/images/banner3.jpeg';
+
+// 导入功能图标
+
+const { state, fetchUserInfo } = auth;
+const router = useRouter();
+
+const isAuthenticated = computed(() => state.isAuthenticated);
+const username = computed(() => state.username);
+
+const goToLogin = () => {
+  router.push({ name: 'login' });
 };
+
+const goToRegister = () => {
+  router.push({ name: 'register' });
+};
+
+onMounted(() => {
+  if (state.isAuthenticated && !state.username) {
+    fetchUserInfo();
+  }
+});
+
+const carouselItems = ref([
+  { id: 1, image: banner1 },
+  { id: 2, image: banner2 },
+  { id: 3, image: banner3 },
+]);
+
+const features = ref([
+  {
+    icon: banner1,
+    title: '实时比价',
+    description: '实时获取各大电商平台的商品价格，帮您找到最低价。',
+  },
+  {
+    icon: banner2,
+    title: '优惠推荐',
+    description: '为您推荐最新的优惠信息和折扣券，购物更省钱。',
+  },
+  {
+    icon: banner3,
+    title: '历史价格查询',
+    description: '您可以查询想要的目标商品历史价格，最低的时候购入。',
+  },
+]);
 </script>
 
 <style>
@@ -72,7 +115,7 @@ export default {
 
 .carousel-image {
   width: 100%;
-  height: 300px;
+  height: 500px;
   object-fit: cover;
 }
 
@@ -115,5 +158,18 @@ export default {
 .el-card p {
   color: #666;
   margin-top: 10px;
+}
+
+.user-info-card,
+.guest-info-card {
+  max-width: 600px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.user-info-card h3,
+.guest-info-card h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
 }
 </style>

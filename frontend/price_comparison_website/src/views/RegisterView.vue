@@ -47,6 +47,7 @@ export default {
     });
     const errorMessage = ref('');
     const router = useRouter();
+    const registerForm = ref(null);
 
     const rules = {
       username: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
@@ -71,15 +72,12 @@ export default {
     };
 
     const handleRegister = () => {
-      // 表单验证
-      const registerForm = this.$refs.registerForm;
-      registerForm.validate(async (valid) => {
+      registerForm.value.validate(async (valid) => {
         if (valid) {
           try {
-            const response = await axios.post('accounts/register/', form.value);
-            const { token } = response.data;
-            localStorage.setItem('token', token);
-            router.push({ name: 'home' });
+            await axios.post('accounts/register/', form.value);
+            // 注册成功后，跳转到登录页面
+            router.push({ name: 'login' });
           } catch (error) {
             if (error.response && error.response.data) {
               const data = error.response.data;
@@ -98,7 +96,6 @@ export default {
           }
         } else {
           console.log('表单验证失败');
-          return false;
         }
       });
     };
@@ -108,6 +105,7 @@ export default {
       errorMessage,
       handleRegister,
       rules,
+      registerForm,
     };
   },
 };

@@ -29,6 +29,7 @@
 import { ref } from 'vue';
 import axios from '../axios';
 import { useRouter } from 'vue-router';
+import auth from '../store/auth';
 
 export default {
   name: 'LoginView',
@@ -40,6 +41,7 @@ export default {
     const errorMessage = ref('');
     const router = useRouter();
     const loginForm = ref(null);
+    const { login } = auth;
 
     const rules = {
       username: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
@@ -51,8 +53,8 @@ export default {
         if (valid) {
           try {
             const response = await axios.post('accounts/login/', form.value);
-            const { token } = response.data;
-            localStorage.setItem('token', token);
+            const { access, refresh } = response.data;
+            login(access, refresh); // 传递 access 和 refresh token
             router.push({ name: 'home' });
           } catch (error) {
             if (error.response && error.response.data) {
@@ -72,7 +74,6 @@ export default {
           }
         } else {
           console.log('表单验证失败');
-          return false;
         }
       });
     };

@@ -1,8 +1,10 @@
 // src/axios.js
 import axios from 'axios';
+import auth from './store/auth';
 
+// 创建 Axios 实例
 const apiClient = axios.create({
-  baseURL: 'http://localhost:8000/api/', // Django 后端的 API 根路径
+  baseURL: 'http://localhost:8000/api/', // 根据您的后端地址修改
   timeout: 5000,
   headers: {
     'Content-Type': 'application/json',
@@ -12,15 +14,13 @@ const apiClient = axios.create({
 // 请求拦截器：附加 JWT 令牌
 apiClient.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem('access_token'); // 获取 access token
+    const token = auth.state.accessToken;
     if (token) {
-      config.headers['Authorization'] = `Bearer ${token}`; // 使用 Bearer 认证类型
+      config.headers['Authorization'] = 'Bearer ' + token;
     }
     return config;
   },
-  (error) => {
-    return Promise.reject(error);
-  }
+  (error) => Promise.reject(error)
 );
 
 // 响应拦截器：处理令牌刷新
@@ -44,43 +44,58 @@ apiClient.interceptors.response.use(
   async (error) => {
     const originalRequest = error.config;
 
-    if (error.response.status === 401 && !originalRequest._retry) {
+    // 检查错误是否是由于认证问题引起的，并且是否应该重试
+    if (error.response && error.response.status === 401 && !originalRequest._retry) {
+      // 标记原始请求已重试
+      originalRequest._retry = true;
+
+      // 获取 refresh token
+      const refreshToken = auth.state.refreshToken;
+
+      // 如果没有 refresh token，执行登出操作
+      if (!refreshToken) {
+        auth.logout();
+        return Promise.reject(error);
+      }
+
+      // 处理令牌刷新的并发请求
       if (isRefreshing) {
-        return new Promise(function (resolve, reject) {
+        return new Promise((resolve, reject) => {
           failedQueue.push({ resolve, reject });
         })
           .then((token) => {
             originalRequest.headers['Authorization'] = 'Bearer ' + token;
-            return axios(originalRequest);
+            return apiClient(originalRequest);
           })
-          .catch((err) => {
-            return Promise.reject(err);
-          });
+          .catch((err) => Promise.reject(err));
       }
 
-      originalRequest._retry = true;
       isRefreshing = true;
 
-      const refreshToken = localStorage.getItem('refresh_token');
-      if (!refreshToken) {
-        window.location.href = '/login';
-        return Promise.reject(error);
-      }
-
       try {
-        const response = await axios.post('http://localhost:8000/api/accounts/token/refresh/', {
-          refresh: refreshToken,
-        });
-        localStorage.setItem('access_token', response.data.access);
-        apiClient.defaults.headers['Authorization'] = 'Bearer ' + response.data.access;
-        originalRequest.headers['Authorization'] = 'Bearer ' + response.data.access;
-        processQueue(null, response.data.access);
+        // 尝试刷新令牌
+        const response = await axios.post(
+          'http://localhost:8000/api/token/refresh/', // 根据后端实际路径修改
+          { refresh: refreshToken }
+        );
+
+        const newAccessToken = response.data.access;
+
+        // 更新令牌
+        auth.state.accessToken = newAccessToken;
+        localStorage.setItem('accessToken', newAccessToken);
+
+        // 更新请求头
+        apiClient.defaults.headers['Authorization'] = 'Bearer ' + newAccessToken;
+        originalRequest.headers['Authorization'] = 'Bearer ' + newAccessToken;
+
+        processQueue(null, newAccessToken);
+
+        // 重试原始请求
         return apiClient(originalRequest);
       } catch (err) {
         processQueue(err, null);
-        localStorage.removeItem('access_token');
-        localStorage.removeItem('refresh_token');
-        window.location.href = '/login';
+        auth.logout();
         return Promise.reject(err);
       } finally {
         isRefreshing = false;

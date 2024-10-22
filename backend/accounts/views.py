@@ -8,11 +8,13 @@ from rest_framework.response import Response
 from .models import CustomUser
 from .serializers import RegistrationSerializer, LoginSerializer
 from rest_framework.permissions import AllowAny
-from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework_simplejwt.tokens import RefreshToken, TokenError
 from rest_framework.views import APIView
 from .serializers import RegistrationSerializer, LoginSerializer
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.permissions import IsAuthenticated
+
 
 class RegisterView(generics.CreateAPIView):
     queryset = CustomUser.objects.all()
@@ -47,3 +49,19 @@ class UserDetailView(APIView):
             # 添加其他需要的字段
         }
         return Response(data, status=status.HTTP_200_OK)
+
+class LogoutView(APIView):
+    permission_classes = [AllowAny]
+
+    def post(self, request):
+        try:
+            # 从请求中获取 refresh token
+            refresh_token = request.data["refresh"]
+            token = RefreshToken(refresh_token)
+            # 将 refresh token 添加到黑名单
+            token.blacklist()
+            return Response({"detail": "成功登出"}, status=status.HTTP_205_RESET_CONTENT)
+        except KeyError:
+            return Response({"error": "未提供 refresh token"}, status=status.HTTP_400_BAD_REQUEST)
+        except TokenError:
+            return Response({"error": "无效的 token"}, status=status.HTTP_400_BAD_REQUEST)
