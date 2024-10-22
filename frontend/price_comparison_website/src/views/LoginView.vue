@@ -1,56 +1,113 @@
 <!-- src/views/LoginView.vue -->
 <template>
-  <div>
-    <h2>用户登录</h2>
-    <form @submit.prevent="handleLogin">
-      <div>
-        <label for="username">用户名：</label>
-        <input type="text" id="username" v-model="username" required />
-      </div>
-      <div>
-        <label for="password">密码：</label>
-        <input type="password" id="password" v-model="password" required />
-      </div>
-      <button type="submit">登录</button>
-    </form>
-    <div v-if="errorMessage" style="color: red;">
-      {{ errorMessage }}
-    </div>
+  <div class="login-container">
+    <el-card class="login-card">
+      <h2 class="login-title">用户登录</h2>
+      <el-form :model="form" :rules="rules" ref="loginForm" label-width="80px">
+        <el-form-item label="用户名" prop="username">
+          <el-input v-model="form.username" autocomplete="off" />
+        </el-form-item>
+        <el-form-item label="密码" prop="password">
+          <el-input type="password" v-model="form.password" autocomplete="off" />
+        </el-form-item>
+        <el-form-item>
+          <el-button type="primary" @click="handleLogin">登录</el-button>
+        </el-form-item>
+      </el-form>
+      <el-alert
+        v-if="errorMessage"
+        :title="errorMessage"
+        type="error"
+        show-icon
+        class="error-alert"
+      ></el-alert>
+    </el-card>
   </div>
 </template>
 
 <script>
+import { ref } from 'vue';
 import axios from '../axios';
+import { useRouter } from 'vue-router';
 
 export default {
   name: 'LoginView',
-  data() {
-    return {
+  setup() {
+    const form = ref({
       username: '',
       password: '',
-      errorMessage: '',
+    });
+    const errorMessage = ref('');
+    const router = useRouter();
+    const loginForm = ref(null);
+
+    const rules = {
+      username: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
+      password: [{ required: true, message: '请输入密码', trigger: 'blur' }],
     };
-  },
-  methods: {
-    async handleLogin() {
-      try {
-        const response = await axios.post('accounts/login/', {
-          "username": this.username,
-          "password": this.password,
-        });
-        // 假设后端返回 token
-        const { token } = response.data;
-        localStorage.setItem('token', token);
-        this.$router.push({ name: 'home' });
-      } catch (error) {
-        if (error.response) {
-          this.errorMessage = error.response.data.detail || '登录失败';
-          console.log(error)
+
+    const handleLogin = () => {
+      loginForm.value.validate(async (valid) => {
+        if (valid) {
+          try {
+            const response = await axios.post('accounts/login/', form.value);
+            const { token } = response.data;
+            localStorage.setItem('token', token);
+            router.push({ name: 'home' });
+          } catch (error) {
+            if (error.response && error.response.data) {
+              const data = error.response.data;
+              let errors = [];
+              for (let key in data) {
+                if (Array.isArray(data[key])) {
+                  errors = errors.concat(data[key]);
+                } else if (typeof data[key] === 'string') {
+                  errors.push(data[key]);
+                }
+              }
+              errorMessage.value = errors.join('；');
+            } else {
+              errorMessage.value = '网络错误';
+            }
+          }
         } else {
-          this.errorMessage = '网络错误';
+          console.log('表单验证失败');
+          return false;
         }
-      }
-    },
+      });
+    };
+
+    return {
+      form,
+      errorMessage,
+      handleLogin,
+      rules,
+      loginForm,
+    };
   },
 };
 </script>
+
+<style>
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background-color: #f5f5f5;
+}
+
+.login-card {
+  width: 400px;
+  padding: 20px;
+}
+
+.login-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.error-alert {
+  margin-top: 20px;
+}
+</style>

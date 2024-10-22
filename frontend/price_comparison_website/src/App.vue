@@ -1,19 +1,38 @@
 <!-- src/App.vue -->
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">首页</router-link>
-      <span v-if="!isAuthenticated">
-        <router-link to="/login">登录</router-link>
-        <router-link to="/register">注册</router-link>
-      </span>
-      <span v-else>
-        欢迎，{{ username }}！
-        <a href="#" @click.prevent="handleLogout">登出</a>
-      </span>
-    </nav>
-    <hr />
-    <router-view />
+    <el-header>
+      <el-row type="flex" justify="space-between" align="middle">
+        <el-col>
+          <router-link to="/">
+            <el-button type="text">首页</el-button>
+          </router-link>
+        </el-col>
+        <el-col>
+          <span v-if="!isAuthenticated">
+            <router-link to="/login">
+              <el-button type="text">登录</el-button>
+            </router-link>
+            <router-link to="/register">
+              <el-button type="text">注册</el-button>
+            </router-link>
+          </span>
+          <span v-else>
+            <el-dropdown>
+              <span class="el-dropdown-link">
+                欢迎，{{ username }}！<i class="el-icon-arrow-down el-icon--right"></i>
+              </span>
+              <el-dropdown-menu slot="dropdown">
+                <el-dropdown-item @click.native="handleLogout">登出</el-dropdown-item>
+              </el-dropdown-menu>
+            </el-dropdown>
+          </span>
+        </el-col>
+      </el-row>
+    </el-header>
+    <el-main>
+      <router-view />
+    </el-main>
   </div>
 </template>
 
@@ -25,16 +44,18 @@ export default {
   data() {
     return {
       username: '',
+      token: localStorage.getItem('token'),
     };
   },
   computed: {
     isAuthenticated() {
-      return !!localStorage.getItem('token');
+      return !!this.token;
     },
   },
   methods: {
     handleLogout() {
       localStorage.removeItem('token');
+      this.token = null;
       this.username = '';
       this.$router.push({ name: 'home' });
     },
@@ -43,8 +64,8 @@ export default {
         const response = await axios.get('user/');
         this.username = response.data.username;
       } catch (error) {
-        // 如果获取用户信息失败，可能是 token 无效
         localStorage.removeItem('token');
+        this.token = null;
       }
     },
   },
@@ -57,12 +78,9 @@ export default {
 </script>
 
 <style>
-/* 添加一些简单的样式 */
-nav {
-  margin-bottom: 10px;
-}
-
-nav a {
-  margin-right: 10px;
+/* 全局样式可以在此处调整 */
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 </style>

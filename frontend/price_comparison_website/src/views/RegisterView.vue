@@ -1,73 +1,138 @@
 <!-- src/views/RegisterView.vue -->
 <template>
-  <div>
-    <h2>用户注册</h2>
-    <form @submit.prevent="handleRegister">
-      <div>
-        <label for="username">用户名：</label>
-        <input type="text" id="username" v-model="username" required />
-      </div>
-      <div>
-        <label for="email">邮箱：</label>
-        <input type="email" id="email" v-model="email" required />
-      </div>
-      <div>
-        <label for="password">密码：</label>
-        <input type="password" id="password" v-model="password" required />
-      </div>
-      <div>
-        <label for="password2">确认密码：</label>
-        <input type="password" id="password2" v-model="password2" required />
-      </div>
-      <button type="submit">注册</button>
-    </form>
-    <div v-if="errorMessage" style="color: red;">
-      {{ errorMessage }}
-    </div>
+  <div class="register-container">
+    <el-card class="register-card">
+      <h2 class="register-title">用户注册</h2>
+      <el-form :model="form" :rules="rules" ref="registerForm" label-width="80px">
+        <el-form-item label="用户名" prop="username">
+          <el-input v-model="form.username" autocomplete="off" />
+        </el-form-item>
+        <el-form-item label="邮箱" prop="email">
+          <el-input v-model="form.email" autocomplete="off" />
+        </el-form-item>
+        <el-form-item label="密码" prop="password">
+          <el-input type="password" v-model="form.password" autocomplete="off" />
+        </el-form-item>
+        <el-form-item label="确认密码" prop="password2">
+          <el-input type="password" v-model="form.password2" autocomplete="off" />
+        </el-form-item>
+        <el-form-item>
+          <el-button type="primary" @click="handleRegister">注册</el-button>
+        </el-form-item>
+      </el-form>
+      <el-alert
+        v-if="errorMessage"
+        :title="errorMessage"
+        type="error"
+        show-icon
+        class="error-alert"
+      ></el-alert>
+    </el-card>
   </div>
 </template>
 
 <script>
+import { ref } from 'vue';
 import axios from '../axios';
+import { useRouter } from 'vue-router';
 
 export default {
   name: 'RegisterView',
-  data() {
-    return {
-      "username": '',
-      "email": '',
-      "password": '',
-      "password2": '',
-      "errorMessage": '',
-    };
-  },
-  methods: {
-    async handleRegister() {
-      if (this.password !== this.password2) {
-        this.errorMessage = '密码不匹配';
-        return;
-      }
+  setup() {
+    const form = ref({
+      username: '',
+      email: '',
+      password: '',
+      password2: '',
+    });
+    const errorMessage = ref('');
+    const router = useRouter();
 
-      try {
-        const response = await axios.post('accounts/register/', {
-          "username": this.username,
-          "email": this.email,
-          "password": this.password,
-          "password2": this.password2,
-        });
-        // 假设后端返回用户信息和 token
-        const { token } = response.data;
-        localStorage.setItem('token', token);
-        this.$router.push({ name: 'home' });
-      } catch (error) {
-        if (error.response) {
-          this.errorMessage = error.response.data.detail || '注册失败';
-          console.log(error)
+    const rules = {
+      username: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
+      email: [
+        { required: true, message: '请输入邮箱', trigger: 'blur' },
+        { type: 'email', message: '请输入有效的邮箱地址', trigger: ['blur', 'change'] },
+      ],
+      password: [{ required: true, message: '请输入密码', trigger: 'blur' }],
+      password2: [
+        { required: true, message: '请再次输入密码', trigger: 'blur' },
+        {
+          validator: (rule, value, callback) => {
+            if (value !== form.value.password) {
+              callback(new Error('两次输入的密码不一致'));
+            } else {
+              callback();
+            }
+          },
+          trigger: 'blur',
+        },
+      ],
+    };
+
+    const handleRegister = () => {
+      // 表单验证
+      const registerForm = this.$refs.registerForm;
+      registerForm.validate(async (valid) => {
+        if (valid) {
+          try {
+            const response = await axios.post('accounts/register/', form.value);
+            const { token } = response.data;
+            localStorage.setItem('token', token);
+            router.push({ name: 'home' });
+          } catch (error) {
+            if (error.response && error.response.data) {
+              const data = error.response.data;
+              let errors = [];
+              for (let key in data) {
+                if (Array.isArray(data[key])) {
+                  errors = errors.concat(data[key]);
+                } else if (typeof data[key] === 'string') {
+                  errors.push(data[key]);
+                }
+              }
+              errorMessage.value = errors.join('；');
+            } else {
+              errorMessage.value = '网络错误';
+            }
+          }
         } else {
-          this.errorMessage = '网络错误';
+          console.log('表单验证失败');
+          return false;
         }
-      }
-    },
+      });
+    };
+
+    return {
+      form,
+      errorMessage,
+      handleRegister,
+      rules,
+    };
   },
 };
 </script>
+
+<style>
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background-color: #f5f5f5;
+}
+
+.register-card {
+  width: 400px;
+  padding: 20px;
+}
+
+.register-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.error-alert {
+  margin-top: 20px;
+}
+</style>
