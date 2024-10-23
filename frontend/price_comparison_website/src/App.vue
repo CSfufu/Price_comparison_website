@@ -17,13 +17,10 @@
               <router-link to="/">首页</router-link>
             </el-menu-item>
             <el-menu-item index="/about">
-              <router-link to="/about">关于我们</router-link>
+              <router-link to="/about">关于我</router-link>
             </el-menu-item>
             <el-menu-item index="/services">
-              <router-link to="/services">服务</router-link>
-            </el-menu-item>
-            <el-menu-item index="/contact">
-              <router-link to="/contact">联系我们</router-link>
+              <router-link to="/services">提供服务</router-link>
             </el-menu-item>
           </el-menu>
         </el-col>
@@ -225,6 +222,14 @@ body {
 .custom-aside .el-menu-vertical-demo .el-menu-item i,
 .custom-aside .el-menu-vertical-demo .el-submenu__title i {
   color: #fff;
+}
+
+.custom-icon-style .el-icon-user {
+  color: #ff0000; /* 改变图标颜色 */
+  font-size: 24px; /* 修改图标的大小 */
+  border: 2px solid #000; /* 为图标加边框 */
+  background-color: #f0f0f0; /* 背景颜色 */
+  border-radius: 50%; /* 圆形边框 */
 }
 
 .custom-aside .el-menu-vertical-demo .el-menu-item.is-active i,

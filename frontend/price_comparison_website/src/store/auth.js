@@ -6,6 +6,7 @@ import axios from '../axios';
 
 const state = reactive({
   username: '',
+  email: '',
   accessToken: localStorage.getItem('accessToken') || null,
   refreshToken: localStorage.getItem('refreshToken') || null,
   isAuthenticated: !!localStorage.getItem('accessToken'),
@@ -15,6 +16,7 @@ const fetchUserInfo = async () => {
     try {
       const response = await axios.get('accounts/me');
       state.username = response.data.username;
+      state.email = response.data.email;
     } catch (error) {
       logout();
     }
@@ -43,6 +45,7 @@ const logout = async () => {
     state.accessToken = null;
     state.refreshToken = null;
     state.username = '';
+    state.email = '';
     state.isAuthenticated = false;
   }
 };

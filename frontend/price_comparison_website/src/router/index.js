@@ -2,6 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
 import RegisterView from '../views/RegisterView.vue';
 import LoginView from '../views/LoginView.vue';
+import AboutView from "../views/AboutView.vue";
+import Services from "../views/Services.vue";
+import ProFile from "../views/ProFile.vue";
 
 const routes = [
   {
@@ -20,6 +23,21 @@ const routes = [
     component: LoginView,
   },
   // 其他路由
+  {
+    path: '/about',
+    name: 'about',
+    component: AboutView,
+  },
+  {
+    path: '/services',
+    name: 'services',
+    component: Services
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    component: ProFile
+  },
 ];
 
 const router = createRouter({
