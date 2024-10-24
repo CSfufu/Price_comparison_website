@@ -5,7 +5,7 @@ import auth from './store/auth';
 // 创建 Axios 实例
 const apiClient = axios.create({
   baseURL: 'http://localhost:8000/api/', // 根据您的后端地址修改
-  timeout: 5000,
+  timeout: 20000,
   headers: {
     'Content-Type': 'application/json',
   },

@@ -4,10 +4,13 @@ from django.shortcuts import render
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
+
+from .models import Product
 from .utils.jd import jd_request_search
 from .utils.taobao import tb_request_search
 from django.http import JsonResponse
 import concurrent.futures
+from .serializers import ProductSerializer
 
 
 
@@ -60,28 +63,46 @@ def tb_search_view(request):
 def search_all_view(request):
     data = request.data
     keyword = data.get('keyword')
-    cookie_jd = data.get('cookie_jd')
-    cookie_tb = data.get('cookie_tb')
-    offset = data.get('offset', 0)
-    limit = data.get('limit', 30)
+    cookie_jd = data.get('cookie_jd', '')
+    cookie_tb = data.get('cookie_tb', '')
+    offset = int(data.get('offset', 0))
+    limit = int(data.get('limit', 30))
 
-    if not keyword or not cookie_jd or not cookie_tb:
-        return JsonResponse({'error': 'Missing required parameters: keyword, cookie_jd, and cookie_tb.'}, status=400)
+    if not keyword or (not cookie_jd and not cookie_tb):
+        return JsonResponse(
+            {'error': 'Missing required parameters: keyword and at least one cookie (cookie_jd or cookie_tb).'},
+            status=400)
 
     try:
         # 使用 ThreadPoolExecutor 并行执行爬虫
         with concurrent.futures.ThreadPoolExecutor() as executor:
-            future_jd = executor.submit(jd_request_search, keyword, cookie_jd, offset, limit // 2)
-            future_tb = executor.submit(tb_request_search, keyword, cookie_tb, offset, limit // 2)
+            futures = []
+            if cookie_jd:
+                futures.append(executor.submit(jd_request_search, keyword, cookie_jd, offset, limit // 2))
+            if cookie_tb:
+                futures.append(executor.submit(tb_request_search, keyword, cookie_tb, offset, limit // 2))
 
-            jd_results = future_jd.result()
-            tb_results = future_tb.result()
+            results = [future.result() for future in futures]
 
-        combined_results = {
-            'jd': jd_results,
-            'tb': tb_results,
-        }
+        combined_results = {}
+        if len(results) == 2:
+            combined_results['jd'], combined_results['tb'] = results
+        elif cookie_jd:
+            combined_results['jd'] = results[0]
+        elif cookie_tb:
+            combined_results['tb'] = results[0]
 
         return JsonResponse(combined_results, status=200)
     except Exception as e:
-        return JsonResponse({'error': str(e)}, status=500)
+        return JsonResponse({'error': 'Search failed. Please check your cookies and try again.'}, status=500)
+
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def product_detail_view(request, pk):
+    try:
+        product = Product.objects.get(pk=pk)
+        serializer = ProductSerializer(product)
+        return Response(serializer.data)
+    except Product.DoesNotExist:
+        return Response({'error': '商品不存在'}, status=404)

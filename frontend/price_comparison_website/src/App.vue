@@ -22,6 +22,9 @@
             <el-menu-item index="/services">
               <router-link to="/services">提供服务</router-link>
             </el-menu-item>
+            <el-menu-item index="/search">
+              <router-link to="/search">搜索</router-link>
+            </el-menu-item>
           </el-menu>
         </el-col>
         <!-- 右侧：用户操作 -->

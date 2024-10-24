@@ -5,6 +5,8 @@ import LoginView from '../views/LoginView.vue';
 import AboutView from "../views/AboutView.vue";
 import Services from "../views/Services.vue";
 import ProFile from "../views/ProFile.vue";
+import SearchView from "../views/SearchView.vue";
+import ProductDetail from "../views/ProductDetail.vue";
 
 const routes = [
   {
@@ -37,6 +39,17 @@ const routes = [
     path: '/profile',
     name: 'profile',
     component: ProFile
+  },
+  {
+    path: '/search',
+    name: 'search',
+    component: SearchView
+  },
+  {
+    path: '/product/:id',
+    name: 'product-detail',
+    component: ProductDetail,
+    props: true,
   },
 ];
 
