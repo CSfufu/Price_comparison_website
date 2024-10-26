@@ -56,7 +56,7 @@
         </el-table-column>
         <el-table-column prop="name" label="商品名称">
           <template #default="scope">
-            <el-link :href="scope.row.link" target="_blank">{{ getTruncatedText(scope.row.name, 10) }}</el-link>
+            <el-link :href="scope.row.link" target="_blank">{{ getTruncatedText(scope.row.name, 60) }}</el-link>
           </template>
         </el-table-column>
         <el-table-column prop="price" label="价格" width="100">
@@ -66,7 +66,7 @@
         </el-table-column>
         <el-table-column prop="store_name" label="店铺名称" width="150">
           <template #default="scope">
-            <el-link :href="scope.row.store_link" target="_blank">{{ getTruncatedText(scope.row.store_name, 10) }}</el-link>
+            <el-link :href="scope.row.store_link" target="_blank">{{ getTruncatedText(scope.row.store_name, 30) }}</el-link>
           </template>
         </el-table-column>
         <el-table-column label="操作" width="100">
@@ -183,7 +183,7 @@ const fetchSearchResults = async () => {
     });
 
     // 处理搜索结果
-   const { jd, tb } = response.data;
+    const { jd, tb } = response.data;
 
     // 合并结果
     const combinedResults = [
@@ -222,8 +222,8 @@ const goToBuy = (link) => {
 
 // 查看商品详情
 const viewDetails = (product) => {
-  // 导航到商品详情页面，可以传递商品 ID 或其他必要信息
-  router.push({ name: 'ProductDetail', params: { id: product.id } });
+  // 使用 product_id 作为参数传递
+  router.push({ name: 'ProductDetail', params: { id: product.product_id } });
 };
 
 // 截断文本函数
