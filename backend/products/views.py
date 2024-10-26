@@ -10,7 +10,7 @@ from .utils.jd import jd_request_search
 from .utils.taobao import tb_request_search
 from django.http import JsonResponse
 import concurrent.futures
-from .serializers import ProductSerializer
+from .serializers import ProductModelSerializer, ProductDictSerializer
 import re
 
 
@@ -101,22 +101,17 @@ def search_all_view(request):
             combined_results['tb'] = results[0]
 
         print("combined_results done correctly123")
-        #print(type(combined_results))
-        #print(len(combined_results))
-        #print(combined_results)
         response_data = {}
         for platform in combined_results:
             data = combined_results[platform]
-            print("done1")
-            print(data)
-            products = data.get('results', [])[:10]
+            products = data.get('results', [])[:20]
             total = data.get('total', 0)
             if platform == 'tb':
                 # 淘宝数据需要字段映射和清理
                 mapped_products = []
                 for item in products:
-                    print(item)
-                    print(item.get('title'))
+                    #print(item)
+                    #print(item.get('title'))
                     mapped_product = {
                         'name': ''.join(clean_title(item.get('title', ''))),
                         'product_id': item.get('item_id', ''),
@@ -128,10 +123,11 @@ def search_all_view(request):
                         'store_link': f"https:{item.get('shopInfo', {}).get('url', '')}" if item.get(
                             'shopInfo') else '',
                     }
-                    #print("mapped_product done")
+                    # print(mapped_product['product_id'], type(mapped_product['product_id']))
+                    # print("mapped_product done")
                     mapped_products.append(mapped_product)
-                    #print(mapped_products)
-                serializer = ProductSerializer(mapped_products, many=True)
+                    # print(mapped_products)
+                serializer = ProductDictSerializer(mapped_products, many=True)
                 # 确保 total 是数字类型
                 response_data[platform] = {
                     'results': serializer.data,
@@ -143,9 +139,9 @@ def search_all_view(request):
                 mapped_products = []
                 count = 0
                 for item in products:
-                    print(item)
-                    print(item.get('info', {}).get('title', ''))
-                    print(count, total)
+                    # print(item)
+                    # print(item.get('info', {}).get('title', ''))
+                    # print(count, total)
                     mapped_product = {
                         'name': ''.join(clean_title(item.get('info', {}).get('title', ''))),
                         'product_id': item.get('sku', ''),
@@ -156,11 +152,12 @@ def search_all_view(request):
                         'store_name': item.get('store', {}).get('title', ''),
                         'store_link': item.get('store', {}).get('link', ''),
                     }
+                    # print(mapped_product['product_id'], type(mapped_product['product_id']))
                     mapped_products.append(mapped_product)
                     count += 1
-                    print(count)
-                print(mapped_products)
-                serializer = ProductSerializer(mapped_products, many=True)
+                    # print(count)
+                # print(mapped_products)
+                serializer = ProductDictSerializer(mapped_products, many=True)
                 # 确保 total 是数字类型
                 response_data[platform] = {
                     'results': serializer.data,
@@ -177,10 +174,10 @@ def search_all_view(request):
 
 @api_view(['GET'])
 @permission_classes([AllowAny])
-def product_detail_view(request, pk):
+def product_detail_view(request, product_id):
     try:
-        product = Product.objects.get(pk=pk)
-        serializer = ProductSerializer(product)
+        product = Product.objects.get(product_id=product_id)
+        serializer = ProductModelSerializer(product)
         return Response(serializer.data)
     except Product.DoesNotExist:
         return Response({'error': '商品不存在'}, status=404)

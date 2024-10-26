@@ -46,8 +46,8 @@ const routes = [
     component: SearchView
   },
   {
-    path: '/product/:id',
-    name: 'product-detail',
+    path: '/products/:id/',
+    name: 'ProductDetail',
     component: ProductDetail,
     props: true,
   },

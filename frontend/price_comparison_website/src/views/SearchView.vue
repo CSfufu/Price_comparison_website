@@ -69,7 +69,7 @@
             <el-link :href="scope.row.store_link" target="_blank">{{ getTruncatedText(scope.row.store_name, 30) }}</el-link>
           </template>
         </el-table-column>
-        <el-table-column label="操作" width="100">
+        <el-table-column label="更多信息" width="100">
           <template #default="scope">
             <el-button type="primary" size="small" @click="viewDetails(scope.row)">
               详情

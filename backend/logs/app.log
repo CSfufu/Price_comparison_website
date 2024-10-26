@@ -1376,3 +1376,518 @@ RuntimeError: You called this URL via POST, but the URL doesn't end in a slash a
 [2024-10-26 02:36:36] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 10182
 [2024-10-26 02:36:37] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 10087
 [2024-10-26 02:36:38] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 9771
+[2024-10-26 02:40:13] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-26 02:40:13] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-26 02:40:18] INFO [django.server:212] "POST /api/products/jd_search/?Content-Type=application/json HTTP/1.1" 200 16960
+[2024-10-26 02:40:30] INFO [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 200 10098
+[2024-10-26 02:41:06] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 9715
+[2024-10-26 02:41:17] INFO [django.server:212] "GET /admin/ HTTP/1.1" 200 10343
+[2024-10-26 02:41:17] INFO [django.server:212] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+[2024-10-26 02:41:17] INFO [django.server:212] "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+[2024-10-26 02:41:17] INFO [django.server:212] "GET /static/admin/css/base.css HTTP/1.1" 304 0
+[2024-10-26 02:41:17] INFO [django.server:212] "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+[2024-10-26 02:41:17] INFO [django.server:212] "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+[2024-10-26 02:41:17] INFO [django.server:212] "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+[2024-10-26 02:41:17] INFO [django.server:212] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[2024-10-26 02:41:17] INFO [django.server:212] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+[2024-10-26 02:41:17] INFO [django.server:212] "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+[2024-10-26 02:41:17] INFO [django.server:212] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+[2024-10-26 02:41:18] WARNING [django.request:241] Not Found: /favicon.ico
+[2024-10-26 02:41:18] WARNING [django.server:212] "GET /favicon.ico HTTP/1.1" 404 2473
+[2024-10-26 02:41:21] INFO [django.server:212] "GET /admin/products/ HTTP/1.1" 200 5089
+[2024-10-26 02:41:22] INFO [django.server:212] "GET /admin/products/product/ HTTP/1.1" 200 57511
+[2024-10-26 02:41:22] INFO [django.server:212] "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+[2024-10-26 02:41:22] INFO [django.server:212] "GET /static/admin/js/core.js HTTP/1.1" 304 0
+[2024-10-26 02:41:22] INFO [django.server:212] "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+[2024-10-26 02:41:22] INFO [django.server:212] "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[2024-10-26 02:41:22] INFO [django.server:212] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+[2024-10-26 02:41:22] INFO [django.server:212] "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+[2024-10-26 02:41:22] INFO [django.server:212] "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+[2024-10-26 02:41:22] INFO [django.server:212] "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+[2024-10-26 02:41:22] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 02:41:22] INFO [django.server:212] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+[2024-10-26 02:41:22] INFO [django.server:212] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 292458
+[2024-10-26 02:41:22] INFO [django.server:212] "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+[2024-10-26 02:41:22] INFO [django.server:212] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+[2024-10-26 02:46:06] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-26 02:46:07] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-26 02:46:30] INFO [django.server:212] "GET /admin/products/product/?p=2 HTTP/1.1" 200 60406
+[2024-10-26 02:46:30] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 02:46:30] INFO [django.server:212] "GET /admin/products/product/1831/change/?_changelist_filters=p%3D2 HTTP/1.1" 200 14799
+[2024-10-26 02:46:30] INFO [django.server:212] "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+[2024-10-26 02:46:30] INFO [django.server:212] "GET /static/admin/css/forms.css HTTP/1.1" 200 9090
+[2024-10-26 02:46:30] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 02:46:30] INFO [django.server:212] "GET /static/admin/css/widgets.css HTTP/1.1" 200 11921
+[2024-10-26 02:46:30] INFO [django.server:212] "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+[2024-10-26 02:46:35] INFO [django.server:212] "GET /admin/products/product/ HTTP/1.1" 200 57511
+[2024-10-26 02:46:35] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 02:46:39] INFO [django.server:212] "GET /admin/products/product/?p=2 HTTP/1.1" 200 60406
+[2024-10-26 02:46:39] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 02:47:04] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 10976
+[2024-10-26 02:47:12] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 10952
+[2024-10-26 02:47:23] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 4842
+[2024-10-26 02:47:30] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 9805
+[2024-10-26 02:50:29] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 10772
+[2024-10-26 02:51:31] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/serializers.py changed, reloading.
+[2024-10-26 02:51:31] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-26 02:51:47] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/serializers.py changed, reloading.
+[2024-10-26 02:51:48] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-26 02:54:56] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-26 02:54:57] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-26 02:55:37] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-26 02:55:38] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-26 02:55:42] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-26 02:55:43] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-26 02:56:04] INFO [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 200 8289
+[2024-10-26 03:38:06] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-26 03:38:06] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-26 03:38:17] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-26 03:38:18] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-26 03:39:28] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-26 03:39:29] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-26 03:40:16] INFO [django.server:212] "GET /admin/products/product/?p=2 HTTP/1.1" 200 64162
+[2024-10-26 03:40:16] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 03:40:25] INFO [django.server:212] "POST /admin/products/product/?p=2 HTTP/1.1" 200 35087
+[2024-10-26 03:40:25] INFO [django.server:212] "GET /static/admin/js/cancel.js HTTP/1.1" 304 0
+[2024-10-26 03:40:27] INFO [django.server:212] "POST /admin/products/product/?p=2 HTTP/1.1" 302 0
+[2024-10-26 03:40:27] INFO [django.server:212] "GET /admin/products/product/?p=2 HTTP/1.1" 200 64195
+[2024-10-26 03:40:27] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 03:40:27] INFO [django.server:212] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+[2024-10-26 03:40:31] INFO [django.server:212] "POST /admin/products/product/?p=2 HTTP/1.1" 200 35012
+[2024-10-26 03:40:33] INFO [django.server:212] "POST /admin/products/product/?p=2 HTTP/1.1" 302 0
+[2024-10-26 03:40:33] INFO [django.server:212] "GET /admin/products/product/?p=2 HTTP/1.1" 200 60045
+[2024-10-26 03:40:33] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 03:40:37] INFO [django.server:212] "POST /admin/products/product/?p=2 HTTP/1.1" 200 30600
+[2024-10-26 03:40:39] INFO [django.server:212] "POST /admin/products/product/?p=2 HTTP/1.1" 302 0
+[2024-10-26 03:40:39] INFO [django.server:212] "GET /admin/products/product/?p=2 HTTP/1.1" 200 60559
+[2024-10-26 03:40:39] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 03:40:43] INFO [django.server:212] "POST /admin/products/product/?p=2 HTTP/1.1" 200 30764
+[2024-10-26 03:40:45] INFO [django.server:212] "POST /admin/products/product/?p=2 HTTP/1.1" 302 0
+[2024-10-26 03:40:45] INFO [django.server:212] "GET /admin/products/product/?p=2 HTTP/1.1" 200 62148
+[2024-10-26 03:40:45] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 03:40:48] INFO [django.server:212] "POST /admin/products/product/?p=2 HTTP/1.1" 200 32372
+[2024-10-26 03:40:51] INFO [django.server:212] "POST /admin/products/product/?p=2 HTTP/1.1" 302 0
+[2024-10-26 03:40:51] INFO [django.server:212] "GET /admin/products/product/?p=2 HTTP/1.1" 200 61556
+[2024-10-26 03:40:51] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 03:40:54] INFO [django.server:212] "POST /admin/products/product/?p=2 HTTP/1.1" 200 31802
+[2024-10-26 03:40:57] INFO [django.server:212] "POST /admin/products/product/?p=2 HTTP/1.1" 302 0
+[2024-10-26 03:40:57] INFO [django.server:212] "GET /admin/products/product/?p=2 HTTP/1.1" 200 60262
+[2024-10-26 03:40:57] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 03:41:01] INFO [django.server:212] "POST /admin/products/product/?p=2 HTTP/1.1" 200 30540
+[2024-10-26 03:41:06] INFO [django.server:212] "POST /admin/products/product/?p=2 HTTP/1.1" 302 0
+[2024-10-26 03:41:06] INFO [django.server:212] "GET /admin/products/product/?p=2 HTTP/1.1" 200 60437
+[2024-10-26 03:41:06] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 03:41:10] INFO [django.server:212] "POST /admin/products/product/?p=2 HTTP/1.1" 200 30845
+[2024-10-26 03:41:13] INFO [django.server:212] "POST /admin/products/product/?p=2 HTTP/1.1" 302 0
+[2024-10-26 03:41:13] INFO [django.server:212] "GET /admin/products/product/?p=2 HTTP/1.1" 200 61142
+[2024-10-26 03:41:13] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 03:41:23] INFO [django.server:212] "POST /admin/products/product/?p=2 HTTP/1.1" 302 0
+[2024-10-26 03:41:23] INFO [django.server:212] "GET /admin/products/product/?p=2 HTTP/1.1" 200 61127
+[2024-10-26 03:41:23] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 03:41:23] INFO [django.server:212] "GET /static/admin/img/icon-alert.svg HTTP/1.1" 200 504
+[2024-10-26 03:41:27] INFO [django.server:212] "POST /admin/products/product/?p=2 HTTP/1.1" 200 260816
+[2024-10-26 03:41:33] ERROR [django.security.TooManyFieldsSent:124] The number of GET/POST parameters exceeded settings.DATA_UPLOAD_MAX_NUMBER_FIELDS.
+Traceback (most recent call last):
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/http/request.py", line 514, in __init__
+    for key, value in parse_qsl(query_string, **parse_qsl_kwargs):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/urllib/parse.py", line 723, in parse_qsl
+    raise ValueError('Max number of fields exceeded')
+ValueError: Max number of fields exceeded
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = middleware_method(
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/middleware/csrf.py", line 470, in process_view
+    self._check_token(request)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/middleware/csrf.py", line 373, in _check_token
+    request_csrf_token = request.POST.get("csrfmiddlewaretoken", "")
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/wsgi.py", line 93, in _get_post
+    self._load_post_and_files()
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/http/request.py", line 383, in _load_post_and_files
+    QueryDict(self.body, encoding=self._encoding),
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/http/request.py", line 521, in __init__
+    raise TooManyFieldsSent(
+django.core.exceptions.TooManyFieldsSent: The number of GET/POST parameters exceeded settings.DATA_UPLOAD_MAX_NUMBER_FIELDS.
+[2024-10-26 03:41:34] WARNING [django.request:241] Bad Request: /admin/products/product/
+[2024-10-26 03:41:34] WARNING [django.server:212] "POST /admin/products/product/?p=2 HTTP/1.1" 400 116344
+[2024-10-26 03:41:44] ERROR [django.security.TooManyFieldsSent:124] The number of GET/POST parameters exceeded settings.DATA_UPLOAD_MAX_NUMBER_FIELDS.
+Traceback (most recent call last):
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/http/request.py", line 514, in __init__
+    for key, value in parse_qsl(query_string, **parse_qsl_kwargs):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/urllib/parse.py", line 723, in parse_qsl
+    raise ValueError('Max number of fields exceeded')
+ValueError: Max number of fields exceeded
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = middleware_method(
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/middleware/csrf.py", line 470, in process_view
+    self._check_token(request)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/middleware/csrf.py", line 373, in _check_token
+    request_csrf_token = request.POST.get("csrfmiddlewaretoken", "")
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/wsgi.py", line 93, in _get_post
+    self._load_post_and_files()
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/http/request.py", line 383, in _load_post_and_files
+    QueryDict(self.body, encoding=self._encoding),
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/http/request.py", line 521, in __init__
+    raise TooManyFieldsSent(
+django.core.exceptions.TooManyFieldsSent: The number of GET/POST parameters exceeded settings.DATA_UPLOAD_MAX_NUMBER_FIELDS.
+[2024-10-26 03:41:44] WARNING [django.request:241] Bad Request: /admin/products/product/
+[2024-10-26 03:41:44] WARNING [django.server:212] "POST /admin/products/product/?p=2 HTTP/1.1" 400 116344
+[2024-10-26 03:41:48] INFO [django.server:212] "GET /admin/ HTTP/1.1" 200 10608
+[2024-10-26 03:41:50] INFO [django.server:212] "GET /admin/products/product/ HTTP/1.1" 200 62452
+[2024-10-26 03:41:50] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 03:41:57] INFO [django.server:212] "POST /admin/products/product/ HTTP/1.1" 200 35782
+[2024-10-26 03:41:59] INFO [django.server:212] "POST /admin/products/product/ HTTP/1.1" 302 0
+[2024-10-26 03:41:59] INFO [django.server:212] "GET /admin/products/product/ HTTP/1.1" 200 58582
+[2024-10-26 03:41:59] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 03:42:03] INFO [django.server:212] "POST /admin/products/product/ HTTP/1.1" 200 31772
+[2024-10-26 03:42:06] INFO [django.server:212] "POST /admin/products/product/ HTTP/1.1" 302 0
+[2024-10-26 03:42:06] INFO [django.server:212] "GET /admin/products/product/ HTTP/1.1" 200 59431
+[2024-10-26 03:42:06] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 03:42:11] INFO [django.server:212] "POST /admin/products/product/ HTTP/1.1" 200 32038
+[2024-10-26 03:42:13] INFO [django.server:212] "POST /admin/products/product/ HTTP/1.1" 302 0
+[2024-10-26 03:42:13] INFO [django.server:212] "GET /admin/products/product/ HTTP/1.1" 200 57775
+[2024-10-26 03:42:13] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 03:42:17] INFO [django.server:212] "POST /admin/products/product/ HTTP/1.1" 200 31155
+[2024-10-26 03:42:19] INFO [django.server:212] "POST /admin/products/product/ HTTP/1.1" 302 0
+[2024-10-26 03:42:19] INFO [django.server:212] "GET /admin/products/product/ HTTP/1.1" 200 59336
+[2024-10-26 03:42:19] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 03:42:22] INFO [django.server:212] "POST /admin/products/product/ HTTP/1.1" 200 32552
+[2024-10-26 03:42:24] INFO [django.server:212] "POST /admin/products/product/ HTTP/1.1" 302 0
+[2024-10-26 03:42:24] INFO [django.server:212] "GET /admin/products/product/ HTTP/1.1" 200 57028
+[2024-10-26 03:42:24] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 03:42:28] INFO [django.server:212] "POST /admin/products/product/ HTTP/1.1" 200 30386
+[2024-10-26 03:42:30] INFO [django.server:212] "POST /admin/products/product/ HTTP/1.1" 302 0
+[2024-10-26 03:42:30] INFO [django.server:212] "GET /admin/products/product/ HTTP/1.1" 200 57884
+[2024-10-26 03:42:30] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 03:42:40] INFO [django.server:212] "POST /admin/products/product/ HTTP/1.1" 200 115178
+[2024-10-26 03:42:44] INFO [django.server:212] "POST /admin/products/product/ HTTP/1.1" 302 0
+[2024-10-26 03:42:44] INFO [django.server:212] "GET /admin/products/product/ HTTP/1.1" 200 8536
+[2024-10-26 03:42:44] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 03:42:47] INFO [django.server:212] "GET /admin/products/product/ HTTP/1.1" 200 8396
+[2024-10-26 03:42:47] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 03:43:06] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/urls.py changed, reloading.
+[2024-10-26 03:43:07] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-26 03:43:25] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/urls.py changed, reloading.
+[2024-10-26 03:43:25] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-26 03:45:35] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-26 03:45:44] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-26 10:46:59] INFO [django.server:212] "POST /api/accounts/login/ HTTP/1.1" 200 483
+[2024-10-26 10:46:59] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-26 10:46:59] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-26 10:47:53] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 20435
+[2024-10-26 10:47:55] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 20410
+[2024-10-26 10:49:49] INFO [django.server:212] "GET /admin/products/product/ HTTP/1.1" 200 59071
+[2024-10-26 10:49:49] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 10:50:03] INFO [django.server:212] "GET /admin/products/product/2276/change/ HTTP/1.1" 200 14616
+[2024-10-26 10:50:03] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 10:50:44] INFO [django.server:212] "POST /admin/products/product/2276/change/ HTTP/1.1" 302 0
+[2024-10-26 10:50:44] INFO [django.server:212] "GET /admin/products/product/ HTTP/1.1" 200 59367
+[2024-10-26 10:50:44] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 10:50:53] INFO [django.server:212] "GET /admin/products/product/2276/change/ HTTP/1.1" 200 14628
+[2024-10-26 10:50:53] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 10:50:55] INFO [django.server:212] "GET /admin/products/product/2276/delete/ HTTP/1.1" 200 8270
+[2024-10-26 10:50:56] INFO [django.server:212] "GET /admin/products/product/2276/change/ HTTP/1.1" 200 14628
+[2024-10-26 10:51:00] INFO [django.server:212] "POST /admin/products/product/2276/change/ HTTP/1.1" 302 0
+[2024-10-26 10:51:01] INFO [django.server:212] "GET /admin/products/product/ HTTP/1.1" 200 59355
+[2024-10-26 10:51:01] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 10:51:29] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/urls.py changed, reloading.
+[2024-10-26 10:51:30] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-26 10:52:23] WARNING [django.request:241] Unauthorized: /api/products/search/
+[2024-10-26 10:52:23] WARNING [django.server:212] "POST /api/products/search/ HTTP/1.1" 401 183
+[2024-10-26 10:52:23] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-10-26 10:52:23] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2495
+[2024-10-26 10:52:23] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-10-26 10:52:23] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-10-26 10:52:23] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-10-26 10:52:23] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2495
+[2024-10-26 10:52:23] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-10-26 10:52:23] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-10-26 10:52:23] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-10-26 10:52:34] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 20401
+[2024-10-26 10:53:30] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 20331
+[2024-10-26 10:55:19] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-26 10:55:20] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-26 10:55:36] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 20401
+[2024-10-26 10:56:04] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-26 10:56:04] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-26 10:58:34] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 19599
+[2024-10-26 10:58:41] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 19419
+[2024-10-26 11:00:01] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 19827
+[2024-10-26 11:00:21] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-26 11:00:21] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-26 11:01:38] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 19796
+[2024-10-26 11:02:08] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 19491
+[2024-10-26 11:03:04] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-26 11:03:08] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-26 11:03:44] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 20034
+[2024-10-26 11:04:16] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-26 11:04:16] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-26 11:04:16] ERROR [django.server:212] "POST /api/products/search/ HTTP/1.1" 500 67
+[2024-10-26 11:04:17] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-26 11:04:17] ERROR [django.server:212] "POST /api/products/search/ HTTP/1.1" 500 67
+[2024-10-26 11:04:29] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-26 11:04:38] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 20069
+[2024-10-26 11:06:13] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/models.py changed, reloading.
+[2024-10-26 11:06:13] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-26 11:11:28] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-26 11:11:30] WARNING [django.request:241] Not Found: /
+[2024-10-26 11:11:30] WARNING [django.server:212] "GET / HTTP/1.1" 404 2422
+[2024-10-26 11:11:30] WARNING [django.request:241] Not Found: /favicon.ico
+[2024-10-26 11:11:30] WARNING [django.server:212] "GET /favicon.ico HTTP/1.1" 404 2473
+[2024-10-26 11:11:34] INFO [django.server:212] "GET /admin/ HTTP/1.1" 200 10366
+[2024-10-26 11:11:34] INFO [django.server:212] "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+[2024-10-26 11:11:34] INFO [django.server:212] "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+[2024-10-26 11:11:34] INFO [django.server:212] "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+[2024-10-26 11:11:34] INFO [django.server:212] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+[2024-10-26 11:11:34] INFO [django.server:212] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[2024-10-26 11:11:34] INFO [django.server:212] "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+[2024-10-26 11:11:34] INFO [django.server:212] "GET /static/admin/css/base.css HTTP/1.1" 200 21310
+[2024-10-26 11:11:34] INFO [django.server:212] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+[2024-10-26 11:11:34] INFO [django.server:212] "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+[2024-10-26 11:11:34] INFO [django.server:212] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+[2024-10-26 11:11:35] INFO [django.server:212] "GET /admin/products/product/ HTTP/1.1" 200 57675
+[2024-10-26 11:11:35] INFO [django.server:212] "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+[2024-10-26 11:11:35] INFO [django.server:212] "GET /static/admin/js/core.js HTTP/1.1" 304 0
+[2024-10-26 11:11:35] INFO [django.server:212] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+[2024-10-26 11:11:35] INFO [django.server:212] "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+[2024-10-26 11:11:35] INFO [django.server:212] "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[2024-10-26 11:11:35] INFO [django.server:212] "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+[2024-10-26 11:11:35] INFO [django.server:212] "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+[2024-10-26 11:11:35] INFO [django.server:212] "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+[2024-10-26 11:11:35] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 11:11:35] INFO [django.server:212] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+[2024-10-26 11:11:35] INFO [django.server:212] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 292458
+[2024-10-26 11:11:35] INFO [django.server:212] "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+[2024-10-26 11:11:35] INFO [django.server:212] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+[2024-10-26 11:11:41] INFO [django.server:212] "POST /admin/products/product/ HTTP/1.1" 200 142831
+[2024-10-26 11:11:41] INFO [django.server:212] "GET /static/admin/js/cancel.js HTTP/1.1" 304 0
+[2024-10-26 11:11:45] INFO [django.server:212] "POST /admin/products/product/ HTTP/1.1" 302 0
+[2024-10-26 11:11:46] INFO [django.server:212] "GET /admin/products/product/ HTTP/1.1" 200 8536
+[2024-10-26 11:11:46] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 11:11:46] INFO [django.server:212] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+[2024-10-26 11:12:14] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-26 11:12:19] INFO [django.server:212] "GET /admin/products/product/ HTTP/1.1" 200 8396
+[2024-10-26 11:12:19] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 11:12:33] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 20043
+[2024-10-26 11:12:51] INFO [django.server:212] "GET /admin/products/product/ HTTP/1.1" 200 44191
+[2024-10-26 11:12:51] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 11:13:51] INFO [django.server:212] "GET /admin/products/product/?o=2 HTTP/1.1" 200 46401
+[2024-10-26 11:13:51] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 11:13:51] INFO [django.server:212] "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+[2024-10-26 11:13:52] INFO [django.server:212] "GET /admin/products/product/?o=1.2 HTTP/1.1" 200 46923
+[2024-10-26 11:13:52] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 11:13:53] INFO [django.server:212] "GET /admin/products/product/?o=-1.2 HTTP/1.1" 200 47004
+[2024-10-26 11:13:53] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 11:13:54] INFO [django.server:212] "GET /admin/products/product/ HTTP/1.1" 200 44191
+[2024-10-26 11:13:54] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 11:13:59] INFO [django.server:212] "GET /admin/products/product/2905/change/ HTTP/1.1" 200 15073
+[2024-10-26 11:13:59] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-26 11:20:56] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 8804
+[2024-10-26 11:20:57] ERROR [django.request:241] Internal Server Error: /api/products/10106300419778/
+Traceback (most recent call last):
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py", line 186, in product_detail_view
+    return Response(serializer.data)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 571, in data
+    ret = super().data
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 538, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/fields.py", line 1870, in to_representation
+    return method(value)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/serializers.py", line 15, in get_price
+    return float(obj.get('price', 0.0))
+AttributeError: 'Product' object has no attribute 'get'
+[2024-10-26 11:20:57] ERROR [django.server:212] "GET /api/products/10106300419778/ HTTP/1.1" 500 129771
+[2024-10-26 11:24:00] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 11465
+[2024-10-26 11:24:01] ERROR [django.request:241] Internal Server Error: /api/products/623895388773/
+Traceback (most recent call last):
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py", line 186, in product_detail_view
+    return Response(serializer.data)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 571, in data
+    ret = super().data
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 538, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/fields.py", line 1870, in to_representation
+    return method(value)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/serializers.py", line 15, in get_price
+    return float(obj.get('price', 0.0))
+AttributeError: 'Product' object has no attribute 'get'
+[2024-10-26 11:24:01] ERROR [django.server:212] "GET /api/products/623895388773/ HTTP/1.1" 500 129433
+[2024-10-26 11:24:20] ERROR [django.request:241] Internal Server Error: /api/products/623895388773/
+Traceback (most recent call last):
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py", line 186, in product_detail_view
+    return Response(serializer.data)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 571, in data
+    ret = super().data
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 538, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/fields.py", line 1870, in to_representation
+    return method(value)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/serializers.py", line 15, in get_price
+    return float(obj.get('price', 0.0))
+AttributeError: 'Product' object has no attribute 'get'
+[2024-10-26 11:24:20] ERROR [django.server:212] "GET /api/products/623895388773/?Content-Type=application/json HTTP/1.1" 500 128764
+[2024-10-26 11:24:43] WARNING [django.request:241] Not Found: /api/products/"623895388773"/
+[2024-10-26 11:24:43] WARNING [django.server:212] "GET /api/products/%22623895388773%22/?Content-Type=application/json HTTP/1.1" 404 27
+[2024-10-26 11:24:48] ERROR [django.request:241] Internal Server Error: /api/products/623895388773/
+Traceback (most recent call last):
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py", line 186, in product_detail_view
+    return Response(serializer.data)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 571, in data
+    ret = super().data
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 538, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/fields.py", line 1870, in to_representation
+    return method(value)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/serializers.py", line 15, in get_price
+    return float(obj.get('price', 0.0))
+AttributeError: 'Product' object has no attribute 'get'
+[2024-10-26 11:24:48] ERROR [django.server:212] "GET /api/products/623895388773/?Content-Type=application/json HTTP/1.1" 500 128764
+[2024-10-26 11:25:14] ERROR [django.request:241] Internal Server Error: /api/products/623895388773/
+Traceback (most recent call last):
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py", line 186, in product_detail_view
+    return Response(serializer.data)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 571, in data
+    ret = super().data
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 538, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/fields.py", line 1870, in to_representation
+    return method(value)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/serializers.py", line 15, in get_price
+    return float(obj.get('price', 0.0))
+AttributeError: 'Product' object has no attribute 'get'
+[2024-10-26 11:25:14] ERROR [django.server:212] "GET /api/products/623895388773/?Content-Type=application/json HTTP/1.1" 500 128764
+[2024-10-26 11:27:25] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/serializers.py changed, reloading.
+[2024-10-26 11:27:26] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-26 11:27:36] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/serializers.py changed, reloading.
+[2024-10-26 11:27:36] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-26 11:27:44] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/serializers.py changed, reloading.
+[2024-10-26 11:27:45] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-26 11:28:07] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-26 11:28:08] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-26 11:28:17] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-26 11:28:17] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-26 11:28:39] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-26 11:28:40] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-26 11:29:38] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-26 11:29:38] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 52
+[2024-10-26 11:30:07] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-26 11:30:25] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-26 11:30:32] INFO [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 200 6973
+[2024-10-26 11:30:52] INFO [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 200 8262
+[2024-10-26 11:31:37] INFO [django.server:212] "GET /api/products/623895388773/?Content-Type=application/json HTTP/1.1" 200 650
+[2024-10-26 11:32:11] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 61
+[2024-10-26 11:32:31] INFO [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 200 15233
+[2024-10-26 11:33:21] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 11182
+[2024-10-26 11:33:24] INFO [django.server:212] "GET /api/products/674807797199/ HTTP/1.1" 200 553
+[2024-10-26 11:35:16] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-26 11:35:16] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader

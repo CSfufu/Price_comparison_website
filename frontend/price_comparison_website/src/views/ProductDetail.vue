@@ -1,15 +1,25 @@
 <!-- src/views/ProductDetail.vue -->
 <template>
   <div class="product-detail-container">
+    <!-- 回退按钮 -->
+    <el-button type="default" @click="goBack" class="back-button">
+      <el-icon><ArrowLeft /></el-icon> 返回
+    </el-button>
+
     <el-card v-if="product">
-      <el-row>
+      <el-row :gutter="20">
         <el-col :span="8">
-          <el-image :src="product.image_url" fit="contain" style="width: 100%; height: 400px;" />
+          <el-image
+            :src="product.image_url"
+            fit="contain"
+            style="width: 100%; height: 400px;"
+            :preview-src-list="[product.image_url]"
+          />
         </el-col>
         <el-col :span="16">
-          <h2>{{ getTruncatedText(product.name, 50) }}</h2>
-          <p>价格：￥{{ product.price }}</p>
-          <p>店铺：{{ getTruncatedText(product.store_name, 30) }}</p>
+          <h2>{{ product.name }}</h2>
+          <p><strong>价格：</strong>￥{{ product.price }}</p>
+          <p><strong>店铺：</strong>{{ product.store_name }}</p>
           <el-button type="primary" @click="goToBuy(product.link)">
             前往购买
           </el-button>
@@ -22,13 +32,16 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import axios from '../axios';
-import { ElMessage } from 'element-plus';
+import { ElMessage, ElButton, ElIcon } from 'element-plus';
+import { ArrowLeft } from '@element-plus/icons-vue'; // 导入箭头图标
 
 const route = useRoute();
+const router = useRouter();
 const product = ref(null);
 
+// 跳转到购买链接
 const goToBuy = (link) => {
   if (link && (link.startsWith('http://') || link.startsWith('https://'))) {
     window.open(link, '_blank');
@@ -37,24 +50,22 @@ const goToBuy = (link) => {
   }
 };
 
-// 截断文本函数
-const getTruncatedText = (text, maxLength) => {
-  if (!text) return '';
-  return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
+// 回退到上一页
+const goBack = () => {
+  router.back();
 };
 
+// 异步获取商品详情
 onMounted(async () => {
-  const id = route.params.id;
-  try {
-    const response = await axios.get(`products/${id}/`); // 发送 GET 请求到 `/api/products/427/`
-    product.value = response.data;
-    console.log('接收到的商品数据:', product.value); // 调试日志
+  const productId = route.params.id; // 使用 'id' 作为 'product_id'
+  if (!productId) {
+    ElMessage.error('无效的商品 ID');
+    return;
+  }
 
-    // 打印字段类型和内容
-    console.log('产品名称类型:', typeof product.value.name);
-    console.log('产品名称内容:', product.value.name);
-    console.log('店铺名称类型:', typeof product.value.store_name);
-    console.log('店铺名称内容:', product.value.store_name);
+  try {
+    const response = await axios.get(`products/${productId}/`); // 确保后端接口支持以 product_id 获取详情
+    product.value = response.data;
   } catch (error) {
     console.error('获取商品详情失败', error);
     ElMessage.error('获取商品详情失败，请稍后重试');
@@ -62,33 +73,49 @@ onMounted(async () => {
 });
 </script>
 
-<style>
+<style scoped>
 .product-detail-container {
   max-width: 1200px;
   margin: 40px auto;
   padding: 0 20px;
 }
 
-.truncate {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.product-detail-container h2,
-.product-detail-container p.truncate {
-  margin: 5px 0;
-}
-
-.product-detail-container h2 {
+.back-button {
   margin-bottom: 20px;
 }
 
-/* 调试样式 */
+/* 优化样式，移除调试用的红色边框 */
 .product-detail-container h2,
 .product-detail-container p {
-  border: 1px solid red; /* 临时添加边框用于调试 */
-  padding: 5px;
-  color: #000; /* 确保文字颜色为黑色 */
+  margin: 10px 0;
+}
+
+.product-detail-container h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.product-detail-container p {
+  font-size: 16px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .product-detail-container {
+    padding: 10px;
+  }
+
+  .el-row {
+    flex-direction: column;
+  }
+
+  .el-col {
+    span: 24 !important;
+  }
+
+  .back-button {
+    width: 100%;
+    justify-content: center;
+  }
 }
 </style>
