@@ -1891,3 +1891,53 @@ AttributeError: 'Product' object has no attribute 'get'
 [2024-10-26 11:33:24] INFO [django.server:212] "GET /api/products/674807797199/ HTTP/1.1" 200 553
 [2024-10-26 11:35:16] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
 [2024-10-26 11:35:16] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-26 11:38:23] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-26 11:38:23] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-26 11:38:56] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-26 11:38:57] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-26 11:42:50] INFO [django.server:212] "POST /api/accounts/login/ HTTP/1.1" 200 483
+[2024-10-26 11:42:50] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-26 11:42:50] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-26 11:42:54] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-10-26 11:45:34] INFO [django.server:212] "POST /api/accounts/login/ HTTP/1.1" 200 483
+[2024-10-26 11:45:34] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-26 11:45:34] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-26 11:46:32] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 20410
+[2024-10-26 11:47:04] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 9637
+[2024-10-26 11:47:15] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 20410
+[2024-10-26 12:00:20] INFO [django.server:212] "OPTIONS /api/accounts/me HTTP/1.1" 200 0
+[2024-10-26 12:00:20] INFO [django.server:212] "OPTIONS /api/accounts/me/ HTTP/1.1" 200 0
+[2024-10-26 12:00:20] INFO [django.server:212] "OPTIONS /api/accounts/me/ HTTP/1.1" 200 0
+[2024-10-26 12:00:20] WARNING [django.request:241] Unauthorized: /api/accounts/me/
+[2024-10-26 12:00:20] WARNING [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 401 183
+[2024-10-26 12:00:20] WARNING [django.request:241] Unauthorized: /api/accounts/me/
+[2024-10-26 12:00:20] WARNING [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 401 183
+[2024-10-26 12:00:20] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-10-26 12:00:20] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2495
+[2024-10-26 12:00:20] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-10-26 12:00:20] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-10-26 12:00:20] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-10-26 12:00:20] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-10-26 12:00:20] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-10-26 12:00:20] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-10-26 12:00:20] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-10-26 12:00:20] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2495
+[2024-10-26 12:00:20] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-10-26 12:00:20] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-10-26 12:00:20] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-10-26 12:00:24] INFO [django.server:212] "OPTIONS /api/accounts/login/ HTTP/1.1" 200 0
+[2024-10-26 12:00:25] INFO [django.server:212] "POST /api/accounts/login/ HTTP/1.1" 200 483
+[2024-10-26 12:00:25] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-26 12:00:25] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-26 12:01:02] INFO [django.server:212] "OPTIONS /api/products/search/ HTTP/1.1" 200 0
+[2024-10-26 12:01:13] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 6094
+[2024-10-26 12:02:08] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-26 12:02:08] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-26 12:02:13] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-26 12:02:13] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-26 12:02:32] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 6148
+[2024-10-26 12:02:41] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 6096
+[2024-10-26 12:03:10] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 6018
+[2024-10-26 12:03:15] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 5959
+[2024-10-26 12:03:48] INFO [django.server:212] "OPTIONS /api/products/845071908886/ HTTP/1.1" 200 0
+[2024-10-26 12:03:48] INFO [django.server:212] "GET /api/products/845071908886/ HTTP/1.1" 200 561

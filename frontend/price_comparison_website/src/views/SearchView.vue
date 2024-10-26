@@ -1,114 +1,141 @@
 <!-- src/views/SearchView.vue -->
 <template>
   <div class="search-container">
-    <!-- 搜索输入框 -->
-    <el-input
-      v-model="keyword"
-      placeholder="请输入商品关键词"
-      class="search-input"
-      @keyup.enter="handleSearch"
-    >
-      <template #append>
-        <el-button type="primary" @click="handleSearch">搜索</el-button>
-      </template>
-    </el-input>
+    <!-- 用户已认证时显示的内容 -->
+    <div v-if="auth.state.isAuthenticated">
+      <!-- 搜索区域 -->
+      <el-card class="search-card">
+        <el-row :gutter="20" align="middle">
+          <el-col :span="18">
+            <el-input
+              v-model="keyword"
+              placeholder="请输入商品关键词"
+              class="search-input"
+              @keyup.enter="handleSearch"
+              clearable
+            >
+              <template #prepend>
+                <el-icon><Search /></el-icon>
+              </template>
+              <template #append>
+                <el-button type="primary" @click="handleSearch">搜索</el-button>
+              </template>
+            </el-input>
+          </el-col>
+          <el-col :span="6" class="cookie-collapse">
+            <el-collapse v-model="activeCollapse">
+              <el-collapse-item title="高级选项（输入您的 Cookie）" name="1">
+                <el-form :model="cookies" label-width="100px">
+                  <el-form-item label="京东 Cookie">
+                    <el-input v-model="cookies.cookie_jd" placeholder="请输入您的京东 Cookie" clearable></el-input>
+                  </el-form-item>
+                  <el-form-item label="淘宝 Cookie">
+                    <el-input v-model="cookies.cookie_tb" placeholder="请输入您的淘宝 Cookie" clearable></el-input>
+                  </el-form-item>
+                </el-form>
+                <p class="cookie-warning">
+                  注意：输入您的 Cookie 存在安全风险，请确保您信任此网站。Cookie 中包含您的登录信息，泄露可能导致账户安全问题。
+                </p>
+              </el-collapse-item>
+            </el-collapse>
+          </el-col>
+        </el-row>
+      </el-card>
 
-    <!-- Cookie 输入框（折叠面板） -->
-    <el-collapse v-model="activeCollapse">
-      <el-collapse-item title="高级选项（输入您的 Cookie）" name="1">
-        <el-form :model="cookies" label-width="120px">
-          <el-form-item label="京东 Cookie">
-            <el-input v-model="cookies.cookie_jd" placeholder="请输入您的京东 Cookie"></el-input>
-          </el-form-item>
-          <el-form-item label="淘宝 Cookie">
-            <el-input v-model="cookies.cookie_tb" placeholder="请输入您的淘宝 Cookie"></el-input>
-          </el-form-item>
-        </el-form>
-        <p class="cookie-warning">
-          注意：输入您的 Cookie 存在安全风险，请确保您信任此网站。Cookie 中包含您的登录信息，泄露可能导致账户安全问题。
-        </p>
-      </el-collapse-item>
-    </el-collapse>
+      <!-- 排序选项 -->
+      <el-row v-if="searched" class="sort-row" align="middle">
+        <el-col :span="4">
+          <span>排序方式：</span>
+        </el-col>
+        <el-col :span="6">
+          <el-select v-model="sortOrder" placeholder="选择排序方式" @change="handleSortChange" clearable>
+            <el-option label="默认" value="default"></el-option>
+            <el-option label="价格升序" value="asc"></el-option>
+            <el-option label="价格降序" value="desc"></el-option>
+          </el-select>
+        </el-col>
+      </el-row>
 
-    <!-- 排序选项（仅在搜索成功后显示） -->
-    <div v-if="searched" class="sort-options">
-      <el-select v-model="sortOrder" placeholder="选择排序方式" @change="handleSortChange">
-        <el-option label="默认" value="default"></el-option>
-        <el-option label="价格升序" value="asc"></el-option>
-        <el-option label="价格降序" value="desc"></el-option>
-      </el-select>
-    </div>
+      <!-- 加载状态 -->
+      <div v-if="loading" class="loading">
+        <el-spin size="large" tip="正在搜索，请稍候...">
+          <div class="content"></div>
+        </el-spin>
+      </div>
 
-    <!-- 显示搜索结果 -->
-    <div v-if="loading" class="loading">
-      <el-icon :size="48"><Loading /></el-icon>
-      <span>正在搜索，请稍候...</span>
-    </div>
+      <!-- 搜索结果 -->
+      <div v-else-if="searchResults.length > 0" class="results">
+        <el-row :gutter="20">
+          <el-col v-for="product in paginatedResults" :key="product.product_id" :span="8">
+            <el-card class="product-card" shadow="hover">
+              <img :src="product.image_url" alt="商品图片" class="product-image" />
+              <div class="product-info">
+                <el-tag :type="product.platform === '京东' ? 'success' : 'warning'">{{ product.platform }}</el-tag>
+                <el-link :href="product.link" target="_blank" class="product-name">
+                  {{ getTruncatedText(product.name, 60) }}
+                </el-link>
+                <div class="product-details">
+                  <span class="price">￥{{ product.price }}</span>
+                  <el-link :href="product.store_link" target="_blank" class="store-name">
+                    {{ getTruncatedText(product.store_name, 30) }}
+                  </el-link>
+                </div>
+                <el-button type="primary" size="small" @click="viewDetails(product)" class="details-button">
+                  详情
+                </el-button>
+              </div>
+            </el-card>
+          </el-col>
+        </el-row>
 
-    <div v-else-if="searchResults.length > 0" class="results">
-      <el-table :data="sortedSearchResults" style="width: 100%">
-        <el-table-column prop="platform" label="平台" width="80">
-          <template #default="scope">
-            <el-tag :type="scope.row.platform === '京东' ? 'success' : 'warning'">
-              {{ scope.row.platform }}
-            </el-tag>
-          </template>
-        </el-table-column>
-        <el-table-column prop="name" label="商品名称">
-          <template #default="scope">
-            <el-link :href="scope.row.link" target="_blank">{{ getTruncatedText(scope.row.name, 60) }}</el-link>
-          </template>
-        </el-table-column>
-        <el-table-column prop="price" label="价格" width="100">
-          <template #default="scope">
-            ￥{{ scope.row.price }}
-          </template>
-        </el-table-column>
-        <el-table-column prop="store_name" label="店铺名称" width="150">
-          <template #default="scope">
-            <el-link :href="scope.row.store_link" target="_blank">{{ getTruncatedText(scope.row.store_name, 30) }}</el-link>
-          </template>
-        </el-table-column>
-        <el-table-column label="更多信息" width="100">
-          <template #default="scope">
-            <el-button type="primary" size="small" @click="viewDetails(scope.row)">
-              详情
-            </el-button>
-          </template>
-        </el-table-column>
-      </el-table>
+        <!-- 分页 -->
+        <div class="pagination">
+          <el-pagination
+            background
+            layout="prev, pager, next"
+            :total="totalResults"
+            :page-size="pageSize"
+            :current-page.sync="currentPage"
+            @current-change="handlePageChange"
+          />
+        </div>
+      </div>
 
-      <!-- 分页 -->
-      <div class="pagination">
-        <el-pagination
-          background
-          layout="prev, pager, next"
-          :total="totalResults"
-          :page-size="pageSize"
-          :current-page.sync="currentPage"
-          @current-change="handlePageChange"
-        />
+      <!-- 无搜索结果 -->
+      <div v-else-if="!loading && searchResults.length === 0 && searched">
+        <el-empty description="未找到相关商品">
+          <el-button type="primary" @click="handleSearch">重新搜索</el-button>
+        </el-empty>
       </div>
     </div>
 
-    <div v-else-if="!loading && searchResults.length === 0 && searched">
-      <el-empty description="未找到相关商品" />
+    <!-- 用户未认证时显示的提示 -->
+    <div v-else class="login-prompt">
+      <el-empty description="请登录之后再使用">
+        <template #image>
+          <el-icon size="64"><User /></el-icon>
+        </template>
+        <template #description>
+          您尚未登录，请先 <router-link to="/login">登录</router-link> 以使用搜索功能。
+        </template>
+      </el-empty>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, computed, watch } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import axios from '../axios'; // 确保 axios 已正确配置
 import { useRouter } from 'vue-router';
 import { ElMessage, ElIcon } from 'element-plus';
-import { Loading } from '@element-plus/icons-vue'; // 导入 Loading 图标
+import { Loading, User, Search } from '@element-plus/icons-vue'; // 导入 Loading、User 和 Search 图标
+import auth from '../store/auth'; // 引入 auth 模块
 
 const keyword = ref('');
 const loading = ref(false);
 const searchResults = ref([]);
 const totalResults = ref(0);
-const pageSize = 60; // 根据后端设置
+const pageSize = 12; // 每页显示的商品数
 const currentPage = ref(1);
 const searched = ref(false);
 const router = useRouter();
@@ -137,6 +164,13 @@ const sortedSearchResults = computed(() => {
   }
 });
 
+// 计算属性，分页后的结果
+const paginatedResults = computed(() => {
+  const start = (currentPage.value - 1) * pageSize;
+  const end = start + pageSize;
+  return sortedSearchResults.value.slice(start, end);
+});
+
 // 处理搜索逻辑
 const handleSearch = () => {
   currentPage.value = 1;
@@ -150,7 +184,7 @@ const handlePageChange = (page) => {
   fetchSearchResults();
 };
 
-// 处理排序变化（如果希望后端处理排序，可以在此重新发送请求）
+// 处理排序变化
 const handleSortChange = (value) => {
   sortOrder.value = value;
 };
@@ -172,15 +206,19 @@ const fetchSearchResults = async () => {
 
   try {
     // 调用后端搜索接口
-    const response = await axios.post('products/search/', {
-      keyword: keyword.value,
-      cookie_jd: cookies.value.cookie_jd, // 传递用户输入的京东 Cookie
-      cookie_tb: cookies.value.cookie_tb, // 传递用户输入的淘宝 Cookie
-      offset: (currentPage.value - 1) * pageSize,
-      limit: pageSize,
-    }, {
-      timeout: 20000,
-    });
+    const response = await axios.post(
+      'products/search/',
+      {
+        keyword: keyword.value,
+        cookie_jd: cookies.value.cookie_jd, // 传递用户输入的京东 Cookie
+        cookie_tb: cookies.value.cookie_tb, // 传递用户输入的淘宝 Cookie
+        offset: (currentPage.value - 1) * pageSize,
+        limit: pageSize,
+      },
+      {
+        timeout: 20000,
+      }
+    );
 
     // 处理搜索结果
     const { jd, tb } = response.data;
@@ -188,7 +226,7 @@ const fetchSearchResults = async () => {
     // 合并结果
     const combinedResults = [
       ...(jd ? jd.results : []),
-      ...(tb ? tb.results : [])
+      ...(tb ? tb.results : []),
     ];
 
     // 计算总数，确保为数字
@@ -232,10 +270,14 @@ const getTruncatedText = (text, maxLength) => {
   return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
 };
 
-// 监听排序方式变化（如果希望后端处理排序）
-watch(sortOrder, () => {
-  // 如果后端支持排序参数，可以在此重新发送请求
-  // fetchSearchResults();
+// 获取用户信息
+const initialize = async () => {
+  await auth.fetchUserInfo();
+};
+
+// 在组件挂载时获取用户信息
+onMounted(() => {
+  initialize();
 });
 </script>
 
@@ -246,21 +288,81 @@ watch(sortOrder, () => {
   padding: 0 20px;
 }
 
-.search-input {
-  margin-bottom: 20px;
+.search-card {
+  padding: 20px;
+  background-color: #f9f9f9;
 }
 
-.sort-options {
-  margin-bottom: 20px;
+.search-input {
+  width: 100%;
+}
+
+.cookie-collapse {
+  text-align: right;
+}
+
+.cookie-warning {
+  color: #f56c6c;
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.sort-row {
+  margin-top: 20px;
 }
 
 .loading {
-  text-align: center;
-  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
 }
 
 .results {
   margin-top: 20px;
+}
+
+.product-card {
+  margin-bottom: 20px;
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 15px;
+}
+
+.product-name {
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  margin: 10px 0;
+}
+
+.product-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.price {
+  color: #f56c6c;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.store-name {
+  font-size: 14px;
+  color: #409EFF;
+}
+
+.details-button {
+  width: 100%;
 }
 
 .pagination {
@@ -268,8 +370,10 @@ watch(sortOrder, () => {
   text-align: center;
 }
 
-.cookie-warning {
-  color: red;
-  margin-top: 10px;
+.login-prompt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
 }
 </style>

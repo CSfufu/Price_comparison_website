@@ -4,7 +4,7 @@ from django.shortcuts import render
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
-
+from rest_framework.permissions import IsAuthenticated
 from .models import Product
 from .utils.jd import jd_request_search
 from .utils.taobao import tb_request_search
@@ -23,7 +23,7 @@ def clean_title(title):
 
 
 @api_view(['POST'])
-@permission_classes([AllowAny])
+@permission_classes([IsAuthenticated])
 def jd_search_view(request):
     """
     处理京东商品搜索请求
@@ -45,7 +45,7 @@ def jd_search_view(request):
 
 
 @api_view(['POST'])
-@permission_classes([AllowAny])
+@permission_classes([IsAuthenticated])
 def tb_search_view(request):
     """
     处理京东商品搜索请求
@@ -67,7 +67,7 @@ def tb_search_view(request):
 
 
 @api_view(['POST'])
-@permission_classes([AllowAny])
+@permission_classes([IsAuthenticated])
 def search_all_view(request):
     data = request.data
     keyword = data.get('keyword')
@@ -173,7 +173,7 @@ def search_all_view(request):
 
 
 @api_view(['GET'])
-@permission_classes([AllowAny])
+@permission_classes([IsAuthenticated])
 def product_detail_view(request, product_id):
     try:
         product = Product.objects.get(product_id=product_id)
