@@ -49,8 +49,8 @@ def jd_request_search(keyword: str, cookie: str, offset: int = 0, limit: int = 3
     # 返回分页后的数据
     ret = {"results": saved_products[(offset % page_size):(offset % page_size + limit)], "total": total}
 
-    print("京东搜索结果：")
-    print(ret)
+    #print("京东搜索结果：")
+    #print(ret)
 
     return ret
 

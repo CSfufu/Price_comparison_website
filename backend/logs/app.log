@@ -909,3 +909,438 @@ RuntimeError: You called this URL via POST, but the URL doesn't end in a slash a
 [2024-10-24 16:01:50] INFO [django.server:212] "POST /api/products/jd_search/?Content-Type=application/json HTTP/1.1" 200 15017
 [2024-10-24 16:02:49] INFO [django.server:212] "POST /api/products/tb_search/?Content-Type=application/json HTTP/1.1" 200 97337
 [2024-10-24 16:06:35] INFO [django.server:212] "POST /api/products/jd_search/?Content-Type=application/json HTTP/1.1" 200 15132
+[2024-10-25 02:02:02] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 02:02:12] INFO [django.server:212] "OPTIONS /api/accounts/login/ HTTP/1.1" 200 0
+[2024-10-25 02:02:13] INFO [django.server:212] "POST /api/accounts/login/ HTTP/1.1" 200 483
+[2024-10-25 02:02:13] INFO [django.server:212] "OPTIONS /api/accounts/me HTTP/1.1" 200 0
+[2024-10-25 02:02:13] INFO [django.server:212] "OPTIONS /api/accounts/me HTTP/1.1" 200 0
+[2024-10-25 02:02:13] INFO [django.server:212] "OPTIONS /api/accounts/me/ HTTP/1.1" 200 0
+[2024-10-25 02:02:13] INFO [django.server:212] "OPTIONS /api/accounts/me/ HTTP/1.1" 200 0
+[2024-10-25 02:02:13] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-25 02:02:13] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-25 02:16:22] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 02:16:23] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 02:17:26] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 02:17:27] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 02:17:59] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 02:18:00] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 02:18:10] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 02:18:11] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 02:18:51] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 02:18:51] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 02:20:08] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 02:20:08] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 02:22:14] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 02:22:15] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 02:25:49] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/serializers.py changed, reloading.
+[2024-10-25 02:25:49] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 02:26:21] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/serializers.py changed, reloading.
+[2024-10-25 02:26:22] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 02:30:03] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 02:32:12] INFO [django.server:212] "OPTIONS /api/products/search/ HTTP/1.1" 200 0
+[2024-10-25 02:32:12] WARNING [django.request:241] Unauthorized: /api/products/search/
+[2024-10-25 02:32:12] WARNING [django.server:212] "POST /api/products/search/ HTTP/1.1" 401 183
+[2024-10-25 02:32:12] INFO [django.server:212] "OPTIONS /api/token/refresh/ HTTP/1.1" 200 0
+[2024-10-25 02:32:12] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-10-25 02:32:12] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2495
+[2024-10-25 02:32:12] INFO [django.server:212] "OPTIONS /api/accounts/logout/ HTTP/1.1" 200 0
+[2024-10-25 02:32:12] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-10-25 02:32:12] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-10-25 02:32:12] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-10-25 02:32:12] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2495
+[2024-10-25 02:32:12] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-10-25 02:32:12] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-10-25 02:32:12] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-10-25 02:32:18] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 02:32:18] ERROR [django.server:212] "POST /api/products/search/ HTTP/1.1" 500 68
+[2024-10-25 02:32:24] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 02:32:24] ERROR [django.server:212] "POST /api/products/search/ HTTP/1.1" 500 68
+[2024-10-25 02:33:50] WARNING [django.request:241] Method Not Allowed: /api/products/search/
+[2024-10-25 02:33:50] WARNING [django.server:212] "GET /api/products/search/?Content-Type=application/json HTTP/1.1" 405 40
+[2024-10-25 02:33:52] WARNING [django.request:241] Method Not Allowed: /api/products/search/
+[2024-10-25 02:33:52] WARNING [django.server:212] "GET /api/products/search/?Content-Type=application/json HTTP/1.1" 405 40
+[2024-10-25 02:33:53] WARNING [django.request:241] Method Not Allowed: /api/products/search/
+[2024-10-25 02:33:53] WARNING [django.server:212] "GET /api/products/search/?Content-Type=application/json HTTP/1.1" 405 40
+[2024-10-25 02:34:02] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 02:34:02] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 02:34:39] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 02:34:39] ERROR [django.server:212] "POST /api/products/search/ HTTP/1.1" 500 68
+[2024-10-25 02:34:44] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 02:34:44] ERROR [django.server:212] "POST /api/products/search/ HTTP/1.1" 500 68
+[2024-10-25 02:35:12] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 02:35:12] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 02:35:15] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 02:35:15] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 02:35:39] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 02:35:39] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 02:36:19] INFO [django.server:212] "POST /api/products/jd_search/?Content-Type=application/json HTTP/1.1" 200 16719
+[2024-10-25 02:37:15] WARNING [django.request:241] Bad Request: /api/products/tb_search/
+[2024-10-25 02:37:15] WARNING [django.server:212] "POST /api/products/tb_search/?Content-Type=application/json HTTP/1.1" 400 61
+[2024-10-25 02:37:18] WARNING [django.request:241] Bad Request: /api/products/tb_search/
+[2024-10-25 02:37:18] WARNING [django.server:212] "POST /api/products/tb_search/?Content-Type=application/json HTTP/1.1" 400 61
+[2024-10-25 02:37:29] INFO [django.server:212] "POST /api/products/tb_search/?Content-Type=application/json HTTP/1.1" 200 97613
+[2024-10-25 02:38:17] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 02:38:17] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 02:38:38] INFO [django.server:212] "POST /api/products/tb_search/?Content-Type=application/json HTTP/1.1" 200 96795
+[2024-10-25 02:39:06] INFO [django.server:212] "POST /api/products/jd_search/?Content-Type=application/json HTTP/1.1" 200 16783
+[2024-10-25 02:39:47] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 02:39:47] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 02:40:02] INFO [django.server:212] "POST /api/products/jd_search/?Content-Type=application/json HTTP/1.1" 200 16783
+[2024-10-25 02:40:07] INFO [django.server:212] "POST /api/products/tb_search/?Content-Type=application/json HTTP/1.1" 200 96827
+[2024-10-25 02:40:11] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 02:40:11] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 02:40:58] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 02:40:58] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 02:41:14] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 02:41:14] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 02:42:50] INFO [django.server:212] "GET /admin/products/product/ HTTP/1.1" 200 56784
+[2024-10-25 02:42:50] INFO [django.server:212] "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+[2024-10-25 02:42:50] INFO [django.server:212] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+[2024-10-25 02:42:50] INFO [django.server:212] "GET /static/admin/css/base.css HTTP/1.1" 304 0
+[2024-10-25 02:42:50] INFO [django.server:212] "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+[2024-10-25 02:42:50] INFO [django.server:212] "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+[2024-10-25 02:42:50] INFO [django.server:212] "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+[2024-10-25 02:42:50] INFO [django.server:212] "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+[2024-10-25 02:42:50] INFO [django.server:212] "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+[2024-10-25 02:42:50] INFO [django.server:212] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+[2024-10-25 02:42:50] INFO [django.server:212] "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+[2024-10-25 02:42:50] INFO [django.server:212] "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[2024-10-25 02:42:50] INFO [django.server:212] "GET /static/admin/js/core.js HTTP/1.1" 304 0
+[2024-10-25 02:42:50] INFO [django.server:212] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+[2024-10-25 02:42:50] INFO [django.server:212] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 292458
+[2024-10-25 02:42:50] INFO [django.server:212] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[2024-10-25 02:42:50] INFO [django.server:212] "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+[2024-10-25 02:42:50] INFO [django.server:212] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[2024-10-25 02:42:50] INFO [django.server:212] "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+[2024-10-25 02:42:50] INFO [django.server:212] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+[2024-10-25 02:42:50] INFO [django.server:212] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+[2024-10-25 04:24:06] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 04:24:14] INFO [django.server:212] "OPTIONS /api/accounts/login/ HTTP/1.1" 200 0
+[2024-10-25 04:24:15] INFO [django.server:212] "POST /api/accounts/login/ HTTP/1.1" 200 483
+[2024-10-25 04:24:15] INFO [django.server:212] "OPTIONS /api/accounts/me HTTP/1.1" 200 0
+[2024-10-25 04:24:15] INFO [django.server:212] "OPTIONS /api/accounts/me/ HTTP/1.1" 200 0
+[2024-10-25 04:24:15] INFO [django.server:212] "OPTIONS /api/accounts/me/ HTTP/1.1" 200 0
+[2024-10-25 04:24:15] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-25 04:24:15] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-25 04:26:14] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-25 04:26:14] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-25 04:26:17] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-25 04:26:17] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-25 09:14:15] WARNING [django.request:241] Unauthorized: /api/accounts/me/
+[2024-10-25 09:14:15] WARNING [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 401 183
+[2024-10-25 09:14:16] WARNING [django.request:241] Unauthorized: /api/accounts/me/
+[2024-10-25 09:14:16] WARNING [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 401 183
+[2024-10-25 09:14:16] INFO [django.server:212] "OPTIONS /api/token/refresh/ HTTP/1.1" 200 0
+[2024-10-25 09:14:16] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-10-25 09:14:16] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2495
+[2024-10-25 09:14:16] INFO [django.server:212] "OPTIONS /api/accounts/logout/ HTTP/1.1" 200 0
+[2024-10-25 09:14:16] INFO [django.server:212] "OPTIONS /api/accounts/logout/ HTTP/1.1" 200 0
+[2024-10-25 09:14:16] INFO [django.server:212] "OPTIONS /api/accounts/logout/ HTTP/1.1" 200 0
+[2024-10-25 09:14:16] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-10-25 09:14:16] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-10-25 09:14:16] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-10-25 09:14:16] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-10-25 09:14:16] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-10-25 09:14:16] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-10-25 09:14:16] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-10-25 09:14:16] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2495
+[2024-10-25 09:14:16] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-10-25 09:14:16] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-10-25 09:14:16] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-10-25 11:18:47] INFO [django.server:212] "POST /api/accounts/login/ HTTP/1.1" 200 483
+[2024-10-25 11:18:47] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-25 11:18:47] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-25 11:22:26] INFO [django.server:212] "POST /api/products/jd_search/?Content-Type=application/json HTTP/1.1" 200 17130
+[2024-10-25 11:22:40] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 11:22:40] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 11:22:43] INFO [django.server:212] "POST /api/products/tb_search/?Content-Type=application/json HTTP/1.1" 200 27
+[2024-10-25 11:22:45] INFO [django.server:212] "POST /api/products/tb_search/?Content-Type=application/json HTTP/1.1" 200 27
+[2024-10-25 11:30:53] WARNING [django.request:241] Unauthorized: /api/accounts/me/
+[2024-10-25 11:30:53] WARNING [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 401 183
+[2024-10-25 11:30:54] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-10-25 11:30:54] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2495
+[2024-10-25 11:30:54] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-10-25 11:30:54] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-10-25 11:30:54] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-10-25 11:30:54] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-10-25 11:30:54] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-10-25 11:30:54] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2495
+[2024-10-25 11:30:54] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-10-25 11:30:54] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-10-25 11:30:54] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-10-25 11:30:54] INFO [django.server:81] - Broken pipe from ('127.0.0.1', 55594)
+[2024-10-25 14:06:53] INFO [django.server:212] "POST /api/products/tb_search/?Content-Type=application/json HTTP/1.1" 200 27
+[2024-10-25 14:44:32] INFO [django.server:212] "POST /api/accounts/login/ HTTP/1.1" 200 483
+[2024-10-25 14:44:32] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-25 14:44:32] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-25 14:46:14] INFO [django.server:212] "POST /api/products/tb_search/?Content-Type=application/json HTTP/1.1" 200 94064
+[2024-10-25 14:46:33] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 14:46:33] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 14:48:44] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 14:48:45] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 14:49:37] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 14:49:37] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 14:58:30] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 14:58:31] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 14:58:43] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 14:58:44] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 14:59:03] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 14:59:03] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 14:59:34] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 14:59:34] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 15:00:56] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 15:00:56] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 15:01:16] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 15:01:16] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 15:01:47] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 15:01:48] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 15:02:03] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 15:02:03] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 15:02:35] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 15:02:46] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 15:03:23] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 15:03:23] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 15:08:23] INFO [django.server:212] "OPTIONS /api/accounts/me HTTP/1.1" 200 0
+[2024-10-25 15:08:23] INFO [django.server:212] "OPTIONS /api/accounts/me/ HTTP/1.1" 200 0
+[2024-10-25 15:08:23] WARNING [django.request:241] Unauthorized: /api/accounts/me/
+[2024-10-25 15:08:23] WARNING [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 401 183
+[2024-10-25 15:08:23] WARNING [django.request:241] Unauthorized: /api/accounts/me/
+[2024-10-25 15:08:23] WARNING [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 401 183
+[2024-10-25 15:08:23] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-10-25 15:08:23] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2495
+[2024-10-25 15:08:23] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-10-25 15:08:23] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-10-25 15:08:23] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-10-25 15:08:23] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-10-25 15:08:23] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-10-25 15:08:23] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-10-25 15:08:23] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-10-25 15:08:23] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2495
+[2024-10-25 15:08:23] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-10-25 15:08:23] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-10-25 15:08:23] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-10-25 15:09:30] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 15:09:33] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 15:09:40] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 15:09:40] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 15:16:44] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 15:16:48] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 15:16:55] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 15:16:55] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 15:17:51] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 15:17:51] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 15:18:08] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 15:18:08] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 15:19:48] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 15:19:48] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 15:21:14] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/utils/taobao.py changed, reloading.
+[2024-10-25 15:21:14] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 15:21:35] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 15:21:57] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 15:21:57] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 15:23:17] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/utils/taobao.py changed, reloading.
+[2024-10-25 15:23:18] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 15:23:30] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 15:23:30] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 15:26:31] INFO [django.server:212] "POST /api/products/tb_search/?Content-Type=application/json HTTP/1.1" 200 96260
+[2024-10-25 15:27:05] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/utils/taobao.py changed, reloading.
+[2024-10-25 15:27:06] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 15:27:41] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/utils/taobao.py changed, reloading.
+[2024-10-25 15:27:41] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 15:27:54] INFO [django.server:212] "POST /api/products/tb_search/?Content-Type=application/json HTTP/1.1" 200 96258
+[2024-10-25 15:28:06] INFO [django.server:212] "POST /api/products/tb_search/?Content-Type=application/json HTTP/1.1" 200 96258
+[2024-10-25 15:29:00] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 15:29:01] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 15:29:13] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 15:29:13] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 15:29:17] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 15:29:17] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 15:29:39] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 15:29:40] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 15:29:47] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 15:29:47] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 15:30:18] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 15:30:18] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 15:30:58] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 15:30:58] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 15:31:13] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 15:31:13] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 15:47:14] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 15:47:15] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 15:47:23] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 15:47:24] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 15:47:38] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 15:47:38] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 15:49:23] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 15:49:24] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 15:49:33] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 15:49:33] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 15:51:47] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 15:51:48] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 15:52:12] INFO [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 200 2
+[2024-10-25 15:54:04] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 15:54:04] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 15:54:10] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 15:54:10] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 15:54:22] INFO [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 200 2
+[2024-10-25 15:55:10] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 15:55:13] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 15:55:26] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 15:55:26] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 15:56:53] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 15:56:53] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 15:57:16] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 15:57:16] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 15:58:00] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 15:58:00] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 15:58:10] INFO [django.server:212] "POST /api/products/tb_search/?Content-Type=application/json HTTP/1.1" 200 27
+[2024-10-25 15:59:51] INFO [django.server:212] "POST /api/products/tb_search/?Content-Type=application/json HTTP/1.1" 200 89893
+[2024-10-25 16:00:13] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 16:00:13] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 16:03:11] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 16:03:11] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 16:03:17] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 16:03:17] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 16:03:46] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 16:03:46] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 16:04:35] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 16:04:35] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 16:05:26] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 16:05:26] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 16:05:32] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 16:05:32] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 16:05:55] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 16:05:55] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 16:06:01] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 16:06:01] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 16:06:30] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 16:06:30] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 16:06:35] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 16:06:35] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 16:09:05] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 16:09:06] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 16:10:00] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 16:10:01] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 16:15:57] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 16:15:58] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 16:16:03] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 16:16:03] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 16:16:59] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 16:17:07] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 16:17:12] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 16:17:12] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 16:18:44] INFO [django.server:212] "POST /api/products/jd_search/?Content-Type=application/json HTTP/1.1" 200 16850
+[2024-10-25 16:19:15] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 16:19:15] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 16:19:17] INFO [django.server:212] "POST /api/products/jd_search/?Content-Type=application/json HTTP/1.1" 200 16850
+[2024-10-25 16:19:22] INFO [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 200 61
+[2024-10-25 16:19:50] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 16:19:50] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 16:19:54] INFO [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 200 61
+[2024-10-25 16:21:22] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 16:21:23] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 16:21:26] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 16:21:26] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 16:22:05] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 16:22:06] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 16:22:33] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 16:22:34] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 16:22:39] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 16:22:39] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 16:23:39] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 16:23:40] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 16:23:45] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 16:23:45] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 16:25:14] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 16:25:15] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 16:25:22] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 16:25:22] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 16:26:29] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 16:26:29] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 16:27:06] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 16:27:06] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 16:28:28] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 16:28:28] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 16:30:48] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 16:30:49] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 16:30:55] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 16:30:55] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 16:31:53] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 16:31:54] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 16:31:58] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 16:31:58] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 16:32:52] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 16:32:53] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 16:32:59] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 16:32:59] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 16:33:54] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 16:33:54] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 16:34:52] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 16:34:52] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 16:34:53] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 16:34:54] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 16:35:03] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 16:35:03] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 16:35:37] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 16:35:39] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 16:35:45] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 16:35:45] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 16:36:15] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 16:36:15] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 16:36:17] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 16:36:17] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 16:37:43] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 16:37:43] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 16:37:52] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 16:37:52] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 51
+[2024-10-25 16:39:03] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 16:39:03] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 51
+[2024-10-25 16:39:03] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 16:39:03] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 16:39:08] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 16:39:08] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 51
+[2024-10-25 16:39:19] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 16:39:20] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 16:39:38] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-25 16:39:38] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 16:39:40] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 16:39:40] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 51
+[2024-10-25 16:43:04] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/serializers.py changed, reloading.
+[2024-10-25 16:43:04] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 16:43:28] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-25 16:43:28] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 68
+[2024-10-25 16:44:35] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 16:44:43] INFO [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 200 61
+[2024-10-25 16:44:53] INFO [django.server:212] "POST /api/products/jd_search/?Content-Type=application/json HTTP/1.1" 200 27
+[2024-10-25 16:44:55] INFO [django.server:212] "POST /api/products/jd_search/?Content-Type=application/json HTTP/1.1" 200 27
+[2024-10-25 16:44:57] INFO [django.server:212] "POST /api/products/tb_search/?Content-Type=application/json HTTP/1.1" 200 27
+[2024-10-25 16:45:30] INFO [django.server:212] "POST /api/products/jd_search/?Content-Type=application/json HTTP/1.1" 200 27
+[2024-10-25 16:45:56] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/serializers.py changed, reloading.
+[2024-10-25 16:45:56] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 16:45:58] INFO [django.server:212] "POST /api/products/jd_search/?Content-Type=application/json HTTP/1.1" 200 27
+[2024-10-25 16:45:59] INFO [django.server:212] "POST /api/products/jd_search/?Content-Type=application/json HTTP/1.1" 200 27
+[2024-10-25 16:46:08] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 16:46:12] INFO [django.server:212] "POST /api/products/jd_search/?Content-Type=application/json HTTP/1.1" 200 27
+[2024-10-25 16:47:03] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 16:47:06] INFO [django.server:212] "POST /api/products/tb_search/?Content-Type=application/json HTTP/1.1" 200 27
+[2024-10-25 16:47:08] INFO [django.server:212] "POST /api/products/tb_search/?Content-Type=application/json HTTP/1.1" 200 27
+[2024-10-25 16:47:10] INFO [django.server:212] "POST /api/products/jd_search/?Content-Type=application/json HTTP/1.1" 200 27
+[2024-10-25 16:48:41] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/models.py changed, reloading.
+[2024-10-25 16:48:41] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 16:49:19] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/serializers.py changed, reloading.
+[2024-10-25 16:49:19] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-25 16:49:27] INFO [django.server:212] "POST /api/products/jd_search/?Content-Type=application/json HTTP/1.1" 200 27
+[2024-10-25 16:49:29] INFO [django.server:212] "POST /api/products/jd_search/?Content-Type=application/json HTTP/1.1" 200 27
+[2024-10-25 16:49:30] INFO [django.server:212] "POST /api/products/jd_search/?Content-Type=application/json HTTP/1.1" 200 27
+[2024-10-25 16:49:59] INFO [django.server:212] "POST /api/products/tb_search/?Content-Type=application/json HTTP/1.1" 200 27
+[2024-10-26 01:23:07] INFO [django.server:212] "POST /api/products/tb_search/?Content-Type=application/json HTTP/1.1" 200 96168
+[2024-10-26 01:23:42] INFO [django.server:212] "POST /api/products/jd_search/?Content-Type=application/json HTTP/1.1" 200 16904
+[2024-10-26 01:23:53] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-26 01:23:53] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 51
+[2024-10-26 01:24:47] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-26 01:24:48] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-26 01:24:51] ERROR [django.request:241] Internal Server Error: /api/products/search/
+[2024-10-26 01:24:51] ERROR [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 500 51
+[2024-10-26 01:45:34] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/serializers.py changed, reloading.
+[2024-10-26 01:45:35] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-26 01:47:34] INFO [django.server:212] "POST /api/products/search/?Content-Type=application/json HTTP/1.1" 200 10169

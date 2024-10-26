@@ -140,6 +140,7 @@ const sortedSearchResults = computed(() => {
 // 处理搜索逻辑
 const handleSearch = () => {
   currentPage.value = 1;
+  sortOrder.value = 'default';
   fetchSearchResults();
 };
 
@@ -182,21 +183,26 @@ const fetchSearchResults = async () => {
     });
 
     // 处理搜索结果
-    const { jd, tb } = response.data;
-    const jdResults = jd.results.map((item) => ({
-      ...item,
-      platform: '京东',
-    }));
-    const tbResults = tb.results.map((item) => ({
-      ...item,
-      platform: '淘宝',
-    }));
+   const { jd, tb } = response.data;
 
-    const jdTotal = Number(jd.total) || 0;
-    const tbTotal = Number(tb.total) || 0;
+    // 合并结果
+    const combinedResults = [
+      ...(jd ? jd.results : []),
+      ...(tb ? tb.results : [])
+    ];
 
-    searchResults.value = [...jdResults, ...tbResults];
-    totalResults.value = jdTotal + tbTotal;
+    // 计算总数，确保为数字
+    const total = (jd && typeof jd.total === 'number' ? jd.total : 0) +
+                  (tb && typeof tb.total === 'number' ? tb.total : 0);
+
+    searchResults.value = combinedResults;
+    totalResults.value = total;
+
+    // 打印调试信息
+    console.log('搜索结果:', searchResults.value);
+    console.log('totalResults 类型:', typeof totalResults.value); // 应为 'number'
+    console.log('totalResults 值:', totalResults.value); // 应为数字
+
   } catch (error) {
     console.error('搜索失败', error);
     ElMessage.error('搜索失败，请稍后重试');

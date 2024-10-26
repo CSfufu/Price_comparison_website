@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 from django.db import models
 
+
 class Product(models.Model):
     name = models.CharField(max_length=200, verbose_name='商品名称')
     product_id = models.CharField(max_length=50, unique=True, verbose_name='商品ID')

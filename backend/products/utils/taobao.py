@@ -59,7 +59,7 @@ def tb_request_search(keyword: str, cookie: str, offset: int = 0, limit: int = 4
     saved_products = save_tb_products(results)
 
     # 截取需要的结果
-    ret = {'total': total, 'results': saved_products[(offset % page_size):(offset % page_size + limit)]}
+    ret = {'total': int(total) if isinstance(total, str) and total.isdigit() else 0, 'results': saved_products[(offset % page_size):(offset % page_size + limit)]}
 
     print("淘宝搜索结果：")
     print(ret)

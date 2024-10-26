@@ -11,7 +11,15 @@ from .utils.taobao import tb_request_search
 from django.http import JsonResponse
 import concurrent.futures
 from .serializers import ProductSerializer
+import re
 
+
+def clean_title(title):
+    """
+    移除 HTML 标签并返回纯文本标题。
+    """
+    clean = re.compile('<.*?>')
+    return re.sub(clean, '', title)
 
 
 @api_view(['POST'])
@@ -92,9 +100,79 @@ def search_all_view(request):
         elif cookie_tb:
             combined_results['tb'] = results[0]
 
-        return JsonResponse(combined_results, status=200)
+        print("combined_results done correctly123")
+        #print(type(combined_results))
+        #print(len(combined_results))
+        #print(combined_results)
+        response_data = {}
+        for platform in combined_results:
+            data = combined_results[platform]
+            print("done1")
+            print(data)
+            products = data.get('results', [])[:10]
+            total = data.get('total', 0)
+            if platform == 'tb':
+                # 淘宝数据需要字段映射和清理
+                mapped_products = []
+                for item in products:
+                    print(item)
+                    print(item.get('title'))
+                    mapped_product = {
+                        'name': ''.join(clean_title(item.get('title', ''))),
+                        'product_id': item.get('item_id', ''),
+                        'platform': '淘宝',
+                        'price': float(item.get('price', '0').replace(',', '')) if item.get('price') else 0.0,
+                        'link': f"https:{item.get('auctionURL', '')}" if item.get('auctionURL') else '',
+                        'image_url': item.get('pic_path', ''),
+                        'store_name': item.get('nick', ''),
+                        'store_link': f"https:{item.get('shopInfo', {}).get('url', '')}" if item.get(
+                            'shopInfo') else '',
+                    }
+                    #print("mapped_product done")
+                    mapped_products.append(mapped_product)
+                    #print(mapped_products)
+                serializer = ProductSerializer(mapped_products, many=True)
+                # 确保 total 是数字类型
+                response_data[platform] = {
+                    'results': serializer.data,
+                    'total': total
+                }
+                print("taobao done")
+            elif platform == 'jd':
+                # 京东数据直接序列化
+                mapped_products = []
+                count = 0
+                for item in products:
+                    print(item)
+                    print(item.get('info', {}).get('title', ''))
+                    print(count, total)
+                    mapped_product = {
+                        'name': ''.join(clean_title(item.get('info', {}).get('title', ''))),
+                        'product_id': item.get('sku', ''),
+                        'platform': '京东',
+                        'price': float(item.get('price', '0').replace(',', '')) if item.get('price') else 0.0,
+                        'link': item.get('info', {}).get('link', ''),
+                        'image_url': item.get('imgSrc', ''),
+                        'store_name': item.get('store', {}).get('title', ''),
+                        'store_link': item.get('store', {}).get('link', ''),
+                    }
+                    mapped_products.append(mapped_product)
+                    count += 1
+                    print(count)
+                print(mapped_products)
+                serializer = ProductSerializer(mapped_products, many=True)
+                # 确保 total 是数字类型
+                response_data[platform] = {
+                    'results': serializer.data,
+                    'total': total
+                }
+                print("jingdong done")
+
+        return Response(response_data, status=200)
+
+
     except Exception as e:
-        return JsonResponse({'error': 'Search failed. Please check your cookies and try again.'}, status=500)
+        return JsonResponse({'error': str(e)}, status=500)
 
 
 @api_view(['GET'])
