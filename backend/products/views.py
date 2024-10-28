@@ -1,15 +1,18 @@
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 from rest_framework.decorators import api_view, permission_classes
-from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
-from .models import Product
+from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework import viewsets, permissions
+from .models import Product, SearchHistory, ProductPriceHistory
+from .serializers import SearchHistorySerializer, ProductPriceHistoryResponseSerializer
 from .utils.jd import jd_request_search
 from .utils.taobao import tb_request_search
 from django.http import JsonResponse
 import concurrent.futures
+from .services import fetch_price_history_from_url, fetch_price_history
 from .serializers import ProductModelSerializer, ProductDictSerializer
 import re
 
@@ -181,3 +184,73 @@ def product_detail_view(request, product_id):
         return Response(serializer.data)
     except Product.DoesNotExist:
         return Response({'error': '商品不存在'}, status=404)
+
+@csrf_exempt
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def get_price_history(request, product_id):
+    """
+    获取指定商品的历史价格数据。
+
+    URL: /api/products/<product_id>/price_history/
+    """
+    try:
+        product = Product.objects.get(product_id=product_id)
+    except Product.DoesNotExist:
+        return Response({'error': '商品不存在'}, status=404)
+
+    # 调用函数获取并更新历史价格数据
+    success = fetch_price_history(product)
+    if not success:
+        return Response({'error': '无法获取历史价格数据'}, status=500)
+
+    # 获取数据库中的历史价格数据
+    price_history = ProductPriceHistory.objects.filter(product=product)
+    serializer = SearchHistorySerializer(price_history, many=True)
+
+    return Response({
+        'product': {
+            'name': product.name,
+            'product_id': product.product_id,
+            'platform': product.platform,
+            'link': product.link,
+        },
+        'price_history': serializer.data
+    })
+
+@csrf_exempt
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def get_price_history_by_url(request):
+    """
+    根据商品链接获取历史价格数据。
+
+    请求方式：POST
+    请求数据：
+    {
+        "item_url": "https://item.jd.com/123456.html"
+    }
+    """
+    data = request.data
+    # print(data, "data is here")
+    item_url = data.get('item_url', '').strip()
+    # print("logging", item_url, type(item_url))
+
+    if not item_url:
+        return Response({'error': '商品链接不能为空'}, status=400)
+
+    result = fetch_price_history_from_url(item_url)
+    print(result)
+    if not result:
+        return Response({'error': '无法获取历史价格数据'}, status=500)
+
+    serializer = ProductPriceHistoryResponseSerializer(result)
+    return Response(serializer.data)
+
+
+class SearchHistoryViewSet(viewsets.ReadOnlyModelViewSet):
+    serializer_class = SearchHistorySerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        return SearchHistory.objects.filter(user=self.request.user)

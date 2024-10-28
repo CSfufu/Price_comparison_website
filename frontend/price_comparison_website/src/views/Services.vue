@@ -62,19 +62,19 @@ const services = ref([
     icon: service1Icon,
     title: '实时比价',
     description: '实时获取各大电商平台的商品价格，帮您找到最低价。',
-    link: '/services/realtime-pricing',
+    link: '/search',
   },
   {
     icon: service2Icon,
-    title: '优惠推荐',
+    title: '搜索历史',
     description: '为您推荐最新的优惠信息和折扣券，购物更省钱。',
-    link: '/services/discounts',
+    link: '/history',
   },
   {
     icon: service3Icon,
     title: '历史价格查询',
     description: '您可以查询目标商品的历史价格，最低的时候购入。',
-    link: '/services/price-history',
+    link: '/price_history',
   },
 ]);
 

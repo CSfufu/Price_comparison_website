@@ -1,7 +1,8 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 from django.db import models
+from django.conf import settings
 
 
 class Product(models.Model):
@@ -17,3 +18,32 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class SearchHistory(models.Model):
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,  # 使用 settings.AUTH_USER_MODEL
+        on_delete=models.CASCADE,
+        related_name='search_histories'
+    )
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    search_time = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-search_time']
+
+    def __str__(self):
+        return f"{self.user.username} searched {self.product.name} at {self.search_time}"
+
+
+class ProductPriceHistory(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='price_history')
+    date = models.DateField(verbose_name='日期')
+    price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='价格')
+
+    class Meta:
+        unique_together = ('product', 'date')
+        ordering = ['date']
+
+    def __str__(self):
+        return f"{self.product.name} - {self.date} - {self.price}"

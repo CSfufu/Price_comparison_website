@@ -38,6 +38,7 @@
       <h2>联系我</h2>
       <p>如果您有任何问题或建议，欢迎通过以下方式联系我们：</p>
       <ul>
+        <li><i class="el-icon-home"></i> 个人主页：<a href="https://csfufu.life" target="_blank">fufu酱のNotebook</a></li>
         <li><i class="el-icon-message"></i> 邮箱：chenshuang@zju.edu.cn</li>
         <li><i class="el-icon-phone"></i> 电话：+86 183 8100 2338</li>
         <li><i class="el-icon-position"></i> 地址：浙江省杭州市西湖区浙江大学玉泉校区</li>

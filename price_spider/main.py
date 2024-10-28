@@ -15,12 +15,14 @@ def raw(text):  # 转化URL字符串
         ':': '%253A',
         '&': '%26',
     }
+    print(text, "text is here")
     new_string = ''
     for char in text:
         try:
             new_string += escape_dict[char]
         except KeyError:
             new_string += char
+    print(new_string, "new_string is here")
     return new_string
 
 def mmm(item):
@@ -44,9 +46,9 @@ def mmm(item):
                'jgzspic=no&c_operator=%E4%B8%AD%E5%9B%BD%E7%A7%BB%E5%8A%A8&c_appver=3.6.0&bj=false&c_dp=2&c_osver=10.3.3'.format(
         item)
     s.headers.update(headers)
-    print(s)
+    # print(s)
     req = s.get(url=url, data=postdata, verify=False).text
-    print(req)
+    # print(req)
     try:
         js = json.loads(req)
         title = js['single']['title']  ##名称
@@ -54,7 +56,7 @@ def mmm(item):
         print(e)
         # exit(mmm(item))
     ###数据清洗
-    print(js)
+    # print(js)
     #pic = js['single']['smallpic']  ##图片
     jiagequshi = js['single']['jiagequshi']  ##价格趋势
     lowerPrice = js['single']['lowerPrice']  ##最低价格
@@ -67,7 +69,7 @@ def mmm(item):
     date_list = []  ##日期
     price_list = []  ##价格
     datalist = jiagequshi.replace('[Date.UTC(','').replace(')','').replace(']','').split(',')##日期转换
-    print(datalist)
+    # print(datalist)
     for i in range(0, len(datalist), 5):
         if i != 0:
             day = int(datalist[i + 2])
@@ -125,6 +127,7 @@ if __name__ == '__main__':
         try:
             print(webdata['web'][i])
             item = webdata['web'][i]  ##京东、淘宝、天猫等电商平台数据都可以获取
+            # print(type(item), item)
             mmm(item)
             i = i + 1
         except Exception as e:

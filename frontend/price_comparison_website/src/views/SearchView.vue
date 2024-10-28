@@ -6,7 +6,7 @@
       <!-- 搜索区域 -->
       <el-card class="search-card">
         <el-row :gutter="20" align="middle">
-          <el-col :span="18">
+          <el-col :span="16">
             <el-input
               v-model="keyword"
               placeholder="请输入商品关键词"
@@ -22,7 +22,7 @@
               </template>
             </el-input>
           </el-col>
-          <el-col :span="6" class="cookie-collapse">
+          <el-col :span="8" class="cookie-collapse">
             <el-collapse v-model="activeCollapse">
               <el-collapse-item title="高级选项（输入您的 Cookie）" name="1">
                 <el-form :model="cookies" label-width="100px">

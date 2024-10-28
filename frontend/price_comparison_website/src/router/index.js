@@ -7,6 +7,8 @@ import Services from "../views/Services.vue";
 import ProFile from "../views/ProFile.vue";
 import SearchView from "../views/SearchView.vue";
 import ProductDetail from "../views/ProductDetail.vue";
+import HistoryView from "../views/HistoryView.vue";
+import PriceHistory from "@/views/PriceHistory.vue";
 
 const routes = [
   {
@@ -46,11 +48,22 @@ const routes = [
     component: SearchView
   },
   {
+    path: '/history',
+    name: History,
+    component: HistoryView
+  },
+  {
+    path: '/price_history',
+    name: PriceHistory,
+    component: PriceHistory
+  },
+  {
     path: '/products/:id/',
     name: 'ProductDetail',
     component: ProductDetail,
     props: true,
   },
+
 ];
 
 const router = createRouter({

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Product
+from .models import Product, SearchHistory
 
 
 class ProductDictSerializer(serializers.Serializer):
@@ -33,4 +33,26 @@ class ProductModelSerializer(serializers.ModelSerializer):
 
     def get_price(self, obj):
         return float(obj.price) if obj.price else 0.0
+
+
+class SearchHistorySerializer(serializers.ModelSerializer):
+    product = ProductModelSerializer(read_only=True)
+    search_time = serializers.DateTimeField(format="%Y-%m-%d %H:%M:%S", read_only=True)
+
+    class Meta:
+        model = SearchHistory
+        fields = ['id', 'product', 'search_time']
+
+
+class PriceHistorySerializer(serializers.Serializer):
+    date = serializers.DateField()
+    price = serializers.FloatField()
+
+
+class ProductPriceHistoryResponseSerializer(serializers.Serializer):
+    name = serializers.CharField()
+    link = serializers.URLField()
+    image_url = serializers.URLField()
+    price_history = PriceHistorySerializer(many=True)
+
 

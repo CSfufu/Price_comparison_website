@@ -25,6 +25,12 @@
             <el-menu-item index="/search">
               <router-link to="/search">搜索</router-link>
             </el-menu-item>
+            <el-menu-item index="/history">
+              <router-link to="/history">搜索历史</router-link>
+            </el-menu-item>
+            <el-menu-item index="/price_history">
+              <router-link to="/price_history">历史价格查询</router-link>
+            </el-menu-item>
           </el-menu>
         </el-col>
         <!-- 右侧：用户操作 -->
@@ -74,17 +80,17 @@
               <i class="el-icon-s-operation"></i>
               <span>功能菜单</span>
             </template>
-            <el-menu-item index="/category1/item1">
+            <el-menu-item index="/search">
               <i class="el-icon-s-data"></i>
               <span>实时比价</span>
             </el-menu-item>
-            <el-menu-item index="/category1/item2">
+            <el-menu-item index="/history">
               <i class="el-icon-s-promotion"></i>
-              <span>优惠推荐</span>
+              <span>搜索历史</span>
             </el-menu-item>
-            <el-menu-item index="/category1/item3">
+            <el-menu-item index="/price_history">
               <i class="el-icon-s-order"></i>
-              <span>历史价格</span>
+              <span>历史价格查询</span>
             </el-menu-item>
           </el-submenu>
         </el-menu>
