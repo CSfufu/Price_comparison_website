@@ -2,10 +2,6 @@
 <!-- src/views/ProductDetail.vue -->
 <template>
   <div class="product-detail-container">
-    <!-- 回退按钮 -->
-    <el-button type="default" @click="goBack" class="back-button">
-      <el-icon><ArrowLeft /></el-icon> 返回
-    </el-button>
 
     <!-- 商品详情卡片 -->
     <el-card v-if="product">
@@ -172,11 +168,6 @@ const goToBuy = (link) => {
   } else {
     ElMessage.warning('无效的购买链接');
   }
-};
-
-// 回退到上一页
-const goBack = () => {
-  router.back();
 };
 
 // 获取商品详情

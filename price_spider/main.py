@@ -59,6 +59,7 @@ def mmm(item):
     # print(js)
     #pic = js['single']['smallpic']  ##图片
     jiagequshi = js['single']['jiagequshi']  ##价格趋势
+    #print(type(jiagequshi), jiagequshi)
     lowerPrice = js['single']['lowerPrice']  ##最低价格
     lowerDate = js['single']['lowerDate']  ##最低价格日期
     lowerDate = re.search('[1-9]\d{0,9}', lowerDate).group(0)
