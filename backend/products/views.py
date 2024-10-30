@@ -107,7 +107,7 @@ def search_all_view(request):
         response_data = {}
         for platform in combined_results:
             data = combined_results[platform]
-            products = data.get('results', [])[:20]
+            products = data.get('results', [])[:10]
             total = data.get('total', 0)
             if platform == 'tb':
                 # 淘宝数据需要字段映射和清理

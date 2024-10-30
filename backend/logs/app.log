@@ -2863,3 +2863,245 @@ KeyError: "Got KeyError when attempting to get a value for field `platform` on s
 [2024-10-28 14:29:17] INFO [django.server:212] "POST /api/products/price_history/ HTTP/1.1" 200 15508
 [2024-10-28 14:29:19] INFO [products.services:83] 成功获取商品的历史价格数据。
 [2024-10-28 14:29:19] INFO [django.server:212] "POST /api/products/price_history/ HTTP/1.1" 200 15508
+[2024-10-28 14:48:28] INFO [django.server:212] "OPTIONS /api/accounts/me HTTP/1.1" 200 0
+[2024-10-28 14:48:28] INFO [django.server:212] "OPTIONS /api/accounts/me/ HTTP/1.1" 200 0
+[2024-10-28 14:48:28] INFO [django.server:212] "OPTIONS /api/accounts/me/ HTTP/1.1" 200 0
+[2024-10-28 14:48:28] WARNING [django.request:241] Unauthorized: /api/accounts/me/
+[2024-10-28 14:48:28] WARNING [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 401 183
+[2024-10-28 14:48:28] WARNING [django.request:241] Unauthorized: /api/accounts/me/
+[2024-10-28 14:48:28] WARNING [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 401 183
+[2024-10-28 14:48:28] INFO [django.server:212] "OPTIONS /api/token/refresh/ HTTP/1.1" 200 0
+[2024-10-28 14:48:28] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-10-28 14:48:28] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2495
+[2024-10-28 14:48:28] INFO [django.server:212] "OPTIONS /api/accounts/logout/ HTTP/1.1" 200 0
+[2024-10-28 14:48:28] INFO [django.server:212] "OPTIONS /api/accounts/logout/ HTTP/1.1" 200 0
+[2024-10-28 14:48:28] INFO [django.server:212] "OPTIONS /api/accounts/logout/ HTTP/1.1" 200 0
+[2024-10-28 14:48:28] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-10-28 14:48:28] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-10-28 14:48:28] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-10-28 14:48:28] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-10-28 14:48:28] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-10-28 14:48:28] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-10-28 14:48:28] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-10-28 14:48:28] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2495
+[2024-10-28 14:48:28] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-10-28 14:48:28] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-10-28 14:48:28] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-10-28 14:48:31] INFO [django.server:212] "OPTIONS /api/accounts/login/ HTTP/1.1" 200 0
+[2024-10-28 14:48:31] INFO [django.server:212] "POST /api/accounts/login/ HTTP/1.1" 200 483
+[2024-10-28 14:48:31] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-28 14:48:31] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-28 14:48:56] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 2759
+[2024-10-28 14:48:57] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 2759
+[2024-10-28 14:50:19] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 2707
+[2024-10-28 14:50:27] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 2707
+[2024-10-28 14:50:28] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 2707
+[2024-10-28 14:50:28] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 2707
+[2024-10-28 14:50:29] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 2707
+[2024-10-28 14:50:50] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-28 14:50:50] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-28 14:50:56] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 2707
+[2024-10-28 14:50:57] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 2707
+[2024-10-28 14:51:13] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 2707
+[2024-10-28 14:51:28] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-28 14:51:28] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-28 14:51:47] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 2739
+[2024-10-28 15:18:28] INFO [django.server:212] "OPTIONS /api/products/search/ HTTP/1.1" 200 0
+[2024-10-28 15:18:28] WARNING [django.request:241] Unauthorized: /api/products/search/
+[2024-10-28 15:18:28] WARNING [django.server:212] "POST /api/products/search/ HTTP/1.1" 401 183
+[2024-10-28 15:18:28] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-10-28 15:18:28] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2495
+[2024-10-28 15:18:28] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-10-28 15:18:28] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-10-28 15:18:28] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-10-28 15:18:28] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2495
+[2024-10-28 15:18:28] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-10-28 15:18:28] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-10-28 15:18:28] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-10-28 15:18:31] INFO [django.server:212] "POST /api/accounts/login/ HTTP/1.1" 200 483
+[2024-10-28 15:18:31] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-28 15:18:31] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-28 15:18:32] INFO [django.server:212] "OPTIONS /api/products/search-history/?page=1&page_size=12 HTTP/1.1" 200 0
+[2024-10-28 15:18:32] INFO [django.server:212] "GET /api/products/search-history/?page=1&page_size=12 HTTP/1.1" 200 2
+[2024-10-28 15:18:49] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 2707
+[2024-10-28 15:20:07] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 6053
+[2024-10-28 15:22:20] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-28 15:22:20] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-28 15:22:30] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 2707
+[2024-10-28 15:22:38] INFO [django.server:212] "OPTIONS /api/products/100142816814/ HTTP/1.1" 200 0
+[2024-10-28 15:22:38] INFO [django.server:212] "GET /api/products/100142816814/ HTTP/1.1" 200 442
+[2024-10-28 15:22:40] INFO [django.server:212] "OPTIONS /api/products/price_history/ HTTP/1.1" 200 0
+[2024-10-28 15:22:43] ERROR [products.services:55] 无法获取商品的历史价格数据。
+[2024-10-28 15:22:43] ERROR [django.request:241] Internal Server Error: /api/products/price_history/
+[2024-10-28 15:22:43] ERROR [django.server:212] "POST /api/products/price_history/ HTTP/1.1" 500 42
+[2024-10-28 15:22:53] ERROR [products.services:55] 无法获取商品的历史价格数据。
+[2024-10-28 15:22:53] ERROR [django.request:241] Internal Server Error: /api/products/price_history/
+[2024-10-28 15:22:53] ERROR [django.server:212] "POST /api/products/price_history/ HTTP/1.1" 500 42
+[2024-10-28 15:23:00] ERROR [products.services:55] 无法获取商品的历史价格数据。
+[2024-10-28 15:23:00] ERROR [django.request:241] Internal Server Error: /api/products/price_history/
+[2024-10-28 15:23:00] ERROR [django.server:212] "POST /api/products/price_history/ HTTP/1.1" 500 42
+[2024-10-28 15:23:15] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 2904
+[2024-10-28 15:23:20] INFO [django.server:212] "OPTIONS /api/products/10121157925013/ HTTP/1.1" 200 0
+[2024-10-28 15:23:20] INFO [django.server:212] "GET /api/products/10121157925013/ HTTP/1.1" 200 420
+[2024-10-28 15:23:23] ERROR [products.services:55] 无法获取商品的历史价格数据。
+[2024-10-28 15:23:23] ERROR [django.request:241] Internal Server Error: /api/products/price_history/
+[2024-10-28 15:23:23] ERROR [django.server:212] "POST /api/products/price_history/ HTTP/1.1" 500 42
+[2024-10-28 15:23:40] WARNING [django.request:241] Unauthorized: /api/products/price_history/
+[2024-10-28 15:23:40] WARNING [django.server:212] "POST /api/products/price_history/ HTTP/1.1" 401 183
+[2024-10-28 15:23:40] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-10-28 15:23:40] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2495
+[2024-10-28 15:23:40] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-10-28 15:23:40] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-10-28 15:23:40] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-10-28 15:23:40] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2495
+[2024-10-28 15:23:40] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-10-28 15:23:40] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-10-28 15:23:40] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-10-28 15:23:54] INFO [django.server:212] "POST /api/accounts/login/ HTTP/1.1" 200 483
+[2024-10-28 15:23:54] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-28 15:23:54] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-28 15:24:03] ERROR [products.services:55] 无法获取商品的历史价格数据。
+[2024-10-28 15:24:03] ERROR [django.request:241] Internal Server Error: /api/products/price_history/
+[2024-10-28 15:24:03] ERROR [django.server:212] "POST /api/products/price_history/ HTTP/1.1" 500 42
+[2024-10-28 15:24:04] ERROR [products.services:55] 无法获取商品的历史价格数据。
+[2024-10-28 15:24:04] ERROR [django.request:241] Internal Server Error: /api/products/price_history/
+[2024-10-28 15:24:04] ERROR [django.server:212] "POST /api/products/price_history/ HTTP/1.1" 500 42
+[2024-10-28 15:24:04] ERROR [products.services:55] 无法获取商品的历史价格数据。
+[2024-10-28 15:24:04] ERROR [django.request:241] Internal Server Error: /api/products/price_history/
+[2024-10-28 15:24:04] ERROR [django.server:212] "POST /api/products/price_history/ HTTP/1.1" 500 42
+[2024-10-28 15:24:21] INFO [django.server:212] "GET /api/products/search-history/?page=1&page_size=12 HTTP/1.1" 200 2
+[2024-10-28 15:24:22] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-28 15:24:22] INFO [django.server:212] "GET /api/products/search-history/?page=1&page_size=12 HTTP/1.1" 200 2
+[2024-10-28 15:25:07] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-28 15:25:07] INFO [django.server:212] "GET /api/products/search-history/?page=1&page_size=12 HTTP/1.1" 200 2
+[2024-10-29 00:22:33] INFO [django.server:212] "OPTIONS /api/accounts/me HTTP/1.1" 200 0
+[2024-10-29 00:22:33] INFO [django.server:212] "OPTIONS /api/products/search-history/?page=1&page_size=12 HTTP/1.1" 200 0
+[2024-10-29 00:22:33] WARNING [django.request:241] Unauthorized: /api/products/search-history/
+[2024-10-29 00:22:33] WARNING [django.server:212] "GET /api/products/search-history/?page=1&page_size=12 HTTP/1.1" 401 183
+[2024-10-29 00:22:34] INFO [django.server:212] "OPTIONS /api/accounts/me/ HTTP/1.1" 200 0
+[2024-10-29 00:22:34] INFO [django.server:212] "OPTIONS /api/token/refresh/ HTTP/1.1" 200 0
+[2024-10-29 00:22:34] WARNING [django.request:241] Unauthorized: /api/accounts/me/
+[2024-10-29 00:22:34] WARNING [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 401 183
+[2024-10-29 00:22:34] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-10-29 00:22:34] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2495
+[2024-10-29 00:22:34] INFO [django.server:212] "OPTIONS /api/accounts/logout/ HTTP/1.1" 200 0
+[2024-10-29 00:22:34] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-10-29 00:22:34] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-10-29 00:22:34] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-10-29 00:22:34] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-10-29 00:22:34] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-10-29 00:22:34] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2495
+[2024-10-29 00:22:34] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-10-29 00:22:34] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-10-29 00:22:34] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-10-30 12:57:48] INFO [django.server:212] "OPTIONS /api/accounts/login/ HTTP/1.1" 200 0
+[2024-10-30 12:57:49] INFO [django.server:212] "POST /api/accounts/login/ HTTP/1.1" 200 483
+[2024-10-30 12:57:49] INFO [django.server:212] "OPTIONS /api/accounts/me HTTP/1.1" 200 0
+[2024-10-30 12:57:49] INFO [django.server:212] "OPTIONS /api/accounts/me/ HTTP/1.1" 200 0
+[2024-10-30 12:57:49] INFO [django.server:212] "OPTIONS /api/accounts/me/ HTTP/1.1" 200 0
+[2024-10-30 12:57:49] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-30 12:57:49] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-30 12:57:52] INFO [django.server:212] "OPTIONS /api/products/search-history/?page=1&page_size=12 HTTP/1.1" 200 0
+[2024-10-30 12:57:52] INFO [django.server:212] "GET /api/products/search-history/?page=1&page_size=12 HTTP/1.1" 200 2
+[2024-10-30 12:57:57] INFO [django.server:212] "GET /api/products/search-history/?page=1&page_size=12 HTTP/1.1" 200 2
+[2024-10-30 12:57:57] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-30 12:59:07] INFO [django.server:212] "OPTIONS /api/products/search/ HTTP/1.1" 200 0
+[2024-10-30 12:59:14] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 6410
+[2024-10-30 12:59:21] INFO [django.server:212] "OPTIONS /api/products/10055061942054/ HTTP/1.1" 200 0
+[2024-10-30 12:59:22] INFO [django.server:212] "GET /api/products/10055061942054/ HTTP/1.1" 200 522
+[2024-10-30 12:59:23] INFO [django.server:212] "OPTIONS /api/products/price_history/ HTTP/1.1" 200 0
+[2024-10-30 12:59:26] INFO [products.services:83] 成功获取商品的历史价格数据。
+[2024-10-30 12:59:26] INFO [django.server:212] "POST /api/products/price_history/ HTTP/1.1" 200 15427
+[2024-10-30 13:00:04] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 6410
+[2024-10-30 13:00:06] INFO [django.server:212] "OPTIONS /api/products/10121157925013/ HTTP/1.1" 200 0
+[2024-10-30 13:00:06] INFO [django.server:212] "GET /api/products/10121157925013/ HTTP/1.1" 200 425
+[2024-10-30 13:03:18] WARNING [django.request:241] Unauthorized: /api/products/search/
+[2024-10-30 13:03:18] WARNING [django.server:212] "POST /api/products/search/ HTTP/1.1" 401 183
+[2024-10-30 13:03:18] INFO [django.server:212] "OPTIONS /api/token/refresh/ HTTP/1.1" 200 0
+[2024-10-30 13:03:18] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-10-30 13:03:18] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2495
+[2024-10-30 13:03:18] INFO [django.server:212] "OPTIONS /api/accounts/logout/ HTTP/1.1" 200 0
+[2024-10-30 13:03:18] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-10-30 13:03:18] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-10-30 13:03:18] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-10-30 13:03:18] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2495
+[2024-10-30 13:03:18] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-10-30 13:03:18] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-10-30 13:03:18] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-10-30 13:03:20] INFO [django.server:212] "POST /api/accounts/login/ HTTP/1.1" 200 483
+[2024-10-30 13:03:20] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-30 13:03:20] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-30 13:03:37] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 6173
+[2024-10-30 13:04:16] INFO [django.server:212] "OPTIONS /api/products/10036051627014/ HTTP/1.1" 200 0
+[2024-10-30 13:04:16] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-30 13:04:16] INFO [django.server:212] "GET /api/products/10036051627014/ HTTP/1.1" 200 449
+[2024-10-30 13:04:23] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 6259
+[2024-10-30 13:04:45] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 6081
+[2024-10-30 13:06:47] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-30 13:06:47] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-30 13:06:48] INFO [django.server:81] - Broken pipe from ('127.0.0.1', 54965)
+[2024-10-30 13:06:57] INFO [django.server:212] "GET /admin/products/product/ HTTP/1.1" 200 57942
+[2024-10-30 13:06:57] INFO [django.server:212] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 292458
+[2024-10-30 13:07:17] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 6199
+[2024-10-30 13:07:17] INFO [django.server:81] - Broken pipe from ('127.0.0.1', 55106)
+[2024-10-30 13:07:34] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 6214
+[2024-10-30 13:08:27] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/products/views.py changed, reloading.
+[2024-10-30 13:08:28] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-10-30 13:09:02] WARNING [django.request:241] Unauthorized: /api/products/search/
+[2024-10-30 13:09:02] WARNING [django.server:212] "POST /api/products/search/ HTTP/1.1" 401 183
+[2024-10-30 13:09:02] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-10-30 13:09:02] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2495
+[2024-10-30 13:09:02] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-10-30 13:09:02] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-10-30 13:09:02] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-10-30 13:09:02] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2495
+[2024-10-30 13:09:02] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-10-30 13:09:02] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-10-30 13:09:02] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-10-30 13:09:02] INFO [django.server:81] - Broken pipe from ('127.0.0.1', 56067)
+[2024-10-30 13:09:05] INFO [django.server:212] "POST /api/accounts/login/ HTTP/1.1" 200 483
+[2024-10-30 13:09:05] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-30 13:09:05] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-30 13:09:07] INFO [django.server:212] "GET /api/products/search-history/?page=1&page_size=12 HTTP/1.1" 200 2
+[2024-10-30 13:09:17] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 6122
+[2024-10-30 13:09:18] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 6095
+[2024-10-30 13:09:28] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 6309
+[2024-10-30 13:09:40] INFO [django.server:212] "POST /api/products/search/ HTTP/1.1" 200 6254
+[2024-10-30 13:10:40] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-30 13:10:40] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-30 13:10:46] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-30 13:10:46] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-30 13:10:46] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-30 13:10:46] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-30 13:10:55] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-30 13:10:55] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-30 13:10:55] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-30 13:10:55] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-10-30 13:11:56] INFO [django.server:212] "GET /api/products/search-history/?page=1&page_size=12 HTTP/1.1" 200 2
+[2024-10-30 13:12:06] INFO [django.server:212] "GET /api/products/search-history/?page=1&page_size=12 HTTP/1.1" 200 2
+[2024-10-30 13:12:29] INFO [django.server:212] "GET /api/products/search-history/?page=1&page_size=12 HTTP/1.1" 200 2
+[2024-10-30 13:12:32] INFO [django.server:212] "GET /api/products/search-history/?page=1&page_size=12 HTTP/1.1" 200 2
+[2024-10-30 13:12:33] INFO [django.server:212] "GET /api/products/search-history/?page=1&page_size=12 HTTP/1.1" 200 2
+[2024-10-30 13:12:39] INFO [django.server:212] "GET /api/products/search-history/?page=1&page_size=12 HTTP/1.1" 200 2
+[2024-10-30 13:12:40] INFO [django.server:212] "GET /api/products/search-history/?page=1&page_size=12 HTTP/1.1" 200 2
+[2024-10-30 13:12:41] INFO [django.server:212] "GET /api/products/search-history/?page=1&page_size=12 HTTP/1.1" 200 2
+[2024-10-30 13:12:43] INFO [django.server:212] "GET /api/products/search-history/?page=1&page_size=12 HTTP/1.1" 200 2
+[2024-10-30 13:12:54] ERROR [products.services:55] 无法获取商品的历史价格数据。
+[2024-10-30 13:12:54] ERROR [django.request:241] Internal Server Error: /api/products/price_history/
+[2024-10-30 13:12:54] ERROR [django.server:212] "POST /api/products/price_history/ HTTP/1.1" 500 42
+[2024-10-30 13:12:54] ERROR [products.services:55] 无法获取商品的历史价格数据。
+[2024-10-30 13:12:54] ERROR [django.request:241] Internal Server Error: /api/products/price_history/
+[2024-10-30 13:12:54] ERROR [django.server:212] "POST /api/products/price_history/ HTTP/1.1" 500 42
+[2024-10-30 13:12:55] ERROR [products.services:55] 无法获取商品的历史价格数据。
+[2024-10-30 13:12:55] ERROR [django.request:241] Internal Server Error: /api/products/price_history/
+[2024-10-30 13:12:55] ERROR [django.server:212] "POST /api/products/price_history/ HTTP/1.1" 500 42
+[2024-10-30 13:13:00] ERROR [products.services:55] 无法获取商品的历史价格数据。
+[2024-10-30 13:13:00] ERROR [django.request:241] Internal Server Error: /api/products/price_history/
+[2024-10-30 13:13:00] ERROR [django.server:212] "POST /api/products/price_history/ HTTP/1.1" 500 42
+[2024-10-30 13:13:01] ERROR [products.services:55] 无法获取商品的历史价格数据。
+[2024-10-30 13:13:01] ERROR [django.request:241] Internal Server Error: /api/products/price_history/
+[2024-10-30 13:13:01] ERROR [django.server:212] "POST /api/products/price_history/ HTTP/1.1" 500 42
+[2024-10-30 13:13:02] ERROR [products.services:55] 无法获取商品的历史价格数据。
+[2024-10-30 13:13:02] ERROR [django.request:241] Internal Server Error: /api/products/price_history/
+[2024-10-30 13:13:02] ERROR [django.server:212] "POST /api/products/price_history/ HTTP/1.1" 500 42
+[2024-10-30 13:13:51] INFO [django.server:212] "GET /api/products/search-history/?page=1&page_size=12 HTTP/1.1" 200 2

@@ -33,8 +33,12 @@
                     <el-input v-model="cookies.cookie_tb" placeholder="请输入您的淘宝 Cookie" clearable></el-input>
                   </el-form-item>
                 </el-form>
+                <el-button type="danger" @click="clearStoredCookies" class="clear-cookie-button">
+                  清除已保存的 Cookie
+                </el-button>
                 <p class="cookie-warning">
                   注意：输入您的 Cookie 存在安全风险，请确保您信任此网站。Cookie 中包含您的登录信息，泄露可能导致账户安全问题。
+                  输入之后会有两个小时的存储期限
                 </p>
               </el-collapse-item>
             </el-collapse>
@@ -189,6 +193,14 @@ const handleSortChange = (value) => {
   sortOrder.value = value;
 };
 
+// 清除存储的 Cookie
+const clearStoredCookies = () => {
+  localStorage.removeItem('user_cookies');
+  cookies.value.cookie_jd = '';
+  cookies.value.cookie_tb = '';
+  ElMessage.success('已清除存储的 Cookie');
+};
+
 // 异步获取搜索结果
 const fetchSearchResults = async () => {
   if (!keyword.value.trim()) {
@@ -205,6 +217,15 @@ const fetchSearchResults = async () => {
   searched.value = true;
 
   try {
+    // 在搜索时，更新 Cookie 的过期时间，并存储到 Local Storage
+    const expiresAt = Date.now() + 2 * 60 * 60 * 1000; // 当前时间 + 2 小时
+    const userCookies = {
+      cookie_jd: cookies.value.cookie_jd,
+      cookie_tb: cookies.value.cookie_tb,
+      expires_at: expiresAt,
+    };
+    localStorage.setItem('user_cookies', JSON.stringify(userCookies));
+
     // 调用后端搜索接口
     const response = await axios.post(
       'products/search/',
@@ -236,16 +257,34 @@ const fetchSearchResults = async () => {
     searchResults.value = combinedResults;
     totalResults.value = total;
 
-    // 打印调试信息
-    console.log('搜索结果:', searchResults.value);
-    console.log('totalResults 类型:', typeof totalResults.value); // 应为 'number'
-    console.log('totalResults 值:', totalResults.value); // 应为数字
-
   } catch (error) {
     console.error('搜索失败', error);
     ElMessage.error('搜索失败，请稍后重试');
   } finally {
     loading.value = false;
+  }
+};
+
+// 在组件加载时，检查 Local Storage 中是否有未过期的 Cookie
+const loadCookiesFromLocalStorage = () => {
+  const storedData = localStorage.getItem('user_cookies');
+  if (storedData) {
+    try {
+      const userCookies = JSON.parse(storedData);
+      const now = Date.now();
+      if (userCookies.expires_at > now) {
+        // Cookie 未过期，加载到组件的数据中
+        cookies.value.cookie_jd = userCookies.cookie_jd;
+        cookies.value.cookie_tb = userCookies.cookie_tb;
+      } else {
+        // Cookie 已过期，清除 Local Storage
+        localStorage.removeItem('user_cookies');
+      }
+    } catch (error) {
+      console.error('解析存储的 Cookie 时出错', error);
+      // 解析出错，清除 Local Storage
+      localStorage.removeItem('user_cookies');
+    }
   }
 };
 
@@ -260,8 +299,10 @@ const goToBuy = (link) => {
 
 // 查看商品详情
 const viewDetails = (product) => {
-  // 使用 product_id 作为参数传递
-  router.push({ name: 'ProductDetail', params: { id: product.product_id } });
+  // 解析路由以获取完整的 URL
+  const routeData = router.resolve({ name: 'ProductDetail', params: { id: product.product_id } });
+  // 在新标签页中打开
+  window.open(routeData.href, '_blank');
 };
 
 // 截断文本函数
@@ -273,6 +314,7 @@ const getTruncatedText = (text, maxLength) => {
 // 获取用户信息
 const initialize = async () => {
   await auth.fetchUserInfo();
+  loadCookiesFromLocalStorage(); // 加载存储的 Cookie
 };
 
 // 在组件挂载时获取用户信息
@@ -299,6 +341,10 @@ onMounted(() => {
 
 .cookie-collapse {
   text-align: right;
+}
+
+.clear-cookie-button {
+  margin-top: 10px;
 }
 
 .cookie-warning {
