@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
+    'django_extensions',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
@@ -115,6 +116,9 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",  # Vue 开发服务器的默认端口
     # 生产环境域名，如 https://yourdomain.com
 ]
+
+CORS_ALLOW_CREDENTIALS = True
+
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (

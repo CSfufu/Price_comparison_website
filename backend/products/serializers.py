@@ -37,11 +37,9 @@ class ProductModelSerializer(serializers.ModelSerializer):
 
 class SearchHistorySerializer(serializers.ModelSerializer):
     product = ProductModelSerializer(read_only=True)
-    search_time = serializers.DateTimeField(format="%Y-%m-%d %H:%M:%S", read_only=True)
-
     class Meta:
         model = SearchHistory
-        fields = ['id', 'product', 'search_time']
+        fields = "__all__"
 
 
 class PriceHistorySerializer(serializers.Serializer):

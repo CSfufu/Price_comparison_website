@@ -168,6 +168,34 @@ def search_all_view(request):
                 }
                 print("jingdong done")
 
+        user = request.user  # 如果需要记录用户，可以在Product模型中添加相关字段
+        for platform in combined_results:
+            products = combined_results[platform].get('results', [])[:10]
+            for product_data in products:
+                # 使用 get_or_create 避免重复
+                product, created = Product.objects.get_or_create(
+                    product_id=product_data['product_id'],
+                    defaults={
+                        'name': product_data['name'],
+                        'platform': product_data['platform'],
+                        'price': product_data['price'],
+                        'link': product_data['link'],
+                        'image_url': product_data['image_url'],
+                        'store_name': product_data['store_name'],
+                        'store_link': product_data['store_link'],
+                    }
+                )
+                if not created:
+                    # 如果商品已存在，可以选择更新某些字段
+                    product.name = product_data['name']
+                    product.platform = product_data['platform']
+                    product.price = product_data['price']
+                    product.link = product_data['link']
+                    product.image_url = product_data['image_url']
+                    product.store_name = product_data['store_name']
+                    product.store_link = product_data['store_link']
+                    product.save()
+
         return Response(response_data, status=200)
 
 
@@ -254,3 +282,12 @@ class SearchHistoryViewSet(viewsets.ReadOnlyModelViewSet):
 
     def get_queryset(self):
         return SearchHistory.objects.filter(user=self.request.user)
+
+
+class ProductViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    提供商品的列表和详情视图。
+    """
+    queryset = Product.objects.all()
+    serializer_class = ProductModelSerializer
+    permission_classes = [permissions.IsAuthenticated]
