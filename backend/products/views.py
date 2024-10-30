@@ -3,6 +3,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 from rest_framework.decorators import api_view, permission_classes
+from rest_framework.pagination import PageNumberPagination
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework import viewsets, permissions
@@ -284,6 +285,12 @@ class SearchHistoryViewSet(viewsets.ReadOnlyModelViewSet):
         return SearchHistory.objects.filter(user=self.request.user)
 
 
+class ProductPagination(PageNumberPagination):
+    page_size = 12  # 每页显示 10 条数据
+    page_size_query_param = 'page_size'
+    max_page_size = 100
+
+
 class ProductViewSet(viewsets.ReadOnlyModelViewSet):
     """
     提供商品的列表和详情视图。
@@ -291,3 +298,6 @@ class ProductViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductModelSerializer
     permission_classes = [permissions.IsAuthenticated]
+    pagination_class = ProductPagination
+
+

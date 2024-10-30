@@ -3,7 +3,7 @@
   <div class="about-container">
     <!-- 顶部横幅 -->
     <div class="banner">
-      <img src="../assets/logo.jpg" alt="About Us" class="banner-image" />
+      <img src="../assets/media/images/banner2.jpeg" alt="About Us" class="banner-image" />
       <div class="banner-text">
         <h1>关于我们</h1>
         <p>了解我们的使命和团队</p>

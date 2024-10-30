@@ -3,7 +3,7 @@
   <div class="services-container">
     <!-- 顶部横幅 -->
     <div class="banner">
-      <img src="../assets/logo.jpg" alt="Our Services" class="banner-image" />
+      <img src="../assets/media/images/banner3.jpeg" alt="Our Services" class="banner-image" />
       <div class="banner-text">
         <h1>我们的服务</h1>
         <p>探索我们为您提供的专业服务</p>
@@ -49,7 +49,7 @@ import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 // 导入服务图标
-import service1Icon from '../assets/media/images/banner1.jpeg';
+import service1Icon from '../assets/media/images/banner4.jpeg';
 import service2Icon from '../assets/media/images/banner2.jpeg';
 import service3Icon from '../assets/media/images/banner3.jpeg';
 

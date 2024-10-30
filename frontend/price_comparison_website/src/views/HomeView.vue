@@ -66,8 +66,8 @@ import auth from '../store/auth';
 
 // 导入轮播图图片
 import banner1 from '../assets/media/images/banner1.jpeg';
-import banner2 from '../assets/media/images/banner2.jpeg';
-import banner3 from '../assets/media/images/banner3.jpeg';
+import banner2 from '../assets/media/images/banner4.jpeg';
+import banner3 from '../assets/media/images/banner5.jpeg';
 
 // 导入功能图标
 
