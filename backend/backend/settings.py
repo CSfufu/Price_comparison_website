@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'products',
     'rest_framework_simplejwt.token_blacklist',
     'accounts',
+    'PriceDropAlert',
     'rest_framework',
     'corsheaders',
     'django.contrib.admin',
@@ -231,3 +232,22 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+from celery.schedules import crontab
+
+# backend/settings.py
+
+CELERY_BROKER_URL = 'redis://localhost:6379/0'  # 使用 Redis 作为消息代理
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+
+CELERY_BEAT_SCHEDULE = {
+    'check-price-drops-every-12-hours': {
+        'task': 'PriceDropAlert.tasks.check_price_drops',
+        'schedule': crontab(minute=0, hour='*/12'),  # 每12小时执行一次
+    },
+}
+
+# backend/settings.py
+
+CELERY_TASK_ALWAYS_EAGER = True
+

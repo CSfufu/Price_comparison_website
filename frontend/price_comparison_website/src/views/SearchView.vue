@@ -38,7 +38,6 @@
                 </el-button>
                 <p class="cookie-warning">
                   注意：输入您的 Cookie 存在安全风险，请确保您信任此网站。Cookie 中包含您的登录信息，泄露可能导致账户安全问题。
-                  输入之后会有两个小时的存储期限
                 </p>
               </el-collapse-item>
             </el-collapse>

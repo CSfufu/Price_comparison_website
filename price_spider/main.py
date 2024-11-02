@@ -57,16 +57,17 @@ def mmm(item):
         # exit(mmm(item))
     ###数据清洗
     # print(js)
-    #pic = js['single']['smallpic']  ##图片
+    pic = js['single']['smallpic']  ##图片
     jiagequshi = js['single']['jiagequshi']  ##价格趋势
-    #print(type(jiagequshi), jiagequshi)
+    # print(type(jiagequshi), jiagequshi)
     lowerPrice = js['single']['lowerPrice']  ##最低价格
     lowerDate = js['single']['lowerDate']  ##最低价格日期
     lowerDate = re.search('[1-9]\d{0,9}', lowerDate).group(0)
     lowerDate = time.strftime("%Y-%m-%d", time.localtime(int(lowerDate)))
     itemurl = js['single']['url']  ##商品链接
-    #qushi = js['single']['qushi']  ##趋势
-    #changPriceRemark = js['single']['changPriceRemark']  ##趋势变动
+    qushi = js['single']['qushi']  ##趋势
+    changPriceRemark = js['single']['changPriceRemark']  ##趋势变动
+    # print(type(changPriceRemark), changPriceRemark)
     date_list = []  ##日期
     price_list = []  ##价格
     datalist = jiagequshi.replace('[Date.UTC(','').replace(')','').replace(']','').split(',')##日期转换
@@ -86,6 +87,7 @@ def mmm(item):
             date_list.append(date)
             price_list.append(price)
 
+
         day = int(datalist[i + 2])
         if int(datalist[i + 1]) == 12:
             mon = 1
@@ -99,16 +101,17 @@ def mmm(item):
         date_list.append(date)
         price_list.append(price)
 
+
     data = {'date_日期': date_list, 'price_价格': price_list}
     df = pd.DataFrame(data)
     df.loc[:, "title_名称"] = title
-    #df.loc[:, "pic_图片"] = pic
+    df.loc[:, "pic_图片"] = pic
     df.loc[:, "lowerPrice_最低价格"] = lowerPrice
     df.loc[:, "lowerDate_最低价格日期"] = lowerDate
     df.loc[:, "itemurl_商品链接"] = itemurl
-    #df.loc[:, "qushi_趋势"] = qushi
-    #df.loc[:, "changPriceRemark_趋势变动"] = changPriceRemark
-    #print(title)
+    df.loc[:, "qushi_趋势"] = qushi
+    df.loc[:, "changPriceRemark_趋势变动"] = changPriceRemark
+    print(title)
     title = title.replace('/', '')
     #print(title)
     df.to_csv('{}.csv'.format(title), index=False, mode='a', encoding="GB18030")  ##保存数据

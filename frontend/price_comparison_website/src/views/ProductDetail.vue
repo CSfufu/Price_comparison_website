@@ -25,9 +25,13 @@
           <el-button type="success" @click="fetchPriceHistory" class="history-button">
             查看历史价格
           </el-button>
+          <el-button type="warning" @click="openAlertModal" class="alert-button">
+            设置降价提醒
+          </el-button>
         </el-col>
       </el-row>
     </el-card>
+
 
     <!-- 加载状态 -->
     <div v-if="loading" class="loading">
@@ -59,6 +63,13 @@
       <el-empty description="未找到价格历史数据" />
     </div>
 
+    <SetPriceAlertModal
+        v-if="product"
+      :visible="alertModalVisible"
+      :product="product"
+      @update:visible="alertModalVisible = $event"
+    />
+
   </div>
 </template>
 
@@ -67,8 +78,10 @@
 import { ref, onMounted, computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import axios from '../axios';
-import { ElMessage, ElButton, ElIcon } from 'element-plus';
+import { ElMessage, ElButton, ElIcon, ElRadioGroup, ElRadioButton } from 'element-plus';
 import { ArrowLeft } from '@element-plus/icons-vue';
+import SetPriceAlertModal from '../components/SetPriceAlertModal.vue';
+
 
 // 导入 Vue ECharts 组件
 import ECharts from 'vue-echarts';
@@ -112,6 +125,14 @@ const selectedRange = ref('all');
 
 // 引用 ECharts 组件
 const VChart = ECharts;
+
+const alertModalVisible = ref(false);
+const emit = defineEmits(['update:visible']);
+
+const openAlertModal = () => {
+  console.log('设置降价提醒按钮被点击');
+  alertModalVisible.value = true;
+};
 
 // 定义图表配置
 const chartOptions = computed(() => ({

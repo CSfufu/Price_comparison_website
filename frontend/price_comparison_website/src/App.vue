@@ -31,6 +31,9 @@
             <el-menu-item index="/price_history">
               <router-link to="/price_history">历史价格查询</router-link>
             </el-menu-item>
+            <el-menu-item index="/alert">
+              <router-link to="/alert">降价提醒</router-link>
+            </el-menu-item>
           </el-menu>
         </el-col>
         <!-- 右侧：用户操作 -->
@@ -91,6 +94,10 @@
             <el-menu-item index="/price_history">
               <i class="el-icon-s-order"></i>
               <span>历史价格查询</span>
+            </el-menu-item>
+            <el-menu-item index="/alert">
+              <i class="el-icon-s-order"></i>
+              <span>降价提醒</span>
             </el-menu-item>
           </el-submenu>
         </el-menu>
