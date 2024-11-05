@@ -21,7 +21,7 @@ class PriceDropAlertSerializer(serializers.ModelSerializer):
         model = PriceDropAlert
         fields = ['id', 'product_id', 'target_price', 'email', 'active', 'current_price', 'product_name',
                   'product_link', 'image_url']
-        read_only_fields = ['id', 'active', 'product_name', 'product_link', 'current_price', 'image_url']
+        read_only_fields = ['id', 'product_name', 'product_link', 'current_price', 'image_url']
 
     def create(self, validated_data):
         # 获取产品ID

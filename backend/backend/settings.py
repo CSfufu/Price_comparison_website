@@ -251,3 +251,11 @@ CELERY_BEAT_SCHEDULE = {
 
 CELERY_TASK_ALWAYS_EAGER = True
 
+# settings.py 配置部分
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'  # 使用SMTP邮件发送
+EMAIL_HOST = 'smtp.163.com'  # SMTP服务器地址
+EMAIL_PORT = 25  # SMTP端口
+EMAIL_USE_TLS = True  # 使用TLS加密
+EMAIL_HOST_USER = '18381002338@163.com'  # 发送邮件的邮箱
+EMAIL_HOST_PASSWORD = 'DEmuvwKH4Ebdc4Ch'
+DEFAULT_FROM_EMAIL = '18381002338@163.com'  # 默认发件人邮箱

@@ -5817,3 +5817,187 @@ KeyError: 'request'
 [2024-11-05 07:26:53] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
 [2024-11-05 07:26:57] INFO [django.server:212] "POST /api/alerts/create/ HTTP/1.1" 201 436
 [2024-11-05 07:26:59] INFO [django.server:212] "GET /api/alerts/?page=1&page_size=10 HTTP/1.1" 200 870
+[2024-11-05 07:41:17] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/backend/settings.py changed, reloading.
+[2024-11-05 07:41:18] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 07:41:25] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/backend/settings.py changed, reloading.
+[2024-11-05 07:41:25] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 07:47:37] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/backend/settings.py changed, reloading.
+[2024-11-05 07:47:38] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 07:48:28] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/backend/settings.py changed, reloading.
+[2024-11-05 07:48:29] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 07:48:42] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/backend/settings.py changed, reloading.
+[2024-11-05 07:48:43] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 07:56:59] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/backend/settings.py changed, reloading.
+[2024-11-05 07:57:00] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 07:57:09] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/backend/settings.py changed, reloading.
+[2024-11-05 07:57:09] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 08:04:16] WARNING [django.request:241] Unauthorized: /api/accounts/me/
+[2024-11-05 08:04:16] WARNING [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 401 183
+[2024-11-05 08:04:16] WARNING [django.request:241] Unauthorized: /api/accounts/me/
+[2024-11-05 08:04:16] WARNING [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 401 183
+[2024-11-05 08:04:16] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 08:04:16] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 08:04:17] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 08:04:17] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 08:04:17] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 08:04:17] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 08:04:17] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 08:04:17] WARNING [django.request:241] Unauthorized: /api/alerts/
+[2024-11-05 08:04:17] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 08:04:17] WARNING [django.server:212] "GET /api/alerts/?page=1&page_size=10 HTTP/1.1" 401 183
+[2024-11-05 08:04:17] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 08:04:17] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 08:04:17] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 08:04:17] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 08:04:17] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-11-05 08:06:33] INFO [django.server:212] "POST /api/accounts/login/ HTTP/1.1" 200 483
+[2024-11-05 08:06:33] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 08:06:33] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 08:06:35] INFO [django.server:212] "GET /api/alerts/?page=1&page_size=10 HTTP/1.1" 200 870
+[2024-11-05 08:12:29] WARNING [django.request:241] Unauthorized: /api/accounts/me/
+[2024-11-05 08:12:29] WARNING [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 401 183
+[2024-11-05 08:12:29] WARNING [django.request:241] Unauthorized: /api/accounts/me/
+[2024-11-05 08:12:29] WARNING [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 401 183
+[2024-11-05 08:12:29] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 08:12:29] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 08:12:29] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 08:12:29] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 08:12:29] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 08:12:29] WARNING [django.request:241] Unauthorized: /api/alerts/
+[2024-11-05 08:12:29] WARNING [django.request:241] Unauthorized: /api/accounts/me/
+[2024-11-05 08:12:29] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 08:12:29] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 08:12:29] WARNING [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 401 183
+[2024-11-05 08:12:29] WARNING [django.server:212] "GET /api/alerts/?page=1&page_size=10 HTTP/1.1" 401 183
+[2024-11-05 08:12:29] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 08:12:29] WARNING [django.request:241] Unauthorized: /api/accounts/me/
+[2024-11-05 08:12:29] WARNING [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 401 183
+[2024-11-05 08:12:29] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 08:12:29] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 08:12:29] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 08:12:29] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 08:12:29] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 08:12:29] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 08:12:29] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 08:12:29] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 08:12:29] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 08:12:29] WARNING [django.request:241] Unauthorized: /api/accounts/me/
+[2024-11-05 08:12:29] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 08:12:29] WARNING [django.request:241] Unauthorized: /api/products/products_history/
+[2024-11-05 08:12:29] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 08:12:29] WARNING [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 401 183
+[2024-11-05 08:12:29] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 08:12:29] WARNING [django.request:241] Unauthorized: /api/accounts/me/
+[2024-11-05 08:12:29] WARNING [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 401 183
+[2024-11-05 08:12:29] WARNING [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 401 183
+[2024-11-05 08:12:29] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 08:12:29] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 08:12:29] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 08:12:29] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 08:12:29] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 08:12:29] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 08:12:29] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 08:12:29] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 08:12:29] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 08:12:29] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 08:12:29] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 08:12:29] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 08:12:29] WARNING [django.request:241] Unauthorized: /api/products/products_history/
+[2024-11-05 08:12:29] WARNING [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 401 183
+[2024-11-05 08:12:29] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 08:12:29] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 08:12:29] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-11-05 08:12:29] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 08:12:29] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 08:12:29] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-11-05 08:12:29] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-11-05 08:26:05] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/backend/settings.py changed, reloading.
+[2024-11-05 08:26:06] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 08:27:42] INFO [flower.command:168] Visit me at http://0.0.0.0:5555
+[2024-11-05 08:27:42] INFO [flower.command:176] Broker: redis://localhost:6379/0
+[2024-11-05 08:27:42] INFO [flower.command:177] Registered tasks: 
+['PriceDropAlert.tasks.check_price_drops',
+ 'backend.celery.debug_task',
+ 'celery.accumulate',
+ 'celery.backend_cleanup',
+ 'celery.chain',
+ 'celery.chord',
+ 'celery.chord_unlock',
+ 'celery.chunks',
+ 'celery.group',
+ 'celery.map',
+ 'celery.starmap']
+[2024-11-05 08:27:42] INFO [kombu.mixins:228] Connected to redis://localhost:6379/0
+[2024-11-05 08:27:43] WARNING [flower.inspector:44] Inspect method active_queues failed
+[2024-11-05 08:27:43] WARNING [flower.inspector:44] Inspect method active failed
+[2024-11-05 08:27:43] WARNING [flower.inspector:44] Inspect method stats failed
+[2024-11-05 08:27:43] WARNING [flower.inspector:44] Inspect method registered failed
+[2024-11-05 08:27:43] WARNING [flower.inspector:44] Inspect method scheduled failed
+[2024-11-05 08:27:43] WARNING [flower.inspector:44] Inspect method conf failed
+[2024-11-05 08:27:43] WARNING [flower.inspector:44] Inspect method reserved failed
+[2024-11-05 08:27:43] WARNING [flower.inspector:44] Inspect method revoked failed
+[2024-11-05 08:30:15] INFO [celery.app.trace:128] Task PriceDropAlert.tasks.check_price_drops[72e68170-6f62-4c89-a3cd-c07021859661] succeeded in 0.08687958299999998s: None
+[2024-11-05 08:30:21] INFO [celery.app.trace:128] Task PriceDropAlert.tasks.check_price_drops[01093977-3c72-418a-b402-50ad219abfe7] succeeded in 0.003612374999999446s: None
+[2024-11-05 10:31:47] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/backend/settings.py changed, reloading.
+[2024-11-05 10:31:48] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 10:31:50] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/backend/settings.py changed, reloading.
+[2024-11-05 10:31:50] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 11:08:15] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/backend/settings.py changed, reloading.
+[2024-11-05 11:08:15] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 11:08:23] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/backend/settings.py changed, reloading.
+[2024-11-05 11:08:24] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 11:19:53] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/backend/settings.py changed, reloading.
+[2024-11-05 11:19:53] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 11:39:15] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 11:39:18] WARNING [django.request:241] Not Found: /
+[2024-11-05 11:39:18] WARNING [django.server:212] "GET / HTTP/1.1" 404 2533
+[2024-11-05 11:39:18] WARNING [django.request:241] Not Found: /favicon.ico
+[2024-11-05 11:39:18] WARNING [django.server:212] "GET /favicon.ico HTTP/1.1" 404 2584
+[2024-11-05 11:39:27] INFO [django.server:212] "OPTIONS /api/accounts/login/ HTTP/1.1" 200 0
+[2024-11-05 11:39:27] INFO [django.server:212] "POST /api/accounts/login/ HTTP/1.1" 200 483
+[2024-11-05 11:39:27] INFO [django.server:212] "OPTIONS /api/accounts/me HTTP/1.1" 200 0
+[2024-11-05 11:39:27] INFO [django.server:212] "OPTIONS /api/accounts/me/ HTTP/1.1" 200 0
+[2024-11-05 11:39:27] INFO [django.server:212] "OPTIONS /api/accounts/me/ HTTP/1.1" 200 0
+[2024-11-05 11:39:27] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 11:39:27] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 11:39:30] INFO [django.server:212] "OPTIONS /api/alerts/?page=1&page_size=10 HTTP/1.1" 200 0
+[2024-11-05 11:39:30] INFO [django.server:212] "GET /api/alerts/?page=1&page_size=10 HTTP/1.1" 200 870
+[2024-11-05 11:39:32] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 11:39:32] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 11:39:32] INFO [django.server:212] "GET /api/alerts/?page=1&page_size=10 HTTP/1.1" 200 870
+[2024-11-05 11:39:35] INFO [django.server:212] "OPTIONS /api/products/products_history?page=1&page_size=12 HTTP/1.1" 200 0
+[2024-11-05 11:39:35] INFO [django.server:212] "OPTIONS /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 200 0
+[2024-11-05 11:39:35] INFO [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 200 5928
+[2024-11-05 11:39:38] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 11:39:38] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 11:39:38] INFO [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 200 5928
+[2024-11-05 11:39:39] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 11:39:39] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 11:39:39] INFO [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 200 5928
+[2024-11-05 11:39:40] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 11:39:40] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 11:39:40] INFO [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 200 5928
+[2024-11-05 11:39:40] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 11:39:40] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 11:39:40] INFO [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 200 5928
+[2024-11-05 11:39:45] INFO [django.server:212] "OPTIONS /api/products/products_history?page=4&page_size=12 HTTP/1.1" 200 0
+[2024-11-05 11:39:45] INFO [django.server:212] "OPTIONS /api/products/products_history/?page=4&page_size=12 HTTP/1.1" 200 0
+[2024-11-05 11:39:45] INFO [django.server:212] "GET /api/products/products_history/?page=4&page_size=12 HTTP/1.1" 200 5735
+[2024-11-05 11:39:58] INFO [django.server:212] "OPTIONS /api/products/10021177309629/ HTTP/1.1" 200 0
+[2024-11-05 11:39:58] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 11:39:58] INFO [django.server:212] "GET /api/products/10021177309629/ HTTP/1.1" 200 502
+[2024-11-05 11:40:08] INFO [django.server:212] "OPTIONS /api/alerts/create/ HTTP/1.1" 200 0
+[2024-11-05 11:40:08] INFO [django.server:212] "POST /api/alerts/create/ HTTP/1.1" 201 451
+[2024-11-05 11:40:09] INFO [django.server:212] "GET /api/alerts/?page=1&page_size=10 HTTP/1.1" 200 1322
+[2024-11-05 11:40:23] INFO [django.server:212] "OPTIONS /api/alerts/4/ HTTP/1.1" 200 0
+[2024-11-05 11:40:23] INFO [django.server:212] "DELETE /api/alerts/4/ HTTP/1.1" 200 26
+[2024-11-05 11:40:23] INFO [django.server:212] "GET /api/alerts/?page=1&page_size=10 HTTP/1.1" 200 885
+[2024-11-05 11:40:25] INFO [django.server:212] "OPTIONS /api/alerts/3/ HTTP/1.1" 200 0
+[2024-11-05 11:40:25] INFO [django.server:212] "DELETE /api/alerts/3/ HTTP/1.1" 200 26
+[2024-11-05 11:40:25] INFO [django.server:212] "GET /api/alerts/?page=1&page_size=10 HTTP/1.1" 200 503
+[2024-11-05 12:18:35] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/backend/settings.py changed, reloading.
+[2024-11-05 12:18:36] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 12:19:36] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/backend/settings.py changed, reloading.
+[2024-11-05 12:19:37] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 12:19:41] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/backend/settings.py changed, reloading.
+[2024-11-05 12:19:41] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader

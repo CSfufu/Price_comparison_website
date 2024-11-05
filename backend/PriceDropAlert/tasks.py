@@ -14,17 +14,22 @@ from django.template.loader import render_to_string
 
 @shared_task
 def check_price_drops():
+    print("Price drop check started")
     alerts = PriceDropAlert.objects.filter(active=True)
+    print(alerts.count())
     for alert in alerts:
+        print(f"Checking price for product: {alert.product.name}")
         product = alert.product
         latest_price = get_latest_price(product.link)
+        print(latest_price, type(latest_price))
 
         if latest_price is not None and latest_price <= alert.target_price:
-            send_price_drop_email(alert.email, product.name, latest_price)
+            #if latest_price is not None and latest_price <= 4000: # 用于测试
+            print(f"Price dropped for {product.name}, sending email to {alert.email}")
+            send_price_drop_email(alert.email, product.name, latest_price, product.link)
             # 更新提醒状态
-            alert.active = True  # 停用提醒
+            alert.active = False  # 停用提醒
             alert.save()
-
 
 def raw(text):  # 转化URL字符串
     escape_dict = {
@@ -87,12 +92,13 @@ def get_latest_price(product_link):
         return None
 
 
-def send_price_drop_email(email, product_name, price):
+def send_price_drop_email(email, product_name, price, product_link):
+    product_name = product_name.replace("\n", " ").replace("\r", " ").replace("\t", " ")
     subject = f'您关注的商品"{product_name}"已降价'
     message = render_to_string('price_drop_alert.html', {
         'product_name': product_name,
         'price': price,
-        'site_url': settings.SITE_URL,
+        'site_url': product_link,
     })
     from_email = settings.DEFAULT_FROM_EMAIL
     recipient_list = [email]
