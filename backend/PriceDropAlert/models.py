@@ -3,6 +3,7 @@ from django.db import models
 from django.conf import settings  # 用于获取自定义用户模型
 from products.models import Product  # 假设 Product 模型在 products 应用中
 
+
 class PriceDropAlert(models.Model):
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
@@ -23,8 +24,8 @@ class PriceDropAlert(models.Model):
     )
     email = models.EmailField(
         verbose_name='通知邮箱',
-        blank=True,
-        null=True
+        blank=False,
+        null=False
     )
     active = models.BooleanField(
         default=False,

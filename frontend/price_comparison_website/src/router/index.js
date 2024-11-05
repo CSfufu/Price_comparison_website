@@ -10,15 +10,9 @@ import ProductDetail from "../views/ProductDetail.vue";
 import HistoryView from "../views/HistoryView.vue";
 import PriceHistory from "../views/PriceHistory.vue";
 import AlertView from "../views/AlertView.vue";
-import SimpleModalTest from '../views/SimpleModalTest.vue';
 
 
 const routes = [
-    {
-    path: '/simple-modal-test',
-    name: 'SimpleModalTest',
-    component: SimpleModalTest
-  },
   {
     path: '/',
     name: 'home',

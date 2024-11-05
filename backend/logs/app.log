@@ -4636,3 +4636,1184 @@ Traceback (most recent call last):
     assert field_name in fields, (
 AssertionError: The field 'product_name' was declared on serializer PriceDropAlertSerializer, but has not been included in the 'fields' option.
 [2024-11-02 15:57:44] ERROR [django.server:212] "POST /api/alerts/ HTTP/1.1" 500 145859
+[2024-11-02 16:12:01] ERROR [django.request:241] Internal Server Error: /api/alerts/
+Traceback (most recent call last):
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/authentication.py", line 201, in authenticate_credentials
+    token = model.objects.select_related('user').get(key=key)
+AttributeError: type object 'Token' has no attribute 'objects'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/request.py", line 74, in wrap_attributeerrors
+    yield
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/request.py", line 231, in user
+    self._authenticate()
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/request.py", line 384, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/authentication.py", line 196, in authenticate
+    return self.authenticate_credentials(token)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/authentication.py", line 202, in authenticate_credentials
+    except model.DoesNotExist:
+AttributeError: type object 'Token' has no attribute 'DoesNotExist'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 414, in initial
+    self.perform_authentication(request)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 324, in perform_authentication
+    request.user
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/request.py", line 231, in user
+    self._authenticate()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/request.py", line 78, in wrap_attributeerrors
+    raise exc.with_traceback(info[2])
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/request.py", line 74, in wrap_attributeerrors
+    yield
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/request.py", line 231, in user
+    self._authenticate()
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/request.py", line 384, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/authentication.py", line 196, in authenticate
+    return self.authenticate_credentials(token)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/authentication.py", line 202, in authenticate_credentials
+    except model.DoesNotExist:
+rest_framework.request.WrappedAttributeError: type object 'Token' has no attribute 'DoesNotExist'
+[2024-11-02 16:12:01] ERROR [django.server:212] "POST /api/alerts/ HTTP/1.1" 500 161317
+[2024-11-02 16:12:30] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/PriceDropAlert/views.py changed, reloading.
+[2024-11-02 16:12:31] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-02 16:12:35] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/PriceDropAlert/views.py changed, reloading.
+[2024-11-02 16:12:35] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-02 16:12:59] INFO [django.server:212] "OPTIONS /api/products/products_history?page=1&page_size=12 HTTP/1.1" 200 0
+[2024-11-02 16:12:59] INFO [django.server:212] "OPTIONS /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 200 0
+[2024-11-02 16:12:59] WARNING [django.request:241] Unauthorized: /api/products/products_history/
+[2024-11-02 16:12:59] WARNING [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 401 183
+[2024-11-02 16:12:59] INFO [django.server:212] "OPTIONS /api/token/refresh/ HTTP/1.1" 200 0
+[2024-11-02 16:12:59] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-02 16:12:59] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-02 16:12:59] INFO [django.server:212] "OPTIONS /api/accounts/logout/ HTTP/1.1" 200 0
+[2024-11-02 16:12:59] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-02 16:12:59] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-02 16:12:59] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-02 16:12:59] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-02 16:12:59] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-02 16:12:59] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-02 16:12:59] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-11-02 16:13:02] INFO [django.server:212] "OPTIONS /api/accounts/login/ HTTP/1.1" 200 0
+[2024-11-02 16:13:02] INFO [django.server:212] "POST /api/accounts/login/ HTTP/1.1" 200 483
+[2024-11-02 16:13:02] INFO [django.server:212] "OPTIONS /api/accounts/me HTTP/1.1" 200 0
+[2024-11-02 16:13:02] INFO [django.server:212] "OPTIONS /api/accounts/me/ HTTP/1.1" 200 0
+[2024-11-02 16:13:02] INFO [django.server:212] "OPTIONS /api/accounts/me/ HTTP/1.1" 200 0
+[2024-11-02 16:13:02] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-02 16:13:02] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-02 16:13:11] INFO [django.server:212] "GET /api/products/10090891841395/ HTTP/1.1" 200 525
+[2024-11-02 16:13:11] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-02 16:13:28] ERROR [django.request:241] Internal Server Error: /api/alerts/
+Traceback (most recent call last):
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/mixins.py", line 18, in create
+    serializer.is_valid(raise_exception=True)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 223, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 442, in run_validation
+    value = self.to_internal_value(data)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 495, in to_internal_value
+    for field in fields:
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 378, in _writable_fields
+    for field in self.fields.values():
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 1079, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 1175, in get_field_names
+    assert field_name in fields, (
+AssertionError: The field 'product_name' was declared on serializer PriceDropAlertSerializer, but has not been included in the 'fields' option.
+[2024-11-02 16:13:28] ERROR [django.server:212] "POST /api/alerts/ HTTP/1.1" 500 145859
+[2024-11-02 16:13:47] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-02 16:13:47] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-02 16:13:47] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-02 16:13:47] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-02 16:13:47] INFO [django.server:212] "GET /api/products/10090891841395/ HTTP/1.1" 200 525
+[2024-11-02 16:13:48] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-02 16:13:48] INFO [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 200 5928
+[2024-11-04 07:40:10] INFO [django.server:212] "OPTIONS /api/accounts/me HTTP/1.1" 200 0
+[2024-11-04 07:40:10] INFO [django.server:212] "OPTIONS /api/accounts/me/ HTTP/1.1" 200 0
+[2024-11-04 07:40:10] INFO [django.server:212] "OPTIONS /api/accounts/me/ HTTP/1.1" 200 0
+[2024-11-04 07:40:10] WARNING [django.request:241] Unauthorized: /api/accounts/me/
+[2024-11-04 07:40:10] WARNING [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 401 183
+[2024-11-04 07:40:11] WARNING [django.request:241] Unauthorized: /api/accounts/me/
+[2024-11-04 07:40:11] INFO [django.server:212] "OPTIONS /api/token/refresh/ HTTP/1.1" 200 0
+[2024-11-04 07:40:11] WARNING [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 401 183
+[2024-11-04 07:40:11] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-04 07:40:11] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-04 07:40:11] INFO [django.server:212] "OPTIONS /api/accounts/logout/ HTTP/1.1" 200 0
+[2024-11-04 07:40:11] INFO [django.server:212] "OPTIONS /api/accounts/logout/ HTTP/1.1" 200 0
+[2024-11-04 07:40:11] INFO [django.server:212] "OPTIONS /api/accounts/logout/ HTTP/1.1" 200 0
+[2024-11-04 07:40:11] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-04 07:40:11] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-04 07:40:11] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-04 07:40:11] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-04 07:40:11] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-04 07:40:11] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-04 07:40:11] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-04 07:40:11] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-04 07:40:11] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-04 07:40:11] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-04 07:40:11] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-11-04 07:40:11] INFO [django.server:81] - Broken pipe from ('127.0.0.1', 65151)
+[2024-11-04 07:40:16] INFO [django.server:212] "OPTIONS /api/accounts/login/ HTTP/1.1" 200 0
+[2024-11-04 07:40:16] INFO [django.server:212] "POST /api/accounts/login/ HTTP/1.1" 200 483
+[2024-11-04 07:40:17] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-04 07:40:17] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-04 07:40:20] INFO [django.server:212] "OPTIONS /api/products/products_history?page=1&page_size=12 HTTP/1.1" 200 0
+[2024-11-04 07:40:20] INFO [django.server:212] "OPTIONS /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 200 0
+[2024-11-04 07:40:20] INFO [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 200 5928
+[2024-11-04 07:40:24] INFO [django.server:212] "OPTIONS /api/products/10096428204831/ HTTP/1.1" 200 0
+[2024-11-04 07:40:24] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-04 07:40:24] INFO [django.server:212] "GET /api/products/10096428204831/ HTTP/1.1" 200 487
+[2024-11-04 07:40:32] INFO [django.server:212] "OPTIONS /api/alerts/ HTTP/1.1" 200 0
+[2024-11-04 07:40:32] ERROR [django.request:241] Internal Server Error: /api/alerts/
+Traceback (most recent call last):
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/mixins.py", line 18, in create
+    serializer.is_valid(raise_exception=True)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 223, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 442, in run_validation
+    value = self.to_internal_value(data)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 495, in to_internal_value
+    for field in fields:
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 378, in _writable_fields
+    for field in self.fields.values():
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 1079, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 1175, in get_field_names
+    assert field_name in fields, (
+AssertionError: The field 'product_name' was declared on serializer PriceDropAlertSerializer, but has not been included in the 'fields' option.
+[2024-11-04 07:40:32] ERROR [django.server:212] "POST /api/alerts/ HTTP/1.1" 500 145859
+[2024-11-04 07:41:18] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/PriceDropAlert/views.py changed, reloading.
+[2024-11-04 07:41:19] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-04 07:43:18] ERROR [django.request:241] Internal Server Error: /api/alerts/
+Traceback (most recent call last):
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/mixins.py", line 18, in create
+    serializer.is_valid(raise_exception=True)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 223, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 442, in run_validation
+    value = self.to_internal_value(data)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 495, in to_internal_value
+    for field in fields:
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 378, in _writable_fields
+    for field in self.fields.values():
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 1079, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 1175, in get_field_names
+    assert field_name in fields, (
+AssertionError: The field 'product_link' was declared on serializer PriceDropAlertSerializer, but has not been included in the 'fields' option.
+[2024-11-04 07:43:18] ERROR [django.server:212] "POST /api/alerts/ HTTP/1.1" 500 145859
+[2024-11-04 07:44:13] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/PriceDropAlert/views.py changed, reloading.
+[2024-11-04 07:44:14] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-04 07:46:27] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/PriceDropAlert/urls.py changed, reloading.
+[2024-11-04 07:46:28] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-04 07:47:54] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/PriceDropAlert/views.py changed, reloading.
+[2024-11-04 07:47:55] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-04 07:51:58] WARNING [django.request:241] Not Found: /api/alerts/
+[2024-11-04 07:51:58] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 404 2879
+[2024-11-04 08:40:28] WARNING [django.request:241] Unauthorized: /api/accounts/me/
+[2024-11-04 08:40:28] WARNING [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 401 183
+[2024-11-04 08:40:28] WARNING [django.request:241] Unauthorized: /api/accounts/me/
+[2024-11-04 08:40:28] WARNING [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 401 183
+[2024-11-04 08:40:28] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-04 08:40:28] WARNING [django.request:241] Unauthorized: /api/products/10096428204831/
+[2024-11-04 08:40:28] WARNING [django.server:212] "GET /api/products/10096428204831/ HTTP/1.1" 401 183
+[2024-11-04 08:40:28] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-04 08:40:28] WARNING [django.request:241] Unauthorized: /api/accounts/me/
+[2024-11-04 08:40:28] WARNING [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 401 183
+[2024-11-04 08:40:28] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-04 08:40:28] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-04 08:40:28] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-04 08:40:28] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-04 08:40:28] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-04 08:40:28] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-04 08:40:28] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-04 08:40:28] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-04 08:40:28] WARNING [django.request:241] Unauthorized: /api/products/products_history/
+[2024-11-04 08:40:28] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-04 08:40:28] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-04 08:40:28] WARNING [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 401 183
+[2024-11-04 08:40:28] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-04 08:40:28] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-04 08:40:28] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-04 08:40:28] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-04 08:40:28] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-04 08:40:28] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-04 08:40:28] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-04 08:40:28] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-04 08:40:28] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-04 08:40:28] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-04 08:40:29] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-11-04 08:40:29] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-11-04 08:40:29] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-11-04 08:40:29] INFO [django.server:81] - Broken pipe from ('127.0.0.1', 61354)
+[2024-11-04 08:40:29] INFO [django.server:81] - Broken pipe from ('127.0.0.1', 61352)
+[2024-11-04 12:34:14] WARNING [django.request:241] Unauthorized: /api/products/10096428204831/
+[2024-11-04 12:34:14] WARNING [django.server:212] "GET /api/products/10096428204831/ HTTP/1.1" 401 58
+[2024-11-04 12:34:14] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-11-04 12:43:43] WARNING [django.request:241] Unauthorized: /api/products/10096428204831/
+[2024-11-04 12:43:43] WARNING [django.server:212] "GET /api/products/10096428204831/ HTTP/1.1" 401 58
+[2024-11-04 12:43:43] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-11-04 12:43:43] INFO [django.server:81] - Broken pipe from ('127.0.0.1', 59130)
+[2024-11-05 04:53:03] WARNING [django.request:241] Unauthorized: /api/products/10096428204831/
+[2024-11-05 04:53:03] WARNING [django.server:212] "GET /api/products/10096428204831/ HTTP/1.1" 401 58
+[2024-11-05 04:53:03] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-11-05 04:53:12] WARNING [django.request:241] Unauthorized: /api/products/10090891841395/
+[2024-11-05 04:53:12] WARNING [django.server:212] "GET /api/products/10090891841395/ HTTP/1.1" 401 58
+[2024-11-05 04:53:12] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-11-05 04:53:12] INFO [django.server:81] - Broken pipe from ('127.0.0.1', 53695)
+[2024-11-05 05:00:14] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/PriceDropAlert/urls.py changed, reloading.
+[2024-11-05 05:00:15] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 05:00:41] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/PriceDropAlert/urls.py changed, reloading.
+[2024-11-05 05:00:42] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 05:01:24] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/PriceDropAlert/urls.py changed, reloading.
+[2024-11-05 05:01:25] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 05:01:48] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/PriceDropAlert/urls.py changed, reloading.
+[2024-11-05 05:01:48] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 05:10:49] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/PriceDropAlert/serializers.py changed, reloading.
+[2024-11-05 05:10:50] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 05:15:05] INFO [django.server:212] "OPTIONS /api/accounts/login/ HTTP/1.1" 200 0
+[2024-11-05 05:15:05] INFO [django.server:212] "POST /api/accounts/login/ HTTP/1.1" 200 483
+[2024-11-05 05:15:05] INFO [django.server:212] "OPTIONS /api/accounts/me HTTP/1.1" 200 0
+[2024-11-05 05:15:05] INFO [django.server:212] "OPTIONS /api/accounts/me/ HTTP/1.1" 200 0
+[2024-11-05 05:15:05] INFO [django.server:212] "OPTIONS /api/accounts/me/ HTTP/1.1" 200 0
+[2024-11-05 05:15:05] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 05:15:05] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 05:15:06] INFO [django.server:212] "OPTIONS /api/products/products_history?page=1&page_size=12 HTTP/1.1" 200 0
+[2024-11-05 05:15:06] INFO [django.server:212] "OPTIONS /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 200 0
+[2024-11-05 05:15:06] INFO [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 200 5928
+[2024-11-05 05:15:08] INFO [django.server:212] "OPTIONS /api/products/10090891841395/ HTTP/1.1" 200 0
+[2024-11-05 05:15:08] INFO [django.server:212] "GET /api/products/10090891841395/ HTTP/1.1" 200 525
+[2024-11-05 05:15:08] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 05:15:14] INFO [django.server:212] "OPTIONS /api/alerts/ HTTP/1.1" 200 0
+[2024-11-05 05:15:14] ERROR [django.request:241] Internal Server Error: /api/alerts/
+Traceback (most recent call last):
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/mixins.py", line 18, in create
+    serializer.is_valid(raise_exception=True)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 223, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 442, in run_validation
+    value = self.to_internal_value(data)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 495, in to_internal_value
+    for field in fields:
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 378, in _writable_fields
+    for field in self.fields.values():
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 1079, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 1175, in get_field_names
+    assert field_name in fields, (
+AssertionError: The field 'current_price' was declared on serializer PriceDropAlertSerializer, but has not been included in the 'fields' option.
+[2024-11-05 05:15:14] ERROR [django.server:212] "POST /api/alerts/ HTTP/1.1" 500 145817
+[2024-11-05 05:15:19] ERROR [django.request:241] Internal Server Error: /api/alerts/
+Traceback (most recent call last):
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/mixins.py", line 18, in create
+    serializer.is_valid(raise_exception=True)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 223, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 442, in run_validation
+    value = self.to_internal_value(data)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 495, in to_internal_value
+    for field in fields:
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 378, in _writable_fields
+    for field in self.fields.values():
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 1079, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 1175, in get_field_names
+    assert field_name in fields, (
+AssertionError: The field 'current_price' was declared on serializer PriceDropAlertSerializer, but has not been included in the 'fields' option.
+[2024-11-05 05:15:19] ERROR [django.server:212] "POST /api/alerts/ HTTP/1.1" 500 145817
+[2024-11-05 05:19:03] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/PriceDropAlert/serializers.py changed, reloading.
+[2024-11-05 05:19:04] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 05:19:14] ERROR [django.request:241] Internal Server Error: /api/alerts/
+Traceback (most recent call last):
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/mixins.py", line 18, in create
+    serializer.is_valid(raise_exception=True)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 223, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 442, in run_validation
+    value = self.to_internal_value(data)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 495, in to_internal_value
+    for field in fields:
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 378, in _writable_fields
+    for field in self.fields.values():
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 1079, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 1175, in get_field_names
+    assert field_name in fields, (
+AssertionError: The field 'product_link' was declared on serializer PriceDropAlertSerializer, but has not been included in the 'fields' option.
+[2024-11-05 05:19:14] ERROR [django.server:212] "POST /api/alerts/ HTTP/1.1" 500 145828
+[2024-11-05 05:19:39] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/PriceDropAlert/serializers.py changed, reloading.
+[2024-11-05 05:19:40] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 05:19:43] WARNING [django.request:241] Bad Request: /api/alerts/
+[2024-11-05 05:19:43] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 400 43
+[2024-11-05 05:19:44] WARNING [django.request:241] Bad Request: /api/alerts/
+[2024-11-05 05:19:44] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 400 43
+[2024-11-05 05:19:56] WARNING [django.request:241] Bad Request: /api/alerts/
+[2024-11-05 05:19:56] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 400 43
+[2024-11-05 05:20:01] WARNING [django.request:241] Bad Request: /api/alerts/
+[2024-11-05 05:20:01] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 400 43
+[2024-11-05 05:20:04] INFO [django.server:212] "GET /api/products/10090891841395/ HTTP/1.1" 200 525
+[2024-11-05 05:20:04] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 05:20:10] WARNING [django.request:241] Unauthorized: /api/alerts/
+[2024-11-05 05:20:10] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 401 183
+[2024-11-05 05:20:10] INFO [django.server:212] "OPTIONS /api/token/refresh/ HTTP/1.1" 200 0
+[2024-11-05 05:20:10] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 05:20:10] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 05:20:10] INFO [django.server:212] "OPTIONS /api/accounts/logout/ HTTP/1.1" 200 0
+[2024-11-05 05:20:10] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 05:20:10] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 05:20:10] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 05:20:10] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 05:20:10] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 05:20:10] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 05:20:10] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-11-05 05:20:16] INFO [django.server:212] "POST /api/accounts/login/ HTTP/1.1" 200 483
+[2024-11-05 05:20:16] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 05:20:16] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 05:20:22] INFO [django.server:212] "OPTIONS /api/alerts/list/?page=1&page_size=10 HTTP/1.1" 200 0
+[2024-11-05 05:20:22] WARNING [django.request:241] Not Found: /api/alerts/list/
+[2024-11-05 05:20:22] WARNING [django.server:212] "GET /api/alerts/list/?page=1&page_size=10 HTTP/1.1" 404 2912
+[2024-11-05 05:20:23] INFO [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 200 5928
+[2024-11-05 05:20:25] INFO [django.server:212] "GET /api/products/10090891841395/ HTTP/1.1" 200 525
+[2024-11-05 05:20:25] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 05:20:36] WARNING [django.request:241] Bad Request: /api/alerts/
+[2024-11-05 05:20:36] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 400 43
+[2024-11-05 05:26:57] WARNING [django.request:241] Unauthorized: /api/products/10090891841395/
+[2024-11-05 05:26:57] WARNING [django.request:241] Unauthorized: /api/accounts/me/
+[2024-11-05 05:26:57] WARNING [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 401 183
+[2024-11-05 05:26:57] WARNING [django.server:212] "GET /api/products/10090891841395/ HTTP/1.1" 401 183
+[2024-11-05 05:26:57] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 05:26:57] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 05:26:57] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 05:26:57] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 05:26:57] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 05:26:57] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 05:26:57] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 05:26:57] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 05:26:57] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 05:26:57] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 05:26:57] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-11-05 05:27:03] INFO [django.server:212] "POST /api/accounts/login/ HTTP/1.1" 200 483
+[2024-11-05 05:27:03] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 05:27:03] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 05:27:05] INFO [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 200 5928
+[2024-11-05 05:27:07] INFO [django.server:212] "OPTIONS /api/products/100005626897/ HTTP/1.1" 200 0
+[2024-11-05 05:27:07] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 05:27:07] INFO [django.server:212] "GET /api/products/100005626897/ HTTP/1.1" 200 468
+[2024-11-05 05:27:13] WARNING [django.request:241] Bad Request: /api/alerts/
+[2024-11-05 05:27:13] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 400 43
+[2024-11-05 05:27:14] WARNING [django.request:241] Bad Request: /api/alerts/
+[2024-11-05 05:27:14] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 400 43
+[2024-11-05 05:27:26] WARNING [django.request:241] Unauthorized: /api/alerts/
+[2024-11-05 05:27:26] WARNING [django.server:212] "GET /api/alerts/ HTTP/1.1" 401 5170
+[2024-11-05 05:27:26] INFO [django.server:212] "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 304 0
+[2024-11-05 05:27:26] INFO [django.server:212] "GET /static/rest_framework/css/default.css HTTP/1.1" 304 0
+[2024-11-05 05:27:26] INFO [django.server:212] "GET /static/rest_framework/css/prettify.css HTTP/1.1" 304 0
+[2024-11-05 05:27:26] INFO [django.server:212] "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 304 0
+[2024-11-05 05:27:26] INFO [django.server:212] "GET /static/rest_framework/js/csrf.js HTTP/1.1" 304 0
+[2024-11-05 05:27:26] INFO [django.server:212] "GET /static/rest_framework/js/default.js HTTP/1.1" 304 0
+[2024-11-05 05:27:26] INFO [django.server:212] "GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 304 0
+[2024-11-05 05:27:26] INFO [django.server:212] "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 304 0
+[2024-11-05 05:27:26] INFO [django.server:212] "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 200 87533
+[2024-11-05 05:27:26] INFO [django.server:212] "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+[2024-11-05 05:27:26] INFO [django.server:212] "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+[2024-11-05 05:27:26] INFO [django.server:212] "GET /static/rest_framework/img/grid.png HTTP/1.1" 304 0
+[2024-11-05 05:28:20] WARNING [django.request:241] Bad Request: /api/alerts/
+[2024-11-05 05:28:20] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 400 43
+[2024-11-05 05:33:00] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/PriceDropAlert/serializers.py changed, reloading.
+[2024-11-05 05:33:01] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 05:33:10] WARNING [django.request:241] Unauthorized: /api/alerts/
+[2024-11-05 05:33:10] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 401 183
+[2024-11-05 05:33:10] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 05:33:10] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 05:33:10] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 05:33:10] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 05:33:10] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 05:33:10] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 05:33:10] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 05:33:10] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 05:33:10] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-11-05 05:33:29] INFO [django.server:212] "POST /api/accounts/login/ HTTP/1.1" 200 483
+[2024-11-05 05:33:29] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 05:33:29] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 05:33:30] INFO [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 200 5928
+[2024-11-05 05:33:31] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 05:33:31] INFO [django.server:212] "GET /api/products/10090891841395/ HTTP/1.1" 200 525
+[2024-11-05 05:33:37] WARNING [django.request:241] Bad Request: /api/alerts/
+[2024-11-05 05:33:37] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 400 43
+[2024-11-05 05:37:12] WARNING [django.request:241] Bad Request: /api/alerts/
+[2024-11-05 05:37:12] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 400 43
+[2024-11-05 05:37:58] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/PriceDropAlert/serializers.py changed, reloading.
+[2024-11-05 05:37:59] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 05:38:12] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/PriceDropAlert/serializers.py changed, reloading.
+[2024-11-05 05:38:13] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 05:40:21] WARNING [django.request:241] Unauthorized: /api/alerts/
+[2024-11-05 05:40:21] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 401 183
+[2024-11-05 05:40:21] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 05:40:21] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 05:40:21] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 05:40:21] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 05:40:21] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 05:40:21] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 05:40:21] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 05:40:21] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 05:40:21] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-11-05 05:40:22] WARNING [django.request:241] Unauthorized: /api/alerts/
+[2024-11-05 05:40:22] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 401 58
+[2024-11-05 05:40:22] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-11-05 05:40:27] INFO [django.server:212] "POST /api/accounts/login/ HTTP/1.1" 200 483
+[2024-11-05 05:40:27] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 05:40:27] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 05:40:30] INFO [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 200 5928
+[2024-11-05 05:40:34] INFO [django.server:212] "OPTIONS /api/products/10109661484124/ HTTP/1.1" 200 0
+[2024-11-05 05:40:34] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 05:40:34] INFO [django.server:212] "GET /api/products/10109661484124/ HTTP/1.1" 200 487
+[2024-11-05 05:40:40] WARNING [django.request:241] Bad Request: /api/alerts/
+[2024-11-05 05:40:40] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 400 43
+[2024-11-05 05:40:41] WARNING [django.request:241] Bad Request: /api/alerts/
+[2024-11-05 05:40:41] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 400 43
+[2024-11-05 05:40:47] WARNING [django.request:241] Unauthorized: /api/alerts/
+[2024-11-05 05:40:47] WARNING [django.server:212] "GET /api/alerts/ HTTP/1.1" 401 5170
+[2024-11-05 05:44:10] WARNING [django.request:241] Bad Request: /api/alerts/
+[2024-11-05 05:44:10] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 400 43
+[2024-11-05 05:44:14] WARNING [django.request:241] Bad Request: /api/alerts/
+[2024-11-05 05:44:14] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 400 43
+[2024-11-05 05:44:14] WARNING [django.request:241] Bad Request: /api/alerts/
+[2024-11-05 05:44:14] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 400 43
+[2024-11-05 05:47:37] WARNING [django.request:241] Unauthorized: /api/alerts/
+[2024-11-05 05:47:37] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 401 183
+[2024-11-05 05:47:37] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 05:47:37] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 05:47:37] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 05:47:37] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 05:47:37] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 05:47:37] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 05:47:37] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 05:47:37] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 05:47:37] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-11-05 05:47:45] INFO [django.server:212] "POST /api/accounts/login/ HTTP/1.1" 200 483
+[2024-11-05 05:47:45] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 05:47:45] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 05:47:46] INFO [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 200 5928
+[2024-11-05 05:47:50] INFO [django.server:212] "OPTIONS /api/products/100070965890/ HTTP/1.1" 200 0
+[2024-11-05 05:47:50] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 05:47:50] INFO [django.server:212] "GET /api/products/100070965890/ HTTP/1.1" 200 478
+[2024-11-05 05:47:57] WARNING [django.request:241] Bad Request: /api/alerts/
+[2024-11-05 05:47:57] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 400 43
+[2024-11-05 05:49:03] WARNING [django.request:241] Bad Request: /api/alerts/
+[2024-11-05 05:49:03] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 400 43
+[2024-11-05 05:52:05] WARNING [django.request:241] Bad Request: /api/alerts/
+[2024-11-05 05:52:05] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 400 43
+[2024-11-05 05:52:06] WARNING [django.request:241] Bad Request: /api/alerts/
+[2024-11-05 05:52:06] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 400 43
+[2024-11-05 05:52:29] WARNING [django.request:241] Unauthorized: /api/alerts/
+[2024-11-05 05:52:29] WARNING [django.server:212] "GET /api/alerts/ HTTP/1.1" 401 5170
+[2024-11-05 05:58:33] WARNING [django.request:241] Unauthorized: /api/alerts/
+[2024-11-05 05:58:33] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 401 183
+[2024-11-05 05:58:33] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 05:58:33] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 05:58:33] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 05:58:33] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 05:58:33] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 05:58:33] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 05:58:33] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 05:58:33] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 05:58:33] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-11-05 06:01:25] WARNING [django.request:241] Unauthorized: /api/products/100070965890/
+[2024-11-05 06:01:25] WARNING [django.server:212] "GET /api/products/100070965890/ HTTP/1.1" 401 58
+[2024-11-05 06:01:26] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-11-05 06:01:27] INFO [django.server:212] "POST /api/accounts/login/ HTTP/1.1" 200 483
+[2024-11-05 06:01:28] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 06:01:28] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 06:01:31] INFO [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 200 5928
+[2024-11-05 06:01:33] INFO [django.server:212] "OPTIONS /api/products/100064822754/ HTTP/1.1" 200 0
+[2024-11-05 06:01:33] INFO [django.server:212] "GET /api/products/100064822754/ HTTP/1.1" 200 437
+[2024-11-05 06:01:33] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 06:01:38] WARNING [django.request:241] Bad Request: /api/alerts/
+[2024-11-05 06:01:38] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 400 43
+[2024-11-05 06:14:14] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 06:14:19] INFO [django.server:212] "POST /api/accounts/login/ HTTP/1.1" 200 483
+[2024-11-05 06:14:19] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 06:14:19] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 06:14:21] INFO [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 200 5928
+[2024-11-05 06:14:44] INFO [django.server:212] "GET /admin/ HTTP/1.1" 200 11119
+[2024-11-05 06:14:44] INFO [django.server:212] "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+[2024-11-05 06:14:44] INFO [django.server:212] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+[2024-11-05 06:14:44] INFO [django.server:212] "GET /static/admin/css/base.css HTTP/1.1" 304 0
+[2024-11-05 06:14:44] INFO [django.server:212] "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+[2024-11-05 06:14:44] INFO [django.server:212] "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+[2024-11-05 06:14:44] INFO [django.server:212] "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+[2024-11-05 06:14:44] INFO [django.server:212] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[2024-11-05 06:14:44] INFO [django.server:212] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+[2024-11-05 06:14:44] INFO [django.server:212] "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+[2024-11-05 06:14:44] INFO [django.server:212] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+[2024-11-05 06:15:11] INFO [django.server:81] - Broken pipe from ('127.0.0.1', 62970)
+[2024-11-05 06:15:11] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-11-05 06:15:11] INFO [django.server:81] - Broken pipe from ('127.0.0.1', 62973)
+[2024-11-05 06:15:11] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-11-05 06:15:11] INFO [django.server:81] - Broken pipe from ('127.0.0.1', 62974)
+[2024-11-05 06:15:14] INFO [django.server:212] "POST /api/accounts/login/ HTTP/1.1" 200 483
+[2024-11-05 06:15:14] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 06:15:14] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 06:15:15] INFO [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 200 5928
+[2024-11-05 06:15:17] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 06:15:17] INFO [django.server:212] "GET /api/products/100064822754/ HTTP/1.1" 200 437
+[2024-11-05 06:15:23] WARNING [django.request:241] Bad Request: /api/alerts/
+[2024-11-05 06:15:23] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 400 43
+[2024-11-05 06:20:20] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/PriceDropAlert/serializers.py changed, reloading.
+[2024-11-05 06:20:21] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 06:21:22] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/PriceDropAlert/models.py changed, reloading.
+[2024-11-05 06:21:23] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 06:21:27] WARNING [django.request:241] Unauthorized: /api/accounts/me/
+[2024-11-05 06:21:27] WARNING [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 401 183
+[2024-11-05 06:21:27] WARNING [django.request:241] Unauthorized: /api/accounts/me/
+[2024-11-05 06:21:27] WARNING [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 401 183
+[2024-11-05 06:21:27] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 06:21:27] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 06:21:27] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 06:21:27] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 06:21:27] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 06:21:27] WARNING [django.request:241] Unauthorized: /api/products/products_history/
+[2024-11-05 06:21:27] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 06:21:27] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 06:21:27] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 06:21:27] WARNING [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 401 183
+[2024-11-05 06:21:27] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 06:21:27] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 06:21:27] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 06:21:27] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 06:21:27] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-11-05 06:21:30] INFO [django.server:212] "POST /api/accounts/login/ HTTP/1.1" 200 483
+[2024-11-05 06:21:30] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 06:21:30] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 06:21:30] INFO [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 200 5928
+[2024-11-05 06:21:31] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 06:21:31] INFO [django.server:212] "GET /api/products/10090891841395/ HTTP/1.1" 200 525
+[2024-11-05 06:24:56] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 06:24:56] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 06:24:56] INFO [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 200 5928
+[2024-11-05 06:24:57] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 06:24:57] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 06:24:57] INFO [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 200 5928
+[2024-11-05 06:24:58] INFO [django.server:212] "GET /api/products/10090891841395/ HTTP/1.1" 200 525
+[2024-11-05 06:24:58] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 06:25:05] WARNING [django.request:241] Bad Request: /api/alerts/
+[2024-11-05 06:25:05] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 400 43
+[2024-11-05 06:25:06] WARNING [django.request:241] Bad Request: /api/alerts/
+[2024-11-05 06:25:06] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 400 43
+[2024-11-05 06:25:13] WARNING [django.request:241] Unauthorized: /api/alerts/
+[2024-11-05 06:25:13] WARNING [django.server:212] "GET /api/alerts/ HTTP/1.1" 401 5170
+[2024-11-05 06:25:16] WARNING [django.request:241] Unauthorized: /api/alerts/
+[2024-11-05 06:25:16] WARNING [django.server:212] "GET /api/alerts/ HTTP/1.1" 401 5170
+[2024-11-05 06:31:06] WARNING [django.request:241] Unauthorized: /api/accounts/me/
+[2024-11-05 06:31:06] WARNING [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 401 183
+[2024-11-05 06:31:06] WARNING [django.request:241] Unauthorized: /api/accounts/me/
+[2024-11-05 06:31:06] WARNING [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 401 183
+[2024-11-05 06:31:06] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 06:31:06] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 06:31:06] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 06:31:06] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 06:31:06] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 06:31:06] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 06:31:06] WARNING [django.request:241] Unauthorized: /api/products/products_history/
+[2024-11-05 06:31:06] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 06:31:06] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 06:31:06] WARNING [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 401 183
+[2024-11-05 06:31:06] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 06:31:06] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 06:31:06] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 06:31:06] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 06:31:06] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-11-05 06:31:09] INFO [django.server:212] "POST /api/accounts/login/ HTTP/1.1" 200 483
+[2024-11-05 06:31:09] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 06:31:09] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 06:31:10] INFO [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 200 5928
+[2024-11-05 06:31:11] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 06:31:11] INFO [django.server:212] "GET /api/products/10090891841395/ HTTP/1.1" 200 525
+[2024-11-05 06:31:23] WARNING [django.request:241] Bad Request: /api/alerts/
+[2024-11-05 06:31:23] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 400 79
+[2024-11-05 06:31:24] WARNING [django.request:241] Bad Request: /api/alerts/
+[2024-11-05 06:31:24] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 400 79
+[2024-11-05 06:31:49] WARNING [django.request:241] Unauthorized: /api/alerts/
+[2024-11-05 06:31:49] WARNING [django.server:212] "GET /api/alerts/ HTTP/1.1" 401 5170
+[2024-11-05 06:36:35] WARNING [django.request:241] Unauthorized: /api/accounts/me/
+[2024-11-05 06:36:35] WARNING [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 401 183
+[2024-11-05 06:36:35] WARNING [django.request:241] Unauthorized: /api/accounts/me/
+[2024-11-05 06:36:35] WARNING [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 401 183
+[2024-11-05 06:36:35] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 06:36:35] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 06:36:35] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 06:36:35] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 06:36:35] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 06:36:35] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 06:36:35] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 06:36:35] WARNING [django.request:241] Unauthorized: /api/products/products_history/
+[2024-11-05 06:36:35] WARNING [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 401 183
+[2024-11-05 06:36:35] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 06:36:35] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 06:36:35] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 06:36:35] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 06:36:35] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 06:36:35] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-11-05 06:36:37] INFO [django.server:212] "POST /api/accounts/login/ HTTP/1.1" 200 483
+[2024-11-05 06:36:37] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 06:36:38] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 06:36:42] INFO [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 200 5928
+[2024-11-05 06:36:49] INFO [django.server:212] "GET /api/products/100064822754/ HTTP/1.1" 200 437
+[2024-11-05 06:36:49] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 06:36:50] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 06:36:56] INFO [django.server:212] "OPTIONS /api/alerts/price/ HTTP/1.1" 200 0
+[2024-11-05 06:36:56] WARNING [django.request:241] Not Found: /api/alerts/price/
+[2024-11-05 06:36:56] WARNING [django.server:212] "POST /api/alerts/price/ HTTP/1.1" 404 2892
+[2024-11-05 06:36:57] WARNING [django.request:241] Not Found: /api/alerts/price/
+[2024-11-05 06:36:57] WARNING [django.server:212] "POST /api/alerts/price/ HTTP/1.1" 404 2892
+[2024-11-05 06:37:18] WARNING [django.request:241] Not Found: /api/alerts/price/
+[2024-11-05 06:37:18] WARNING [django.server:212] "POST /api/alerts/price/ HTTP/1.1" 404 2892
+[2024-11-05 06:37:29] WARNING [django.request:241] Bad Request: /api/alerts/
+[2024-11-05 06:37:29] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 400 79
+[2024-11-05 06:37:31] WARNING [django.request:241] Bad Request: /api/alerts/
+[2024-11-05 06:37:31] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 400 79
+[2024-11-05 06:37:31] WARNING [django.request:241] Bad Request: /api/alerts/
+[2024-11-05 06:37:31] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 400 79
+[2024-11-05 06:37:41] WARNING [django.request:241] Bad Request: /api/alerts/
+[2024-11-05 06:37:41] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 400 79
+[2024-11-05 06:37:47] WARNING [django.request:241] Bad Request: /api/alerts/
+[2024-11-05 06:37:47] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 400 79
+[2024-11-05 06:40:29] WARNING [django.request:241] Bad Request: /api/alerts/
+[2024-11-05 06:40:29] WARNING [django.server:212] "POST /api/alerts/ HTTP/1.1" 400 79
+[2024-11-05 06:44:42] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/PriceDropAlert/views.py changed, reloading.
+[2024-11-05 06:44:42] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 06:45:35] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/PriceDropAlert/views.py changed, reloading.
+[2024-11-05 06:45:36] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 06:45:51] WARNING [django.request:241] Unauthorized: /api/products/100064822754/
+[2024-11-05 06:45:51] WARNING [django.request:241] Unauthorized: /api/accounts/me/
+[2024-11-05 06:45:51] WARNING [django.server:212] "GET /api/products/100064822754/ HTTP/1.1" 401 183
+[2024-11-05 06:45:51] WARNING [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 401 183
+[2024-11-05 06:45:51] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 06:45:51] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 06:45:51] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 06:45:51] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 06:45:51] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 06:45:51] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 06:45:51] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 06:45:51] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 06:45:51] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 06:45:51] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 06:45:51] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-11-05 06:45:59] INFO [django.server:212] "POST /api/accounts/login/ HTTP/1.1" 200 483
+[2024-11-05 06:45:59] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 06:45:59] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 06:46:00] INFO [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 200 5928
+[2024-11-05 06:46:02] INFO [django.server:212] "GET /api/products/100064822754/ HTTP/1.1" 200 437
+[2024-11-05 06:46:02] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 06:46:02] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 06:46:06] INFO [django.server:212] "OPTIONS /api/alerts/create/ HTTP/1.1" 200 0
+[2024-11-05 06:46:06] WARNING [django.request:241] Bad Request: /api/alerts/create/
+[2024-11-05 06:46:06] WARNING [django.server:212] "POST /api/alerts/create/ HTTP/1.1" 400 79
+[2024-11-05 06:46:07] WARNING [django.request:241] Bad Request: /api/alerts/create/
+[2024-11-05 06:46:07] WARNING [django.server:212] "POST /api/alerts/create/ HTTP/1.1" 400 79
+[2024-11-05 06:49:10] INFO [django.server:212] "OPTIONS /api/api/alerts/price/ HTTP/1.1" 200 0
+[2024-11-05 06:49:10] WARNING [django.request:241] Not Found: /api/api/alerts/price/
+[2024-11-05 06:49:10] WARNING [django.server:212] "POST /api/api/alerts/price/ HTTP/1.1" 404 2615
+[2024-11-05 06:49:11] WARNING [django.request:241] Not Found: /api/api/alerts/price/
+[2024-11-05 06:49:11] WARNING [django.server:212] "POST /api/api/alerts/price/ HTTP/1.1" 404 2615
+[2024-11-05 06:49:28] WARNING [django.request:241] Bad Request: /api/alerts/create/
+[2024-11-05 06:49:28] WARNING [django.server:212] "POST /api/alerts/create/ HTTP/1.1" 400 68
+[2024-11-05 06:49:29] WARNING [django.request:241] Bad Request: /api/alerts/create/
+[2024-11-05 06:49:29] WARNING [django.server:212] "POST /api/alerts/create/ HTTP/1.1" 400 68
+[2024-11-05 06:49:30] WARNING [django.request:241] Bad Request: /api/alerts/create/
+[2024-11-05 06:49:30] WARNING [django.server:212] "POST /api/alerts/create/ HTTP/1.1" 400 68
+[2024-11-05 06:49:30] WARNING [django.request:241] Bad Request: /api/alerts/create/
+[2024-11-05 06:49:30] WARNING [django.server:212] "POST /api/alerts/create/ HTTP/1.1" 400 68
+[2024-11-05 06:49:31] WARNING [django.request:241] Bad Request: /api/alerts/create/
+[2024-11-05 06:49:31] WARNING [django.server:212] "POST /api/alerts/create/ HTTP/1.1" 400 68
+[2024-11-05 06:49:31] WARNING [django.request:241] Bad Request: /api/alerts/create/
+[2024-11-05 06:49:31] WARNING [django.server:212] "POST /api/alerts/create/ HTTP/1.1" 400 68
+[2024-11-05 06:49:31] WARNING [django.request:241] Bad Request: /api/alerts/create/
+[2024-11-05 06:49:31] WARNING [django.server:212] "POST /api/alerts/create/ HTTP/1.1" 400 68
+[2024-11-05 06:49:32] WARNING [django.request:241] Bad Request: /api/alerts/create/
+[2024-11-05 06:49:32] WARNING [django.server:212] "POST /api/alerts/create/ HTTP/1.1" 400 68
+[2024-11-05 06:49:53] WARNING [django.request:241] Bad Request: /api/alerts/create/
+[2024-11-05 06:49:53] WARNING [django.server:212] "POST /api/alerts/create/ HTTP/1.1" 400 68
+[2024-11-05 06:51:48] WARNING [django.request:241] Unauthorized: /api/alerts/create/
+[2024-11-05 06:51:48] WARNING [django.server:212] "POST /api/alerts/create/ HTTP/1.1" 401 183
+[2024-11-05 06:51:48] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 06:51:48] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 06:51:48] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 06:51:48] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 06:51:48] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 06:51:48] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 06:51:48] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 06:51:48] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 06:51:48] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-11-05 06:51:54] INFO [django.server:212] "POST /api/accounts/login/ HTTP/1.1" 200 483
+[2024-11-05 06:51:54] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 06:51:54] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 06:51:55] INFO [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 200 5928
+[2024-11-05 06:51:57] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 06:51:57] INFO [django.server:212] "GET /api/products/100064822754/ HTTP/1.1" 200 437
+[2024-11-05 06:52:02] WARNING [django.request:241] Bad Request: /api/alerts/create/
+[2024-11-05 06:52:02] WARNING [django.server:212] "POST /api/alerts/create/ HTTP/1.1" 400 68
+[2024-11-05 06:52:03] WARNING [django.request:241] Bad Request: /api/alerts/create/
+[2024-11-05 06:52:03] WARNING [django.server:212] "POST /api/alerts/create/ HTTP/1.1" 400 68
+[2024-11-05 06:52:14] WARNING [django.request:241] Unauthorized: /api/alerts/create/
+[2024-11-05 06:52:14] WARNING [django.server:212] "GET /api/alerts/create/ HTTP/1.1" 401 3931
+[2024-11-05 06:53:32] WARNING [django.request:241] Bad Request: /api/alerts/create/
+[2024-11-05 06:53:32] WARNING [django.server:212] "POST /api/alerts/create/ HTTP/1.1" 400 68
+[2024-11-05 07:00:09] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/PriceDropAlert/serializers.py changed, reloading.
+[2024-11-05 07:00:10] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 07:00:18] WARNING [django.request:241] Unauthorized: /api/products/100064822754/
+[2024-11-05 07:00:18] WARNING [django.request:241] Unauthorized: /api/accounts/me/
+[2024-11-05 07:00:18] WARNING [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 401 183
+[2024-11-05 07:00:18] WARNING [django.server:212] "GET /api/products/100064822754/ HTTP/1.1" 401 183
+[2024-11-05 07:00:18] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 07:00:18] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 07:00:18] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 07:00:18] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 07:00:18] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 07:00:18] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 07:00:18] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 07:00:18] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 07:00:18] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 07:00:18] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 07:00:18] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-11-05 07:00:27] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 07:00:30] INFO [django.server:212] "POST /api/accounts/login/ HTTP/1.1" 200 483
+[2024-11-05 07:00:30] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 07:00:30] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 07:00:33] INFO [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 200 5928
+[2024-11-05 07:00:35] INFO [django.server:212] "GET /api/products/100064822754/ HTTP/1.1" 200 437
+[2024-11-05 07:00:35] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 07:00:35] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 07:00:58] WARNING [django.request:241] Bad Request: /api/alerts/create/
+[2024-11-05 07:00:58] WARNING [django.server:212] "POST /api/alerts/create/ HTTP/1.1" 400 42
+[2024-11-05 07:02:26] ERROR [django.request:241] Internal Server Error: /api/alerts/create/
+Traceback (most recent call last):
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/PriceDropAlert/views.py", line 91, in post
+    serializer.save()
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/PriceDropAlert/serializers.py", line 26, in create
+    user = self.context['request'].user
+KeyError: 'request'
+[2024-11-05 07:02:26] ERROR [django.server:212] "POST /api/alerts/create/ HTTP/1.1" 500 111073
+[2024-11-05 07:02:28] ERROR [django.request:241] Internal Server Error: /api/alerts/create/
+Traceback (most recent call last):
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/PriceDropAlert/views.py", line 91, in post
+    serializer.save()
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/PriceDropAlert/serializers.py", line 26, in create
+    user = self.context['request'].user
+KeyError: 'request'
+[2024-11-05 07:02:28] ERROR [django.server:212] "POST /api/alerts/create/ HTTP/1.1" 500 111073
+[2024-11-05 07:02:30] INFO [django.server:212] "GET /api/products/100064822754/ HTTP/1.1" 200 437
+[2024-11-05 07:02:30] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 07:02:30] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 07:02:34] ERROR [django.request:241] Internal Server Error: /api/alerts/create/
+Traceback (most recent call last):
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/PriceDropAlert/views.py", line 91, in post
+    serializer.save()
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/PriceDropAlert/serializers.py", line 26, in create
+    user = self.context['request'].user
+KeyError: 'request'
+[2024-11-05 07:02:34] ERROR [django.server:212] "POST /api/alerts/create/ HTTP/1.1" 500 111073
+[2024-11-05 07:03:04] ERROR [django.request:241] Internal Server Error: /api/alerts/create/
+Traceback (most recent call last):
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/PriceDropAlert/views.py", line 91, in post
+    serializer.save()
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/PriceDropAlert/serializers.py", line 26, in create
+    user = self.context['request'].user
+KeyError: 'request'
+[2024-11-05 07:03:04] ERROR [django.server:212] "POST /api/alerts/create/ HTTP/1.1" 500 111073
+[2024-11-05 07:03:44] ERROR [django.request:241] Internal Server Error: /api/alerts/create/
+Traceback (most recent call last):
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/PriceDropAlert/views.py", line 91, in post
+    serializer.save()
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+  File "/Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/PriceDropAlert/serializers.py", line 26, in create
+    user = self.context['request'].user
+KeyError: 'request'
+[2024-11-05 07:03:44] ERROR [django.server:212] "POST /api/alerts/create/ HTTP/1.1" 500 111073
+[2024-11-05 07:09:03] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/PriceDropAlert/serializers.py changed, reloading.
+[2024-11-05 07:09:03] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 07:09:38] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/PriceDropAlert/views.py changed, reloading.
+[2024-11-05 07:09:38] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 07:09:53] WARNING [django.request:241] Unauthorized: /api/products/100064822754/
+[2024-11-05 07:09:53] WARNING [django.request:241] Unauthorized: /api/accounts/me/
+[2024-11-05 07:09:53] WARNING [django.server:212] "GET /api/products/100064822754/ HTTP/1.1" 401 183
+[2024-11-05 07:09:53] WARNING [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 401 183
+[2024-11-05 07:09:53] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 07:09:53] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 07:09:53] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 07:09:53] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 07:09:53] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 07:09:53] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 07:09:53] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 07:09:53] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 07:09:53] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 07:09:53] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 07:09:53] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-11-05 07:09:53] INFO [django.server:81] - Broken pipe from ('127.0.0.1', 57383)
+[2024-11-05 07:09:56] INFO [django.server:212] "POST /api/accounts/login/ HTTP/1.1" 200 483
+[2024-11-05 07:09:56] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 07:09:56] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 07:09:58] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 07:09:58] INFO [django.server:81] - Broken pipe from ('127.0.0.1', 57445)
+[2024-11-05 07:09:59] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 07:10:04] INFO [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 200 5928
+[2024-11-05 07:10:05] INFO [django.server:212] "GET /api/products/100064822754/ HTTP/1.1" 200 437
+[2024-11-05 07:10:05] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 07:10:05] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 07:10:09] WARNING [django.request:241] Bad Request: /api/alerts/create/
+[2024-11-05 07:10:09] WARNING [django.server:212] "POST /api/alerts/create/ HTTP/1.1" 400 39
+[2024-11-05 07:10:10] WARNING [django.request:241] Bad Request: /api/alerts/create/
+[2024-11-05 07:10:10] WARNING [django.server:212] "POST /api/alerts/create/ HTTP/1.1" 400 39
+[2024-11-05 07:10:13] WARNING [django.request:241] Bad Request: /api/alerts/create/
+[2024-11-05 07:10:13] WARNING [django.server:212] "POST /api/alerts/create/ HTTP/1.1" 400 39
+[2024-11-05 07:11:14] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/PriceDropAlert/serializers.py changed, reloading.
+[2024-11-05 07:11:15] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 07:11:44] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 07:13:04] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/PriceDropAlert/serializers.py changed, reloading.
+[2024-11-05 07:13:04] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 07:13:24] INFO [django.server:212] "POST /api/alerts/create/ HTTP/1.1" 201 262
+[2024-11-05 07:13:34] INFO [django.server:212] "POST /api/alerts/create/ HTTP/1.1" 201 262
+[2024-11-05 07:13:36] INFO [django.server:212] "OPTIONS /api/alerts/?page=1&page_size=10 HTTP/1.1" 200 0
+[2024-11-05 07:13:36] INFO [django.server:212] "GET /api/alerts/?page=1&page_size=10 HTTP/1.1" 200 577
+[2024-11-05 07:13:40] INFO [django.server:212] "OPTIONS /api/alerts/1/ HTTP/1.1" 200 0
+[2024-11-05 07:13:40] INFO [django.server:212] "DELETE /api/alerts/1/ HTTP/1.1" 200 26
+[2024-11-05 07:13:40] INFO [django.server:212] "GET /api/alerts/?page=1&page_size=10 HTTP/1.1" 200 314
+[2024-11-05 07:13:55] INFO [django.server:212] "GET /api/products/100064822754/ HTTP/1.1" 200 437
+[2024-11-05 07:13:57] INFO [django.server:212] "GET /api/alerts/?page=1&page_size=10 HTTP/1.1" 200 314
+[2024-11-05 07:15:17] INFO [django.server:212] "OPTIONS /api/accounts/me HTTP/1.1" 200 0
+[2024-11-05 07:15:17] INFO [django.server:212] "OPTIONS /api/accounts/me/ HTTP/1.1" 200 0
+[2024-11-05 07:15:17] INFO [django.server:212] "OPTIONS /api/accounts/me/ HTTP/1.1" 200 0
+[2024-11-05 07:15:17] WARNING [django.request:241] Unauthorized: /api/accounts/me/
+[2024-11-05 07:15:17] WARNING [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 401 183
+[2024-11-05 07:15:17] WARNING [django.request:241] Unauthorized: /api/accounts/me/
+[2024-11-05 07:15:17] WARNING [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 401 183
+[2024-11-05 07:15:17] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 07:15:17] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 07:15:17] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 07:15:17] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 07:15:17] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 07:15:17] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 07:15:17] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 07:15:17] WARNING [django.request:241] Unauthorized: /api/alerts/
+[2024-11-05 07:15:17] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 07:15:17] WARNING [django.server:212] "GET /api/alerts/?page=1&page_size=10 HTTP/1.1" 401 183
+[2024-11-05 07:15:17] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 07:15:17] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 07:15:17] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 07:15:17] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 07:15:17] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-11-05 07:15:20] INFO [django.server:212] "OPTIONS /api/accounts/login/ HTTP/1.1" 200 0
+[2024-11-05 07:15:20] INFO [django.server:212] "POST /api/accounts/login/ HTTP/1.1" 200 483
+[2024-11-05 07:15:20] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 07:15:20] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 07:15:21] INFO [django.server:212] "GET /api/alerts/?page=1&page_size=10 HTTP/1.1" 200 314
+[2024-11-05 07:17:55] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 07:17:55] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 07:17:57] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 07:17:57] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 07:17:57] INFO [django.server:212] "GET /api/alerts/?page=1&page_size=10 HTTP/1.1" 200 314
+[2024-11-05 07:17:57] INFO [django.server:81] - Broken pipe from ('127.0.0.1', 61572)
+[2024-11-05 07:17:58] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 07:17:59] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 07:17:59] INFO [django.server:212] "OPTIONS /api/products/products_history?page=1&page_size=12 HTTP/1.1" 200 0
+[2024-11-05 07:17:59] INFO [django.server:212] "OPTIONS /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 200 0
+[2024-11-05 07:17:59] INFO [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 200 5928
+[2024-11-05 07:18:06] INFO [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 200 5928
+[2024-11-05 07:18:07] INFO [django.server:212] "GET /api/alerts/?page=1&page_size=10 HTTP/1.1" 200 314
+[2024-11-05 07:18:10] INFO [django.server:212] "GET /api/alerts/?page=1&page_size=10 HTTP/1.1" 200 314
+[2024-11-05 07:19:11] INFO [django.server:212] "GET /api/alerts/?page=1&page_size=10 HTTP/1.1" 200 314
+[2024-11-05 07:19:37] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 07:19:37] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 07:19:37] INFO [django.server:212] "GET /api/alerts/?page=1&page_size=10 HTTP/1.1" 200 314
+[2024-11-05 07:19:39] INFO [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 200 5928
+[2024-11-05 07:19:42] INFO [django.server:212] "GET /api/alerts/?page=1&page_size=10 HTTP/1.1" 200 314
+[2024-11-05 07:20:23] INFO [django.server:212] "OPTIONS /api/alerts/2/ HTTP/1.1" 200 0
+[2024-11-05 07:20:23] WARNING [django.request:241] Unauthorized: /api/alerts/2/
+[2024-11-05 07:20:23] WARNING [django.server:212] "DELETE /api/alerts/2/ HTTP/1.1" 401 183
+[2024-11-05 07:20:23] INFO [django.server:212] "OPTIONS /api/token/refresh/ HTTP/1.1" 200 0
+[2024-11-05 07:20:23] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 07:20:23] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 07:20:23] INFO [django.server:212] "OPTIONS /api/accounts/logout/ HTTP/1.1" 200 0
+[2024-11-05 07:20:23] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 07:20:23] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 07:20:23] WARNING [django.request:241] Not Found: /api/token/refresh/
+[2024-11-05 07:20:23] WARNING [django.server:212] "POST /api/token/refresh/ HTTP/1.1" 404 2606
+[2024-11-05 07:20:23] WARNING [django.request:241] Unauthorized: /api/accounts/logout/
+[2024-11-05 07:20:23] WARNING [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 401 183
+[2024-11-05 07:20:23] INFO [django.server:212] "POST /api/accounts/logout/ HTTP/1.1" 205 25
+[2024-11-05 07:20:27] INFO [django.server:212] "POST /api/accounts/login/ HTTP/1.1" 200 483
+[2024-11-05 07:20:27] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 07:20:27] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 07:20:28] INFO [django.server:212] "GET /api/alerts/?page=1&page_size=10 HTTP/1.1" 200 314
+[2024-11-05 07:20:30] INFO [django.server:212] "DELETE /api/alerts/2/ HTTP/1.1" 200 26
+[2024-11-05 07:20:30] INFO [django.server:212] "GET /api/alerts/?page=1&page_size=10 HTTP/1.1" 200 52
+[2024-11-05 07:20:32] INFO [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 200 5928
+[2024-11-05 07:20:34] INFO [django.server:212] "GET /api/products/100064822754/ HTTP/1.1" 200 437
+[2024-11-05 07:20:34] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 07:20:34] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 07:20:38] INFO [django.server:212] "POST /api/alerts/create/ HTTP/1.1" 201 262
+[2024-11-05 07:20:39] INFO [django.server:212] "GET /api/alerts/?page=1&page_size=10 HTTP/1.1" 200 314
+[2024-11-05 07:21:33] INFO [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 200 5928
+[2024-11-05 07:21:35] INFO [django.server:212] "GET /api/alerts/?page=1&page_size=10 HTTP/1.1" 200 314
+[2024-11-05 07:23:00] INFO [django.utils.autoreload:266] /Users/csgo/Desktop/ZJU_CS_COURSE/price_comparison_website/backend/PriceDropAlert/serializers.py changed, reloading.
+[2024-11-05 07:23:01] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2024-11-05 07:23:04] INFO [django.server:212] "POST /api/accounts/login/ HTTP/1.1" 200 483
+[2024-11-05 07:23:04] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 07:23:04] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 07:23:05] INFO [django.server:212] "GET /api/alerts/?page=1&page_size=10 HTTP/1.1" 200 433
+[2024-11-05 07:23:07] INFO [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 200 5928
+[2024-11-05 07:23:08] INFO [django.server:212] "GET /api/alerts/?page=1&page_size=10 HTTP/1.1" 200 433
+[2024-11-05 07:26:49] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 07:26:49] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 07:26:49] INFO [django.server:212] "GET /api/alerts/?page=1&page_size=10 HTTP/1.1" 200 433
+[2024-11-05 07:26:51] INFO [django.server:212] "GET /api/products/products_history/?page=1&page_size=12 HTTP/1.1" 200 5928
+[2024-11-05 07:26:53] INFO [django.server:212] "OPTIONS /api/products/10096428204831/ HTTP/1.1" 200 0
+[2024-11-05 07:26:53] INFO [django.server:212] "GET /api/products/10096428204831/ HTTP/1.1" 200 487
+[2024-11-05 07:26:53] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 07:26:53] INFO [django.server:212] "GET /api/accounts/me/ HTTP/1.1" 200 52
+[2024-11-05 07:26:57] INFO [django.server:212] "POST /api/alerts/create/ HTTP/1.1" 201 436
+[2024-11-05 07:26:59] INFO [django.server:212] "GET /api/alerts/?page=1&page_size=10 HTTP/1.1" 200 870

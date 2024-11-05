@@ -4,170 +4,218 @@
     v-model="dialogVisible"
     title="设置降价提醒"
     width="500px"
-    :teleport="'body'"
-    :modal="true"
-    :lock-scroll="false"
     :close-on-click-modal="false"
     :close-on-press-escape="false"
   >
-    <!-- 表单内容 -->
-    <el-form :model="alertForm" label-width="100px">
-      <!-- 商品名称显示 -->
+    <el-form
+      ref="formRef"
+      :model="alertForm"
+      :rules="rules"
+      label-width="100px"
+    >
       <el-form-item label="商品名称">
         <span>{{ product.name }}</span>
       </el-form-item>
 
-      <!-- 当前价格显示 -->
       <el-form-item label="当前价格">
-        <span>￥{{ product.price }}</span>
+        <span class="price">￥{{ product.price }}</span>
       </el-form-item>
 
-      <!-- 目标价格输入 -->
-      <el-form-item label="目标价格">
+      <el-form-item
+        label="目标价格"
+        prop="target_price"
+      >
         <el-input-number
           v-model="alertForm.target_price"
           :min="0"
+          :max="product.price"
+          :precision="2"
           :step="0.01"
+          style="width: 100%"
           placeholder="请输入目标价格"
-          style="width: 100%;"
-        ></el-input-number>
+        />
+        <div class="price-tip">目标价格必须低于当前价格</div>
       </el-form-item>
 
-      <!-- 通知方式选择 -->
       <el-form-item label="通知方式">
-        <el-checkbox-group v-model="alertForm.notification_methods">
-          <el-checkbox label="email">邮件</el-checkbox>
-          <!-- 可以根据需要添加其他通知方式 -->
-        </el-checkbox-group>
+        <div v-if="userEmail" class="notification-info">
+          <el-tag size="small" type="info">
+            降价时将通过邮箱 {{ userEmail }} 通知您
+          </el-tag>
+        </div>
+        <div v-else class="notification-warning">
+          <el-alert
+            type="warning"
+            show-icon
+            :closable="false"
+            title="未获取到邮箱信息，请刷新页面重试"
+          />
+        </div>
       </el-form-item>
     </el-form>
 
-    <!-- 弹窗底部按钮 -->
     <template #footer>
-      <el-button @click="closeDialog">取消</el-button>
-      <el-button type="primary" @click="submitAlert" :loading="loading">确定</el-button>
+      <el-button @click="handleClose">取消</el-button>
+      <el-button
+        type="primary"
+        :loading="loading"
+        :disabled="!userEmail"
+        @click="submitForm"
+      >
+        确定
+      </el-button>
     </template>
   </el-dialog>
 </template>
 
 <script setup>
-import { ref, watch, reactive } from 'vue';
-import axios from '@/axios.js'; // 确保 axios 实例配置正确
-import { ElMessage } from 'element-plus';
+import { ref, computed, watch, reactive, onMounted } from 'vue'
+import { ElMessage } from 'element-plus'
+import axios from '@/axios'
+import auth from '@/store/auth'
 
-// 定义组件接收的 props
 const props = defineProps({
   visible: {
     type: Boolean,
-    required: true,
+    required: true
   },
   product: {
     type: Object,
-    required: true,
-  },
-});
-
-// 定义组件发出的事件
-const emit = defineEmits(['update:visible']);
-
-// 创建一个本地的可变状态 `dialogVisible`，并与 `props.visible` 同步
-const dialogVisible = ref(props.visible);
-
-// 监听 `props.visible` 的变化，同步到 `dialogVisible`
-watch(
-  () => props.visible,
-  (newVal) => {
-    dialogVisible.value = newVal;
+    required: true
   }
-);
+})
 
-// 监听 `dialogVisible` 的变化，向父组件同步
-watch(
-  dialogVisible,
-  (newVal) => {
-    emit('update:visible', newVal);
-  }
-);
+const emit = defineEmits(['update:visible', 'success'])
 
-// 定义表单数据
+// 表单ref
+const formRef = ref(null)
+
+// 对话框可见性
+const dialogVisible = computed({
+  get: () => props.visible,
+  set: (val) => emit('update:visible', val)
+})
+
+// 用户邮箱
+const userEmail = computed(() => auth.state.email)
+
+// 表单数据
 const alertForm = reactive({
-  product: null, // 商品 ID
-  target_price: null, // 目标价格
-  notification_methods: [], // 通知方式数组
-});
+  product: null,
+  target_price: null
+})
 
-// 监听 `props.product` 的变化，更新 `alertForm.product`
-watch(
-  () => props.product,
-  (newProduct) => {
-    if (newProduct && newProduct.id) {
-      alertForm.product = newProduct.id;
+// 表单验证规则
+const rules = {
+  target_price: [
+    { required: true, message: '请输入目标价格', trigger: 'blur' },
+    {
+      validator: (rule, value, callback) => {
+        if (!value) {
+          callback(new Error('请输入目标价格'))
+        } else if (value >= props.product.price) {
+          callback(new Error('目标价格必须低于当前价格'))
+        } else if (value <= 0) {
+          callback(new Error('目标价格必须大于0'))
+        } else {
+          callback()
+        }
+      },
+      trigger: 'change'
     }
-  },
-  { immediate: true }
-);
-
-// 定义 loading 状态
-const loading = ref(false);
-
-// 关闭弹窗的方法
-const closeDialog = () => {
-  dialogVisible.value = false;
-  resetForm();
-};
-
-// 重置表单数据的方法
-const resetForm = () => {
-  alertForm.target_price = null;
-  alertForm.notification_methods = [];
-};
-
-// 提交表单的方法
-const submitAlert = async () => {
-  // 表单验证
-  if (alertForm.target_price === null || alertForm.target_price === undefined) {
-    ElMessage.warning('请设置目标价格');
-    return;
-  }
-
-  if (alertForm.notification_methods.length === 0) {
-    ElMessage.warning('请选择至少一种通知方式');
-    return;
-  }
-
-  loading.value = true;
-
-  try {
-    // 发送 POST 请求到后端创建降价提醒
-    await axios.post('alerts/', {
-      product: alertForm.product,
-      target_price: alertForm.target_price,
-      notification_methods: alertForm.notification_methods,
-    });
-
-    ElMessage.success('降价提醒设置成功');
-    closeDialog();
-  } catch (error) {
-    console.error('设置降价提醒失败', error);
-    if (error.response && error.response.data) {
-      // 后端返回的错误信息
-      const errorMsg = Object.values(error.response.data).flat().join(' ');
-      ElMessage.error(`设置降价提醒失败: ${errorMsg}`);
-    } else {
-      ElMessage.error('设置降价提醒失败，请稍后重试');
-    }
-  } finally {
-    loading.value = false;
-  }
-};
-</script>
-
-<style scoped>
-.el-dialog__body {
-  padding: 20px 20px 0 20px;
+  ]
 }
 
-.el-form-item {
-  margin-bottom: 20px;
+// 加载状态
+const loading = ref(false)
+
+// 监听product变化
+watch(() => props.product, (newProduct) => {
+  if (newProduct?.id) {
+    alertForm.product = newProduct.id
+  }
+}, { immediate: true })
+
+// 组件挂载时确保用户信息已加载
+onMounted(async () => {
+  if (auth.state.isAuthenticated && !auth.state.username) {
+    try {
+      await auth.fetchUserInfo()
+    } catch (error) {
+      ElMessage.error('用户信息加载失败，请重新登录')
+    }
+  } else if (!auth.state.isAuthenticated) {
+    ElMessage.warning('请先登录以设置降价提醒')
+    emit('update:visible', false) // Close dialog if not authenticated
+  }
+})
+
+const handleClose = () => {
+  emit('update:visible', false)
+}
+
+const submitForm = async () => {
+  if (alertForm.target_price >= props.product.price || !alertForm.target_price) {
+    ElMessage.error('目标价格无效')
+    return
+  }
+
+  loading.value = true
+  try {
+    console.log("Sending data:", {
+      product_id: props.product.product_id,
+      target_price: alertForm.target_price,
+      email: userEmail.value,
+      active: true
+    });
+    // Assuming you need to send a request to save the alert
+    const response = await axios.post('alerts/create/', {
+      product_id: props.product.product_id, // 确保使用正确的字段名
+      target_price: alertForm.target_price,
+      email: userEmail.value,
+      active: true
+    });
+
+
+    ElMessage.success('降价提醒已设置')
+    emit('success')
+    handleClose()
+  } catch (error) {
+  if (error.response) {
+    console.error('Server Error:', error.response);
+    ElMessage.error(`错误: ${error.response.data.detail || '请求失败'}`);
+  } else if (error.request) {
+    console.error('Network Error:', error.request);
+    ElMessage.error('网络错误，请稍后重试');
+  } else {
+    console.error('Error:', error.message);
+    ElMessage.error('发生未知错误');
+  }
+} finally {
+    loading.value = false
+  }
+}
+</script>
+
+
+<style scoped>
+.price {
+  color: #ff4d4f;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.price-tip {
+  font-size: 12px;
+  color: #999;
+  margin-top: 4px;
+}
+
+.notification-info {
+  margin: 8px 0;
+}
+
+.notification-warning {
+  margin: 8px 0;
 }
 </style>
