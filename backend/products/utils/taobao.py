@@ -1,6 +1,8 @@
 import time
 import hashlib
 from urllib.parse import quote
+
+import certifi
 from lib.logger import logger
 import requests  # 使用 requests 进行同步请求
 import json

@@ -106,6 +106,7 @@ def search_all_view(request):
 
         print("combined_results done correctly123")
         response_data = {}
+        mmp_products = []
         for platform in combined_results:
             data = combined_results[platform]
             products = data.get('results', [])[:10]
@@ -130,6 +131,7 @@ def search_all_view(request):
                     # print(mapped_product['product_id'], type(mapped_product['product_id']))
                     # print("mapped_product done")
                     mapped_products.append(mapped_product)
+                    mmp_products.append(mapped_product)
                     # print(mapped_products)
                 serializer = ProductDictSerializer(mapped_products, many=True)
                 # 确保 total 是数字类型
@@ -158,6 +160,7 @@ def search_all_view(request):
                     }
                     # print(mapped_product['product_id'], type(mapped_product['product_id']))
                     mapped_products.append(mapped_product)
+                    mmp_products.append(mapped_product)
                     count += 1
                     # print(count)
                 # print(mapped_products)
@@ -168,34 +171,33 @@ def search_all_view(request):
                     'total': total
                 }
                 print("jingdong done")
-
-        user = request.user  # 如果需要记录用户，可以在Product模型中添加相关字段
-        for platform in combined_results:
-            products = combined_results[platform].get('results', [])[:10]
-            for product_data in products:
-                # 使用 get_or_create 避免重复
-                product, created = Product.objects.get_or_create(
-                    product_id=product_data['product_id'],
-                    defaults={
-                        'name': product_data['name'],
-                        'platform': product_data['platform'],
-                        'price': product_data['price'],
-                        'link': product_data['link'],
-                        'image_url': product_data['image_url'],
-                        'store_name': product_data['store_name'],
-                        'store_link': product_data['store_link'],
-                    }
-                )
-                if not created:
-                    # 如果商品已存在，可以选择更新某些字段
-                    product.name = product_data['name']
-                    product.platform = product_data['platform']
-                    product.price = product_data['price']
-                    product.link = product_data['link']
-                    product.image_url = product_data['image_url']
-                    product.store_name = product_data['store_name']
-                    product.store_link = product_data['store_link']
-                    product.save()
+        # print(mmp_products)
+        for product_data in mmp_products:
+            # 使用 get_or_create 避免重复
+            # print(product_data)
+            product, created = Product.objects.get_or_create(
+                product_id=product_data['product_id'],
+                defaults={
+                    'name': product_data['name'],
+                    'platform': product_data['platform'],
+                    'price': product_data['price'],
+                    'link': product_data['link'],
+                    'image_url': product_data['image_url'],
+                    'store_name': product_data['store_name'],
+                    'store_link': product_data['store_link'],
+                }
+            )
+            # print("done")
+            if not created:
+                # 如果商品已存在，可以选择更新某些字段
+                product.name = product_data['name']
+                product.platform = product_data['platform']
+                product.price = product_data['price']
+                product.link = product_data['link']
+                product.image_url = product_data['image_url']
+                product.store_name = product_data['store_name']
+                product.store_link = product_data['store_link']
+                product.save()
 
         return Response(response_data, status=200)
 

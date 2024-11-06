@@ -1,4 +1,6 @@
 import re
+
+import certifi
 from bs4 import BeautifulSoup
 import requests  # 使用 requests 进行同步请求
 from urllib.parse import quote

@@ -9,7 +9,6 @@ router.register(r'products_history', ProductViewSet, basename='products_history'
 
 
 urlpatterns = [
-    # ... 其他 URL
     path('jd_search/', jd_search_view, name='jd_search'),
     path('tb_search/', tb_search_view, name='tb_search'),
     path('search/', search_all_view, name='search_all'),
