@@ -1,4 +1,3 @@
-<!-- src/App.vue -->
 <template>
   <div id="app">
     <!-- 顶部导航栏 -->
@@ -69,7 +68,7 @@
     <!-- 主体内容区域 -->
     <el-container>
       <!-- 侧边栏 -->
-      <el-aside width="220px" class="custom-aside">
+      <el-aside width="220px" v-if="!isMobile" class="custom-aside">
         <el-menu
           :default-active="$route.path"
           class="el-menu-vertical-demo"
@@ -117,21 +116,47 @@
 </template>
 
 <script>
-import { computed, onMounted } from 'vue';
+import { computed, ref, onMounted, onBeforeUnmount } from 'vue';
 import { useRouter } from 'vue-router';
 import auth from './store/auth';
 
 export default {
   name: 'App',
   setup() {
+    // 获取用户状态
     const router = useRouter();
-    const { state, fetchUserInfo, logout } = auth;
+    const {state, fetchUserInfo, logout} = auth;
 
-    const handleLogout = () => {
-      logout();
-      router.push({ name: 'home' });
+    // 判断是否为移动端
+    const isMobile = ref(false);
+
+    // 检查当前窗口宽度是否小于1024px
+    const checkMobile = () => {
+      isMobile.value = window.innerWidth < 1024;
     };
 
+    // 监听窗口尺寸变化
+    onMounted(() => {
+      checkMobile();
+      window.addEventListener('resize', checkMobile);
+    });
+
+    // 清理事件监听
+    onBeforeUnmount(() => {
+      window.removeEventListener('resize', checkMobile);
+    });
+
+    // 用户登出
+    const handleLogout = () => {
+      logout();
+      router.push({name: 'home'});
+    };
+
+    // 获取用户名和是否认证的计算属性
+    const username = computed(() => state.username);
+    const isAuthenticated = computed(() => state.isAuthenticated);
+
+    // 初始化用户信息
     onMounted(() => {
       if (state.isAuthenticated && !state.username) {
         fetchUserInfo();
@@ -139,9 +164,10 @@ export default {
     });
 
     return {
-      username: computed(() => state.username),
-      isAuthenticated: computed(() => state.isAuthenticated),
+      username,
+      isAuthenticated,
       handleLogout,
+      isMobile
     };
   },
 };
@@ -237,19 +263,6 @@ body {
 
 .custom-aside .el-menu-vertical-demo .el-menu-item i,
 .custom-aside .el-menu-vertical-demo .el-submenu__title i {
-  color: #fff;
-}
-
-.custom-icon-style .el-icon-user {
-  color: #ff0000; /* 改变图标颜色 */
-  font-size: 24px; /* 修改图标的大小 */
-  border: 2px solid #000; /* 为图标加边框 */
-  background-color: #f0f0f0; /* 背景颜色 */
-  border-radius: 50%; /* 圆形边框 */
-}
-
-.custom-aside .el-menu-vertical-demo .el-menu-item.is-active i,
-.custom-aside .el-menu-vertical-demo .el-submenu.is-active .el-submenu__title i {
   color: #fff;
 }
 </style>

@@ -26,7 +26,13 @@ SECRET_KEY = 'django-insecure-3qzawt%b*&@vw7+4ykrh%$6*6_qc8v=g8q0!&!2h0&jg_(j5jz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '0.0.0.0',
+    'localhost',
+    '127.0.0.1',
+    'backend',  # 容器服务名
+    '*',  # 开发环境可以使用通配符，生产环境建议明确指定
+]
 
 # Application definition
 
@@ -87,7 +93,7 @@ DATABASES = {
         'NAME': 'price_comparison_db',
         'USER': 'root',
         'PASSWORD': '123jklcs',
-        'HOST': '127.0.0.1',
+        'HOST': 'db',
         'PORT': '3306',
         'OPTIONS': {
             'sql_mode': 'traditional'
@@ -237,8 +243,8 @@ from celery.schedules import crontab
 
 # backend/settings.py
 
-CELERY_BROKER_URL = 'redis://localhost:6379/0'  # 使用 Redis 作为消息代理
-CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+CELERY_BROKER_URL = 'redis://redis:6379/0'  # 使用 Redis 作为消息代理
+CELERY_RESULT_BACKEND = 'redis://redis:6379/0'
 
 CELERY_BEAT_SCHEDULE = {
     'check-price-drops-every-12-hours': {

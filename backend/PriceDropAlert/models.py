@@ -24,8 +24,8 @@ class PriceDropAlert(models.Model):
     )
     email = models.EmailField(
         verbose_name='通知邮箱',
-        blank=False,
-        null=False
+        blank=True,
+        null=True
     )
     active = models.BooleanField(
         default=False,
