@@ -14,9 +14,8 @@ export default defineConfig({
     }
   },
   server: {
-    // 让 Vite 监听所有网络接口，外部也能访问
-    host: '0.0.0.0', // 默认为 localhost, 改为 0.0.0.0 以接受来自外部的连接
-    port: 5173, // 默认端口
-    strictPort: true, // 强制 Vite 使用指定端口
+    host: '0.0.0.0',
+    port: 5173,
+    strictPort: true,
   }
 })
