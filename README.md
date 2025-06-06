@@ -1,11 +1,11 @@
-# Web 商品价格比较网站
+# Web product price comparison website
 
-本实验文档旨在设计并实现一个功能全面的 Web 商品价格比较网站，涵盖了用户注册与登录、商品价格实时查询、多平台价格对比、历史价格追踪、降价提醒等核心模块。文档内容包括系统的功能需求分析、详细的技术实现方案、数据库设计、前后端交互、以及界面设计等多个方面。通过对商品名称的分词处理、多平台接口的集成查询，网站能够实时获取多个电商平台（如淘宝、京东等）的商品价格，并为用户提供直观的价格比较功能。系统还通过建立商品数据库，记录商品的详细信息及其历史价格变化，并以图表形式展示，帮助用户进行长期价格跟踪和分析。此外，网站支持用户设置个性化的降价提醒功能，系统会定期查询指定商品的最新价格，并通过邮件或推送的方式通知用户，以提升购物的便利性和精准性。考虑到移动端用户的需求，系统界面设计将适配手机浏览器，提供无缝的移动端体验，用户也可以通过扫描商品条码或拍摄商品图片来查询商品信息。
+This experimental document aims to design and implement a fully functional Web commodity price comparison website, covering core modules such as user registration and login, real-time commodity price query, multi-platform price comparison, historical price tracking, and price reduction reminder. The document content includes multiple aspects such as the functional requirements analysis of the system, detailed technical implementation plans, database design, front-end and back-end interaction, as well as interface design. Through the word segmentation processing of product names and the integrated query of multi-platform interfaces, the website can obtain the product prices of multiple e-commerce platforms (such as Taobao, JD.com, etc.) in real time, and provide users with intuitive price comparison functions. The system also establishes a commodity database to record detailed information about commodities and their historical price changes, and presents it in the form of charts, helping users conduct long-term price tracking and analysis. In addition, the website supports users in setting personalized price reduction reminder functions. The system will regularly check the latest prices of designated products and notify users via email or push notifications to enhance the convenience and accuracy of shopping. Considering the needs of mobile users, the system interface design will be adapted to mobile browsers to provide a seamless mobile experience. Users can also query product information by scanning product barcodes or taking product pictures.
 
-该项目的背景是源于电商购物用户对比价格的需求日益增加，用户往往需要在多个平台之间切换，以找到最具竞争力的价格。通过这一项目的开发，用户可以在同一平台上同时获取多个电商平台的价格信息，简化了价格比较过程，并通过个性化提醒功能，帮助用户在商品降价时及时购买，提升整体购物体验。
+The background of this project stems from the increasing demand of e-commerce shopping users to compare prices. Users often need to switch between multiple platforms to find the most competitive prices. Through the development of this project, users can obtain price information from multiple e-commerce platforms simultaneously on the same platform, simplifying the price comparison process. Moreover, through the personalized reminder function, it helps users purchase goods in a timely manner when they are discounted, enhancing the overall shopping experience.
 
-如何运行这个模块，只需要执行
+How to run this module? Just execute it
+```bash
+$ docker-compose up --build
 ```
-docker-compose up --build
-```
-然后在本地机器上打开对应的`http://localhost:5173/` ，即可实现全部的功能模块
+Then open the corresponding 'http://localhost:5173/' on your local machine to implement all the function modules
